@@ -33,25 +33,27 @@
 
 <p>Tagged as: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/hakyll.html">hakyll</a>, <a href="../tags/github.html">github</a>.</p>
 
-<p>I first discovered Haskell in 2008, and I remember even then being quite impressed by the quality of the community(1), which has since grown substantially. There was enough buzz around it that I decided to jump in and try to learn some Haskell(2).</p>
-<p>My first foray into Haskell (and functional programming in general) was hacking up some solutions to Project Euler(3) problems in Haskell, and after solving just a few of them I noticed that the core Haskell paradigms (laziness, purity) really shifted my thinking about the practice of programming in general.</p>
+<p>I first discovered Haskell in 2008, and I remember even then being quite impressed by the quality of the <a href="http://haskell.org/haskellwiki/Haskell">community</a>, which has since grown substantially. There was enough buzz around it that I decided to jump in and try to <a href="http://haskell.org/haskellwiki/Tutorials">learn some Haskell</a>.</p>
+<p>My first foray into Haskell (and functional programming in general) was hacking up some solutions to <a href="http://projecteuler.net/">Project Euler</a> problems in Haskell, and after solving just a few of them I noticed that the core Haskell paradigms (laziness, purity) really shifted my thinking about the practice of programming in general.</p>
 <p>Since that initial discovery phase, I haven’t actually used Haskell much. I’ve learned quite a bit more about functional programming since then, but largely this has been through more thorough experimentation with Clojure over the last year or two.</p>
-<p>I was recently reading a blog post by Chris Done(4) that made the front page of Hacker News and caught my eye. The post discussed “value polymorphism” which reminded me how little that I actually know about Haskell, having just scratched the surface in my earlier exploration.</p>
-<p>I also noticed that he was using Hakyll(5) as his blogging engine, and I figured that since I was planning to start this blog, and I was feeling like I wanted to get back into some Haskell coding, that I could kill two birds with one stone.</p>
+<p>I was recently reading a blog post by <a href="http://chrisdone.com/">Chris Done</a> that made the front page of Hacker News and caught my eye. The post discussed “value polymorphism” which reminded me how little that I actually know about Haskell, having just scratched the surface in my earlier exploration.</p>
+<p>I also noticed that he was using <a href="http://jaspervdj.be/hakyll/index.html">Hakyll</a> as his blogging engine, and I figured that since I was planning to start this blog, and I was feeling like I wanted to get back into some Haskell coding, that I could kill two birds with one stone.</p>
 <p>Here’s how I did it:</p>
-<p>First, I downloaded and installed the Haskell Platform(6) for Mac OS X. I remember when trying to get Haskell set up in the past I always had a little bit of a hard time figuring it all out, but the Haskell Platform package has really improved that experience.</p>
+<p>First, I downloaded and installed the <a href="http://hackage.haskell.org/platform/">Haskell Platform</a> for Mac OS X. I remember when trying to get Haskell set up in the past I always had a little bit of a hard time figuring it all out, but the Haskell Platform package has really improved that experience.</p>
 <p>Next, I just ran:</p>
 <pre><code> cabal install hakyll
 </code></pre>
 <p>I was hoping this would just work out of the box but unfortunately, this failed with a compiler error when it tried to build the library regex-pcre–0.94.2:</p>
 <pre><code> Wrap.hsc:143:18: error: pcre.h: No such file or directory
 </code></pre>
-<p>I figured that I must be missing some regex library that didn’t come with the Haskell package, so after a little research I tried installing the “pcre” Homebrew (7) package:</p>
+<p>I figured that I must be missing some regex library that didn’t come with the Haskell package, so after a little research I tried installing the “pcre” Homebrew package:</p>
 <pre><code> brew install pcre
 </code></pre>
-<p>Sure enough, that did the trick and a second crack at: “cabal install hakyll” finished without any further issues. I later found that this issue is covered in the Hakyll FAQ here(8).</p>
-<p>The next step was to work through the tutorial on the hakyll site in order to understand some of the general concepts. I ran into another obstacle during this step, trying to compile of some of the example code. Fortunately, this was also documented in the Hakyll FAQ(9) so I was able to quickly resolve it.</p>
+<p>Sure enough, that did the trick and a second crack at: “cabal install hakyll” finished without any further issues. I later found that this issue is covered in the Hakyll FAQ <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#problem-with-regex-pcre-dependency-on-mac-os">here</a>.</p>
+<p>The next step was to work through the tutorial on the hakyll site in order to understand some of the general concepts. I ran into another obstacle during this step, trying to compile of some of the example code. Fortunately, this was <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#file-name-does-not-match-module-name-on-mac-os">also documented in the Hakyll FAQ</a> so I was able to quickly resolve it.</p>
 <p>Once I had the lay of the land, I copied the tagblog/ folder out of the hakyll-examples project and into my own git project. From there, I edited the files in the css/ and templates/ directory to my liking. For the duration of this step, I kept the sample blog posts around so I could see how they looked as I changed the templates and styles.</p>
+<p>As soon as the site is looking good, you can remove any extraneous files and build the site using Hakyll. Since everything is statically compiled into the site/ directory, you can just turn this into it’s own git repo (you’ll have to add /site to your .gitignore if you want to put the rest of the project into git as well) and push it to a repository named <your_github_acct>.github.com and <a href="http://pages.github.com/">github pages</a> will do the rest!</p>
+<p>You can check out <a href="https://github.com/gphil">my github page</a> for the source.</p>
 <br />
 <div id="disqus_thread"></div>
 <script type="text/javascript">
