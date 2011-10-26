@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>gphil's blog</title>
+        <link>http://example.com</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://example.com/rss.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Wed, 26 Oct 2011 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>Setting up a blog using Hakyll and GitHub</title>
+    <link>http://example.com/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html</link>
+    <description><![CDATA[<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>gphil's blog - Setting up a blog using Hakyll and GitHub</title>
+        <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/default.css"></link>
+        <link rel="alternate" type="application/rss+xml" title="gphil's blog" href="../rss.xml"></link>
+    </head>
+    <body>
+        <h1 class="title">gphil's blog</h1>
+        <div id="navigation">
+            <a href="../">Home</a> | 
+            <a href="../posts.html">Posts</a>
+        </div>
+
+        <h3>Setting up a blog using Hakyll and GitHub</h3>
+
+<p>by <em>gphil</em> on <strong>October 26, 2011</strong></p>
+
+<p>Tagged as: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/hakyll.html">hakyll</a>, <a href="../tags/github.html">github</a>.</p>
+
+<p>I first discovered Haskell in 2008, and I remember even then being quite impressed by the quality of the community(1), which has since grown substantially. There was enough buzz around it that I decided to jump in and try to learn some Haskell(2).</p>
+<p>My first foray into Haskell (and functional programming in general) was hacking up some solutions to Project Euler(3) problems in Haskell, and after solving just a few of them I noticed that the core Haskell paradigms (laziness, purity) really shifted my thinking about the practice of programming in general.</p>
+<p>Since that initial discovery phase, I haven’t actually used Haskell much. I’ve learned quite a bit more about functional programming since then, but largely this has been through more thorough experimentation with Clojure over the last year or two.</p>
+<p>I was recently reading a blog post by Chris Done(4) that made the front page of Hacker News and caught my eye. The post discussed “value polymorphism” which reminded me how little that I actually know about Haskell, having just scratched the surface in my earlier exploration.</p>
+<p>I also noticed that he was using Hakyll(5) as his blogging engine, and I figured that since I was planning to start this blog, and I was feeling like I wanted to get back into some Haskell coding, that I could kill two birds with one stone.</p>
+<p>Here’s how I did it:</p>
+<p>First, I downloaded and installed the Haskell Platform(6) for Mac OS X. I remember when trying to get Haskell set up in the past I always had a little bit of a hard time figuring it all out, but the Haskell Platform package has really improved that experience.</p>
+<p>Next, I just ran:</p>
+<pre><code> cabal install hakyll
+</code></pre>
+<p>I was hoping this would just work out of the box but unfortunately, this failed with a compiler error when it tried to build the library regex-pcre–0.94.2:</p>
+<pre><code> Wrap.hsc:143:18: error: pcre.h: No such file or directory
+</code></pre>
+<p>I figured that I must be missing some regex library that didn’t come with the Haskell package, so after a little research I tried installing the “pcre” Homebrew (7) package:</p>
+<pre><code> brew install pcre
+</code></pre>
+<p>Sure enough, that did the trick and a second crack at: “cabal install hakyll” finished without any further issues. I later found that this issue is covered in the Hakyll FAQ here(8).</p>
+<p>The next step was to work through the tutorial on the hakyll site in order to understand some of the general concepts. I ran into another obstacle during this step, trying to compile of some of the example code. Fortunately, this was also documented in the Hakyll FAQ(9) so I was able to quickly resolve it.</p>
+<p>Once I had the lay of the land, I copied the tagblog/ folder out of the hakyll-examples project and into my own git project. From there, I edited the files in the css/ and templates/ directory to my liking. For the duration of this step, I kept the sample blog posts around so I could see how they looked as I changed the templates and styles.</p>
+<br />
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gphilsblog'; // required: replace example with your forum shortname
+    var disqus_developer = 1; // developer mode is on
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        <br />
+        <br />
+        <br />
+        <br />
+       <div class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></img></a><br />This text on this blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
+    </body>
+</html>
+]]></description>
+    <pubDate>Wed, 26 Oct 2011 00:00:00 UT</pubDate>
+    <guid>http://example.com/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html</guid>
+</item>
+
+    </channel> 
+</rss>
