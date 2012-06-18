@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    <title>gphil's blog - Is the SQL &quot;HAVING&quot; Clause Strictly Necessary?</title>
+    <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css"></link>
+    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css"></link>
+    <link rel="stylesheet" type="text/css" href="../css/default.css"></link>
+    <link rel="stylesheet" type="text/css" href="../css/shCore.css"></link>
+    <link rel="stylesheet" type="text/css" href="../css/shCoreDefault.css"></link>
+    <link rel="alternate" type="application/rss+xml" title="gphil's blog" href="../rss.xml"></link>   
+    <script type="text/javascript" src="../js/shCore.js"></script>
+    <script type="text/javascript" src="../js/shBrushSql.js"></script>
+  </head>
+  <body>
+    <h1 class="title">gphil's blog</h1>
+    <div id="navigation">
+      <a href="../">Home</a> | 
+      <a href="../posts.html">Posts</a>
+    </div>
+    <h3>Is the SQL &quot;HAVING&quot; Clause Strictly Necessary?</h3>
+
+<p>by <em>gphil</em> on <strong>June 18, 2012</strong></p>
+
+<p>Tagged as: <a href="../tags/sql.html">sql</a>, <a href="../tags/databases.html">databases</a>, <a href="../tags/refactoring.html">refactoring</a>.</p>
+
+<p>The other day I was refactoring a SQL query containing a “HAVING” clause, and while I was thinking about that refactor, I realized that “HAVING” clauses can always in principle be reimplemented using a self-join to a subquery and a “WHERE” clause.</p>
+<p>My “proof” of this is that you can always write a subquery using the grouping and aggregate that you wish to filter on, then join the outer query to it using the columns in the grouping, and then filter the outer query using based on the result of the joined-in aggregate from the subquery.</p>
+<p>Consider the following example, which selects all the ice cream parlors in cities that have over 5 ice cream parlors:</p>
+<pre class="brush: sql">
+SELECT city, state, ice_cream_parlor
+FROM ice_cream_parlors icps
+GROUP BY city, state
+HAVING count(ice_cream_parlor) &gt; 5;
+</pre>
+
+<p>This can be re-written as:</p>
+<pre class="brush: sql">
+SELECT icps.city, icps.state, icps.ice_cream_parlor
+FROM ice_cream_parlors icps
+INNER JOIN (
+                SELECT city, state, count(ice_cream_parlor) icp_count
+                FROM ice_cream_parlors icps
+                GROUP by city, state
+           ) sq
+ON icps.city = sq.city and icps.state = sq.state
+GROUP BY icps.city, icps.state, icps.ice_cream_parlor
+WHERE sq.icp_count &gt; 5;
+</pre>
+
+<p>It seems that all “HAVING” queries could in principle be re-written this way, undermining an explicit need for the “HAVING” clause. However, I think there are some benefits to using the “HAVING” clause, even if you don’t necessarily need it to express your query.</p>
+<p>The first and most obvious benefit of the “HAVING” clause is that the first query is shorter and easier to understand than the second query.</p>
+<p>Another potential benefit of the “HAVING” clause is that depending on your database, there may be significant performance differences between these two approaches, although I haven’t really looked into this at all yet other than to check that these queries generate significantly different explain plans in PostgreSQL.</p>
+<p>Finally, I’m not 100% sure if all possible use cases of a “HAVING” clause can be rewritten using this method (or similar), but I haven’t been able to come up with any counter-examples.</p>
+<p>Does anyone know of any counter-examples that I’m missing, or have a more conclusive proof that all “HAVING” clauses can be re-written like this?</p>
+<br />
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gphilsblog'; // required: replace example with your forum shortname
+    var disqus_developer = 1; // developer mode is on
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></img></a><br />This text on this blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '4fdf607f613f5d640900004f');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  </body>
+</html>
