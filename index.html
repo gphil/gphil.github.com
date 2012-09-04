@@ -7,11 +7,7 @@
     <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css"></link>
     <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css"></link>
     <link rel="stylesheet" type="text/css" href="./css/default.css"></link>
-    <link rel="stylesheet" type="text/css" href="./css/shCore.css"></link>
-    <link rel="stylesheet" type="text/css" href="./css/shCoreDefault.css"></link>
     <link rel="alternate" type="application/rss+xml" title="gphil's blog" href="./rss.xml"></link>   
-    <script type="text/javascript" src="./js/shCore.js"></script>
-    <script type="text/javascript" src="./js/shBrushSql.js"></script>
   </head>
   <body>
     <h1 class="title">gphil's blog</h1>
@@ -31,6 +27,10 @@
   <h3>Recent Activity</h3>
   <ul>
     <li>
+    <a href="./posts/2012-09-04-logging-in-clojure.html">Logging in Clojure</a>
+    - <em>September  4, 2012</em> - by <em>gphil</em>
+</li>
+<li>
     <a href="./posts/2012-06-18-is-a-sql-having-clause-necessary.html">Is the SQL &quot;HAVING&quot; Clause Strictly Necessary?</a>
     - <em>June 18, 2012</em> - by <em>gphil</em>
 </li>
@@ -44,7 +44,7 @@
 
   <h3>Tags</h3>
   <div>
-    <a style="font-size: 100%" href="./tags/databases.html">databases</a> <a style="font-size: 100%" href="./tags/github.html">github</a> <a style="font-size: 100%" href="./tags/hakyll.html">hakyll</a> <a style="font-size: 100%" href="./tags/haskell.html">haskell</a> <a style="font-size: 100%" href="./tags/refactoring.html">refactoring</a> <a style="font-size: 100%" href="./tags/sql.html">sql</a>
+    <a style="font-size: 100%" href="./tags/SLF4J.html">SLF4J</a> <a style="font-size: 100%" href="./tags/clojure.html">clojure</a> <a style="font-size: 100%" href="./tags/clojure.tools.html">clojure.tools.logging</a> <a style="font-size: 100%" href="./tags/databases.html">databases</a> <a style="font-size: 100%" href="./tags/github.html">github</a> <a style="font-size: 100%" href="./tags/hakyll.html">hakyll</a> <a style="font-size: 100%" href="./tags/haskell.html">haskell</a> <a style="font-size: 100%" href="./tags/leiningen.html">leiningen</a> <a style="font-size: 100%" href="./tags/log4j.html">log4j</a> <a style="font-size: 100%" href="./tags/logging.html">logging</a> <a style="font-size: 100%" href="./tags/refactoring.html">refactoring</a> <a style="font-size: 100%" href="./tags/sql.html">sql</a>
   </div>
 
 </div>
@@ -56,19 +56,13 @@
     <br />
     <div class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></img></a><br />This text on this blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
     <script type="text/javascript">
-      SyntaxHighlighter.all()
-    </script>
-    <script type="text/javascript">
-      var _gauges = _gauges || [];
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34480958-1']);
+      _gaq.push(['_trackPageview']);
       (function() {
-      var t   = document.createElement('script');
-      t.type  = 'text/javascript';
-      t.async = true;
-      t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '4fdf607f613f5d640900004f');
-      t.src = '//secure.gaug.es/track.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
   </body>

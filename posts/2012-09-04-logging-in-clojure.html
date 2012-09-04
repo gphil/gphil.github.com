@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    <title>gphil's blog - Logging in Clojure</title>
+    <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css"></link>
+    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css"></link>
+    <link rel="stylesheet" type="text/css" href="../css/default.css"></link>
+    <link rel="alternate" type="application/rss+xml" title="gphil's blog" href="../rss.xml"></link>   
+  </head>
+  <body>
+    <h1 class="title">gphil's blog</h1>
+    <div id="navigation">
+      <a href="../">Home</a> | 
+      <a href="../posts.html">Posts</a>
+    </div>
+    <h3>Logging in Clojure</h3>
+
+<p>by <em>gphil</em> on <strong>September  4, 2012</strong></p>
+
+<p>Tagged as: <a href="../tags/clojure.html">clojure</a>, <a href="../tags/logging.html">logging</a>, <a href="../tags/leiningen.html">leiningen</a>, <a href="../tags/SLF4J.html">SLF4J</a>, <a href="../tags/log4j.html">log4j</a>, <a href="../tags/clojure.tools.html">clojure.tools.logging</a>.</p>
+
+<p>At <a href="http://kwelia.com">Kwelia</a> we are using Clojure for some data integration and transformation tasks. As these tasks started to get more complex, what initially started as some short and somewhat disorganized scripts has now evolved into a larger project which organizes these tasks.</p>
+<p>Recently, I wanted to configure a logging service for this project and I found that the process for doing so was not well documented, and I hit a few speedbumps along the way. So, I’ve decided to share what I found here.</p>
+<p>After a little bit of research, I discovered <a href="https://github.com/clojure/tools.logging">clojure.tools.logging</a> which is a set of logging macros which delegate to one of many interchangeable logging frameworks. (From the README: “At runtime a specific implementation is selected from, in order, slf4j, Apache commons-logging, log4j, and finally java.util.logging.”)</p>
+<p>So, my first stab at it was to just add clojure.tools.logging to my leiningen project and test it out as demonstrated in the README.</p>
+<script src="https://gist.github.com/3625496.js"> </script>
+
+<p>I intentionally didn’t try to add any logging backends yet, just to see what happened out of the box. When I tried logging something I got the following messages:</p>
+<script src="https://gist.github.com/3625006.js?file=gistfile1.txt"></script>
+
+<p>I figured that this meant that clojure.tools.logging was trying to use SLF4J as the above line quoted from the README suggested it would, but I hadn’t ever explicitly installed SLF4J so I decided to dig into that. Using “lein deps :tree” I found out that <a href="https://github.com/neotyk/http.async.client">http.async.client</a> (which we were already using in this project to integrate with some webservices) depended on it.</p>
+<p>Since SLF4J appears itself to be a wrapper for multiple logging backends, and since I’ve used log4j in the past, I decided that I would point SLF4J to use log4j. (I also considered trying to use log4j directly, but I was dissuaded from doing so based on <a href="https://groups.google.com/d/msg/clojure-dev/H0scci72QQ0/ynVUsipwbkMJ">this conversation.</a>)</p>
+<p>So I added log4j to my project.clj (the exclusions are optional dependencies not available in Clojars or Maven Central and I did not want to deal with obtaining them from other sources):</p>
+<script src="https://gist.github.com/3625485.js"> </script>
+
+<p>And put the following basic log4j configuration in my src/ directory (it can go anywhere on the CLASSPATH):</p>
+<script src="https://gist.github.com/3624967.js"></script>
+
+<p>Finally, I had to explicitly add the log4j adapter for SLF4J in order to get everything to link up.</p>
+<script src="https://gist.github.com/3625561.js"> </script>
+
+<p>After adding these dependencies and the log4j.properties configuration file, I was successfully able to use clojure.tools.logging to log to log4j via SLF4J.</p>
+<p>Hopefully this is helpful to somebody else who’s trying to figure this out. I’m no expert in this domain, so if you think I did something wrong please let me know in the comments.</p>
+<br />
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gphilsblog'; // required: replace example with your forum shortname
+    var disqus_developer = 1; // developer mode is on
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></img></a><br />This text on this blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34480958-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
