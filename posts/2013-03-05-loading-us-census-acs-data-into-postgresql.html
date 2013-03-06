@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>gphil's blog - Is the SQL &quot;HAVING&quot; Clause Strictly Necessary?</title>
+    <title>gphil's blog - Loading US Census ACS Data into PostgreSQL</title>
     <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css" />
@@ -16,25 +16,16 @@
       <a href="../">Home</a> |
       <a href="../posts.html">Posts</a>
     </div>
-    <h3>Is the SQL &quot;HAVING&quot; Clause Strictly Necessary?</h3>
+    <h3>Loading US Census ACS Data into PostgreSQL</h3>
 
-<p>by <em>gphil</em> on <strong>June 18, 2012</strong></p>
+<p>by <em>gphil</em> on <strong>March  5, 2013</strong></p>
 
-<p>Tagged as: <a href="../tags/sql.html">sql</a>, <a href="../tags/databases.html">databases</a>, <a href="../tags/refactoring.html">refactoring</a>.</p>
+<p>Tagged as: <a href="../tags/data.html">data</a>, <a href="../tags/postgresql.html">postgresql</a>.</p>
 
-<p>The other day I was refactoring a SQL query containing a “HAVING” clause, and while I was thinking about that refactor, I realized that “HAVING” clauses can always in principle be reimplemented using a self-join to a subquery and a “WHERE” clause.</p>
-<p>My “proof” of this is that you can always write a subquery using the grouping and aggregate that you wish to filter on, then join the outer query to it using the columns in the grouping, and then filter the outer query using based on the result of the joined-in aggregate from the subquery.</p>
-<p>Consider the following example, which selects all the ice cream parlors in cities that have over 5 ice cream parlors:</p>
-<script src="https://gist.github.com/3625695.js"> </script>
-
-<p>This can be re-written as:</p>
-<script src="https://gist.github.com/3625707.js"> </script>
-
-<p>It seems that all “HAVING” queries could in principle be re-written this way, undermining an explicit need for the “HAVING” clause. However, I think there are some benefits to using the “HAVING” clause, even if you don’t necessarily need it to express your query.</p>
-<p>The first and most obvious benefit of the “HAVING” clause is that the first query is shorter and easier to understand than the second query.</p>
-<p>Another potential benefit of the “HAVING” clause is that depending on your database, there may be significant performance differences between these two approaches, although I haven’t really looked into this at all yet other than to check that these queries generate significantly different explain plans in PostgreSQL.</p>
-<p>Finally, I’m not 100% sure if all possible use cases of a “HAVING” clause can be rewritten using this method (or similar), but I haven’t been able to come up with any counter-examples.</p>
-<p>Does anyone know of any counter-examples that I’m missing, or have a more conclusive proof that all “HAVING” clauses can be re-written like this?</p>
+<p>Today I was looking into displaying data from the <a href="https://www.census.gov/acs/www/">US Census ACS</a> (the most recent being the 2011 5-year estimates) alongside our analytics at <a href="http://kwelia.com">Kwelia</a>. Unfortunately, this data is only available in a pretty strange format (spread across thousands of text files) that is not easily queried. So, I decided that the first order of business was to get the data loaded into a PostgreSQL database and work from there.</p>
+<p>I googled around and found a few projects on GitHub that were built for the purpose of loading this data into PostgreSQL. I settled on <a href="https://github.com/leehach/census-postgres">this one</a>, which did most of what I needed.</p>
+<p>However, I had to make a few changes because I only wanted to load the data for the census tract level and ignore the other geographies because we can aggregate everything up from the census tract level in our app. You can check out what I ended up with in <a href="https://github.com/gphil/census-postgres">my version</a>.</p>
+<p>It took me a little while to figure this out on my own, so hopefuly this is helpful for other people trying to use this data. Even after loading the data it’s still fairly difficult to figure out what’s where, but at least it’s now in a format that’s easier to manipulate and query.</p>
 <br />
 <div id="disqus_thread"></div>
 <script type="text/javascript">

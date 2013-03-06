@@ -1,201 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>gphil's blog</title>
-        <link>http://example.com</link>
-        <description><![CDATA[gphil's blog RSS Feed]]></description>
-        <atom:link href="http://example.com/rss.xml" rel="self"
-                   type="application/rss+xml" />
-        <lastBuildDate>Wed, 26 Oct 2011 00:00:00 UT</lastBuildDate>
-        <item>
-    <title>Setting up a blog using Hakyll and GitHub</title>
-    <link>http://example.com/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html</link>
-    <description><![CDATA[<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-    <title>gphil's blog - Setting up a blog using Hakyll and GitHub</title>
-    <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css"></link>
-    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css"></link>
-    <link rel="stylesheet" type="text/css" href="../css/default.css"></link>
-    <link rel="alternate" type="application/rss+xml" title="gphil's blog" href="../rss.xml"></link>   
-  </head>
-  <body>
-    <h1 class="title">gphil's blog</h1>
-    <div id="navigation">
-      <a href="../">Home</a> | 
-      <a href="../posts.html">Posts</a>
-    </div>
-    <h3>Setting up a blog using Hakyll and GitHub</h3>
-
-<p>by <em>gphil</em> on <strong>October 26, 2011</strong></p>
-
-<p>Tagged as: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/hakyll.html">hakyll</a>, <a href="../tags/github.html">github</a>.</p>
-
-<p>I first discovered Haskell in 2008, and I remember even then being quite impressed by the quality of the <a href="http://haskell.org/haskellwiki/Haskell">community</a>, which has since grown substantially. There was enough buzz around it that I decided to jump in and try to <a href="http://haskell.org/haskellwiki/Tutorials">learn some Haskell</a>.</p>
-<p>My first foray into Haskell (and functional programming in general) was hacking up some solutions to <a href="http://projecteuler.net/">Project Euler</a> problems in Haskell, and after solving just a few of them I noticed that the core Haskell paradigms (laziness, purity) really shifted my thinking about the practice of programming in general.</p>
-<p>Since that initial discovery phase, I haven’t actually used Haskell much. I’ve learned quite a bit more about functional programming since then, but largely this has been through more thorough experimentation with Clojure over the last year or two.</p>
-<p>I was recently reading a blog post by <a href="http://chrisdone.com/">Chris Done</a> that made the front page of Hacker News and caught my eye. The post discussed “value polymorphism” which reminded me how little that I actually know about Haskell, having just scratched the surface in my earlier exploration.</p>
-<p>I also noticed that he was using <a href="http://jaspervdj.be/hakyll/index.html">Hakyll</a> as his blogging engine, and I figured that since I was planning to start this blog, and I was feeling like I wanted to get back into some Haskell coding, that I could kill two birds with one stone.</p>
-<p>Here’s how I did it:</p>
-<p>First, I downloaded and installed the <a href="http://hackage.haskell.org/platform/">Haskell Platform</a> for Mac OS X. I remember when trying to get Haskell set up in the past I always had a little bit of a hard time figuring it all out, but the Haskell Platform package has really improved that experience.</p>
-<p>Next, I just ran:</p>
-<pre><code> cabal install hakyll
-</code></pre>
-<p>I was hoping this would just work out of the box but unfortunately, this failed with a compiler error when it tried to build the library regex-pcre–0.94.2:</p>
-<pre><code> Wrap.hsc:143:18: error: pcre.h: No such file or directory
-</code></pre>
-<p>I figured that I must be missing some regex library that didn’t come with the Haskell package, so after a little research I tried installing the “pcre” Homebrew package:</p>
-<pre><code> brew install pcre
-</code></pre>
-<p>Sure enough, that did the trick and a second crack at: “cabal install hakyll” finished without any further issues. I later found that this issue is covered in the Hakyll FAQ <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#problem-with-regex-pcre-dependency-on-mac-os">here</a>.</p>
-<p>The next step was to work through the tutorial on the hakyll site in order to understand some of the general concepts. I ran into another obstacle during this step, trying to compile of some of the example code. Fortunately, this was <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#file-name-does-not-match-module-name-on-mac-os">also documented in the Hakyll FAQ</a> so I was able to quickly resolve it.</p>
-<p>Once I had the lay of the land, I copied the tagblog/ folder out of the hakyll-examples project and into my own git project. From there, I edited the files in the css/ and templates/ directory to my liking. For the duration of this step, I kept the sample blog posts around so I could see how they looked as I changed the templates and styles.</p>
-<p>As soon as the site was looking good, I removed the extraneous files from the Hakyll sample blog and build the site using the Hakyll compiler. Since everything is statically compiled into the _site/ directory, you can just turn this into it’s own git repo (you’ll have to add “/_site” to your .gitignore if you want to put the rest of the project into git as well since that will be it’s own repo) and push it to a repository named “your_github_acct.github.com” and <a href="http://pages.github.com/">github pages</a> will do the rest!</p>
-<p>You can check out <a href="https://github.com/gphil">my github page</a> for the source.</p>
-<br />
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'gphilsblog'; // required: replace example with your forum shortname
-    var disqus_developer = 1; // developer mode is on
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></img></a><br />This text on this blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34480958-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-  </body>
-</html>
-]]></description>
-    <pubDate>Wed, 26 Oct 2011 00:00:00 UT</pubDate>
-    <guid>http://example.com/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html</guid>
-</item>
-<item>
-    <title>Is the SQL "HAVING" Clause Strictly Necessary?</title>
-    <link>http://example.com/posts/2012-06-18-is-a-sql-having-clause-necessary.html</link>
-    <description><![CDATA[<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-    <title>gphil's blog - Is the SQL &quot;HAVING&quot; Clause Strictly Necessary?</title>
-    <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css"></link>
-    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css"></link>
-    <link rel="stylesheet" type="text/css" href="../css/default.css"></link>
-    <link rel="alternate" type="application/rss+xml" title="gphil's blog" href="../rss.xml"></link>   
-  </head>
-  <body>
-    <h1 class="title">gphil's blog</h1>
-    <div id="navigation">
-      <a href="../">Home</a> | 
-      <a href="../posts.html">Posts</a>
-    </div>
-    <h3>Is the SQL &quot;HAVING&quot; Clause Strictly Necessary?</h3>
-
-<p>by <em>gphil</em> on <strong>June 18, 2012</strong></p>
-
-<p>Tagged as: <a href="../tags/sql.html">sql</a>, <a href="../tags/databases.html">databases</a>, <a href="../tags/refactoring.html">refactoring</a>.</p>
-
-<p>The other day I was refactoring a SQL query containing a “HAVING” clause, and while I was thinking about that refactor, I realized that “HAVING” clauses can always in principle be reimplemented using a self-join to a subquery and a “WHERE” clause.</p>
-<p>My “proof” of this is that you can always write a subquery using the grouping and aggregate that you wish to filter on, then join the outer query to it using the columns in the grouping, and then filter the outer query using based on the result of the joined-in aggregate from the subquery.</p>
-<p>Consider the following example, which selects all the ice cream parlors in cities that have over 5 ice cream parlors:</p>
-<script src="https://gist.github.com/3625695.js"> </script>
-
-<p>This can be re-written as:</p>
-<script src="https://gist.github.com/3625707.js"> </script>
-
-<p>It seems that all “HAVING” queries could in principle be re-written this way, undermining an explicit need for the “HAVING” clause. However, I think there are some benefits to using the “HAVING” clause, even if you don’t necessarily need it to express your query.</p>
-<p>The first and most obvious benefit of the “HAVING” clause is that the first query is shorter and easier to understand than the second query.</p>
-<p>Another potential benefit of the “HAVING” clause is that depending on your database, there may be significant performance differences between these two approaches, although I haven’t really looked into this at all yet other than to check that these queries generate significantly different explain plans in PostgreSQL.</p>
-<p>Finally, I’m not 100% sure if all possible use cases of a “HAVING” clause can be rewritten using this method (or similar), but I haven’t been able to come up with any counter-examples.</p>
-<p>Does anyone know of any counter-examples that I’m missing, or have a more conclusive proof that all “HAVING” clauses can be re-written like this?</p>
-<br />
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'gphilsblog'; // required: replace example with your forum shortname
-    var disqus_developer = 1; // developer mode is on
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></img></a><br />This text on this blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34480958-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-  </body>
-</html>
-]]></description>
-    <pubDate>Mon, 18 Jun 2012 00:00:00 UT</pubDate>
-    <guid>http://example.com/posts/2012-06-18-is-a-sql-having-clause-necessary.html</guid>
-</item>
-<item>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>gphil's blog - All posts</title>
+    <link href="http://gphil.net/rss.xml" rel="self" />
+    <link href="http://gphil.net" />
+    <id>http://gphil.net/rss.xml</id>
+    <author>
+        <name>Greg Phillips</name>
+        <email>gap023@gmail.com</email>
+    </author>
+    <updated>2013-03-05T00:00:00Z</updated>
+    <entry>
+    <title>Loading US Census ACS Data into PostgreSQL</title>
+    <link href="http://gphil.net/posts/2013-03-05-loading-us-census-acs-data-into-postgresql.html" />
+    <id>http://gphil.net/posts/2013-03-05-loading-us-census-acs-data-into-postgresql.html</id>
+    <published>2013-03-05T00:00:00Z</published>
+    <updated>2013-03-05T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>Today I was looking into displaying data from the <a href="https://www.census.gov/acs/www/">US Census ACS</a> (the most recent being the 2011 5-year estimates) alongside our analytics at <a href="http://kwelia.com">Kwelia</a>. Unfortunately, this data is only available in a pretty strange format (spread across thousands of text files) that is not easily queried. So, I decided that the first order of business was to get the data loaded into a PostgreSQL database and work from there.</p>
+<p>I googled around and found a few projects on GitHub that were built for the purpose of loading this data into PostgreSQL. I settled on <a href="https://github.com/leehach/census-postgres">this one</a>, which did most of what I needed.</p>
+<p>However, I had to make a few changes because I only wanted to load the data for the census tract level and ignore the other geographies because we can aggregate everything up from the census tract level in our app. You can check out what I ended up with in <a href="https://github.com/gphil/census-postgres">my version</a>.</p>
+<p>It took me a little while to figure this out on my own, so hopefuly this is helpful for other people trying to use this data. Even after loading the data it’s still fairly difficult to figure out what’s where, but at least it’s now in a format that’s easier to manipulate and query.</p>]]></summary>
+</entry>
+<entry>
     <title>Logging in Clojure</title>
-    <link>http://example.com/posts/2012-09-04-logging-in-clojure.html</link>
-    <description><![CDATA[<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-    <title>gphil's blog - Logging in Clojure</title>
-    <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css"></link>
-    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css"></link>
-    <link rel="stylesheet" type="text/css" href="../css/default.css"></link>
-    <link rel="alternate" type="application/rss+xml" title="gphil's blog" href="../rss.xml"></link>   
-  </head>
-  <body>
-    <h1 class="title">gphil's blog</h1>
-    <div id="navigation">
-      <a href="../">Home</a> | 
-      <a href="../posts.html">Posts</a>
-    </div>
-    <h3>Logging in Clojure</h3>
-
-<p>by <em>gphil</em> on <strong>September  4, 2012</strong></p>
-
-<p>Tagged as: <a href="../tags/clojure.html">clojure</a>, <a href="../tags/logging.html">logging</a>, <a href="../tags/leiningen.html">leiningen</a>, <a href="../tags/SLF4J.html">SLF4J</a>, <a href="../tags/log4j.html">log4j</a>, <a href="../tags/clojure.tools.html">clojure.tools.logging</a>.</p>
-
-<p>At <a href="http://kwelia.com">Kwelia</a> we are using Clojure for some data integration and transformation tasks. As these tasks started to get more complex, what initially started as some short and somewhat disorganized scripts has now evolved into a larger project which organizes these tasks.</p>
+    <link href="http://gphil.net/posts/2012-09-04-logging-in-clojure.html" />
+    <id>http://gphil.net/posts/2012-09-04-logging-in-clojure.html</id>
+    <published>2012-09-04T00:00:00Z</published>
+    <updated>2012-09-04T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>At <a href="http://kwelia.com">Kwelia</a> we are using Clojure for some data integration and transformation tasks. As these tasks started to get more complex, what initially started as some short and somewhat disorganized scripts has now evolved into a larger project which organizes these tasks.</p>
 <p>Recently, I wanted to configure a logging service for this project and I found that the process for doing so was not well documented, and I hit a few speedbumps along the way. So, I’ve decided to share what I found here.</p>
 <p>After a little bit of research, I discovered <a href="https://github.com/clojure/tools.logging">clojure.tools.logging</a> which is a set of logging macros which delegate to one of many interchangeable logging frameworks. (From the README: “At runtime a specific implementation is selected from, in order, slf4j, Apache commons-logging, log4j, and finally java.util.logging.”)</p>
 <p>So, my first stab at it was to just add clojure.tools.logging to my leiningen project and test it out as demonstrated in the README.</p>
@@ -216,45 +47,52 @@
 <script src="https://gist.github.com/3625561.js"> </script>
 
 <p>After adding these dependencies and the log4j.properties configuration file, I was successfully able to use clojure.tools.logging to log to log4j via SLF4J.</p>
-<p>Hopefully this is helpful to somebody else who’s trying to figure this out. I’m no expert in this domain, so if you think I did something wrong please let me know in the comments.</p>
-<br />
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'gphilsblog'; // required: replace example with your forum shortname
-    var disqus_developer = 1; // developer mode is on
+<p>Hopefully this is helpful to somebody else who’s trying to figure this out. I’m no expert in this domain, so if you think I did something wrong please let me know in the comments.</p>]]></summary>
+</entry>
+<entry>
+    <title>Is the SQL "HAVING" Clause Strictly Necessary?</title>
+    <link href="http://gphil.net/posts/2012-06-18-is-a-sql-having-clause-necessary.html" />
+    <id>http://gphil.net/posts/2012-06-18-is-a-sql-having-clause-necessary.html</id>
+    <published>2012-06-18T00:00:00Z</published>
+    <updated>2012-06-18T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>The other day I was refactoring a SQL query containing a “HAVING” clause, and while I was thinking about that refactor, I realized that “HAVING” clauses can always in principle be reimplemented using a self-join to a subquery and a “WHERE” clause.</p>
+<p>My “proof” of this is that you can always write a subquery using the grouping and aggregate that you wish to filter on, then join the outer query to it using the columns in the grouping, and then filter the outer query using based on the result of the joined-in aggregate from the subquery.</p>
+<p>Consider the following example, which selects all the ice cream parlors in cities that have over 5 ice cream parlors:</p>
+<script src="https://gist.github.com/3625695.js"> </script>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<p>This can be re-written as:</p>
+<script src="https://gist.github.com/3625707.js"> </script>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></img></a><br />This text on this blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34480958-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-  </body>
-</html>
-]]></description>
-    <pubDate>Tue, 04 Sep 2012 00:00:00 UT</pubDate>
-    <guid>http://example.com/posts/2012-09-04-logging-in-clojure.html</guid>
-</item>
+<p>It seems that all “HAVING” queries could in principle be re-written this way, undermining an explicit need for the “HAVING” clause. However, I think there are some benefits to using the “HAVING” clause, even if you don’t necessarily need it to express your query.</p>
+<p>The first and most obvious benefit of the “HAVING” clause is that the first query is shorter and easier to understand than the second query.</p>
+<p>Another potential benefit of the “HAVING” clause is that depending on your database, there may be significant performance differences between these two approaches, although I haven’t really looked into this at all yet other than to check that these queries generate significantly different explain plans in PostgreSQL.</p>
+<p>Finally, I’m not 100% sure if all possible use cases of a “HAVING” clause can be rewritten using this method (or similar), but I haven’t been able to come up with any counter-examples.</p>
+<p>Does anyone know of any counter-examples that I’m missing, or have a more conclusive proof that all “HAVING” clauses can be re-written like this?</p>]]></summary>
+</entry>
+<entry>
+    <title>Setting up a blog using Hakyll and GitHub</title>
+    <link href="http://gphil.net/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html" />
+    <id>http://gphil.net/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html</id>
+    <published>2011-10-26T00:00:00Z</published>
+    <updated>2011-10-26T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>I first discovered Haskell in 2008, and I remember even then being quite impressed by the quality of the <a href="http://haskell.org/haskellwiki/Haskell">community</a>, which has since grown substantially. There was enough buzz around it that I decided to jump in and try to <a href="http://haskell.org/haskellwiki/Tutorials">learn some Haskell</a>.</p>
+<p>My first foray into Haskell (and functional programming in general) was hacking up some solutions to <a href="http://projecteuler.net/">Project Euler</a> problems in Haskell, and after solving just a few of them I noticed that the core Haskell paradigms (laziness, purity) really shifted my thinking about the practice of programming in general.</p>
+<p>Since that initial discovery phase, I haven’t actually used Haskell much. I’ve learned quite a bit more about functional programming since then, but largely this has been through more thorough experimentation with Clojure over the last year or two.</p>
+<p>I was recently reading a blog post by <a href="http://chrisdone.com/">Chris Done</a> that made the front page of Hacker News and caught my eye. The post discussed “value polymorphism” which reminded me how little that I actually know about Haskell, having just scratched the surface in my earlier exploration.</p>
+<p>I also noticed that he was using <a href="http://jaspervdj.be/hakyll/index.html">Hakyll</a> as his blogging engine, and I figured that since I was planning to start this blog, and I was feeling like I wanted to get back into some Haskell coding, that I could kill two birds with one stone.</p>
+<p>Here’s how I did it:</p>
+<p>First, I downloaded and installed the <a href="http://hackage.haskell.org/platform/">Haskell Platform</a> for Mac OS X. I remember when trying to get Haskell set up in the past I always had a little bit of a hard time figuring it all out, but the Haskell Platform package has really improved that experience.</p>
+<p>Next, I just ran:</p>
+<pre><code> cabal install hakyll</code></pre>
+<p>I was hoping this would just work out of the box but unfortunately, this failed with a compiler error when it tried to build the library regex-pcre-0.94.2:</p>
+<pre><code> Wrap.hsc:143:18: error: pcre.h: No such file or directory</code></pre>
+<p>I figured that I must be missing some regex library that didn’t come with the Haskell package, so after a little research I tried installing the “pcre” Homebrew package:</p>
+<pre><code> brew install pcre</code></pre>
+<p>Sure enough, that did the trick and a second crack at: “cabal install hakyll” finished without any further issues. I later found that this issue is covered in the Hakyll FAQ <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#problem-with-regex-pcre-dependency-on-mac-os">here</a>.</p>
+<p>The next step was to work through the tutorial on the hakyll site in order to understand some of the general concepts. I ran into another obstacle during this step, trying to compile of some of the example code. Fortunately, this was <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#file-name-does-not-match-module-name-on-mac-os">also documented in the Hakyll FAQ</a> so I was able to quickly resolve it.</p>
+<p>Once I had the lay of the land, I copied the tagblog/ folder out of the hakyll-examples project and into my own git project. From there, I edited the files in the css/ and templates/ directory to my liking. For the duration of this step, I kept the sample blog posts around so I could see how they looked as I changed the templates and styles.</p>
+<p>As soon as the site was looking good, I removed the extraneous files from the Hakyll sample blog and build the site using the Hakyll compiler. Since everything is statically compiled into the _site/ directory, you can just turn this into it’s own git repo (you’ll have to add “/<em>site&quot; to your .gitignore if you want to put the rest of the project into git as well since that will be it’s own repo) and push it to a repository named &quot;your</em>github_acct.github.com” and <a href="http://pages.github.com/">github pages</a> will do the rest!</p>
+<p>You can check out <a href="https://github.com/gphil">my github page</a> for the source.</p>]]></summary>
+</entry>
 
-    </channel> 
-</rss>
+</feed>
