@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>gphil's blog - Posts tagged startups</title>
+    <link href="http://gphil.net/tags/startups.xml" rel="self" />
+    <link href="http://gphil.net" />
+    <id>http://gphil.net/tags/startups.xml</id>
+    <author>
+        <name>Greg Phillips</name>
+        <email>gap023@gmail.com</email>
+    </author>
+    <updated>2013-04-27T00:00:00Z</updated>
+    <entry>
+    <title>50 Percent Failure Rate</title>
+    <link href="http://gphil.net/posts/2013-04-27-50-percent-failure-rate.html" />
+    <id>http://gphil.net/posts/2013-04-27-50-percent-failure-rate.html</id>
+    <published>2013-04-27T00:00:00Z</published>
+    <updated>2013-04-27T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>Lately I’ve been reading <a href="http://www.amazon.com/gp/product/1935401009/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1935401009&amp;linkCode=as2&amp;tag=gphilsblog-20">The Principles of Product Development Flow</a> by Don Reinertsen. It describes a set of principles for conducting product development in an economically optimal fashion.</p>
+<p>The principles in the book are aimed at product development “in the large.” The goal of the book is to empower product developers to make better decisions by quantifying the expected economic value of each decision faced when developing a product.</p>
+<p>In my case, I’m developing a software product in a startup context (at <a href="https://kwelia.com">Kwelia</a>) and I’ve found that many of principles described in the book have been helpful in guiding our product development.</p>
+<p>One of the principles stood out to me as particularly enlightening for a startup: when running an experiment with two outcomes, a 50% failure rate is optimal for generating information.</p>
+<p>That’s because if something is certain to succeed or fail, there’s no reason to test it because you already know. If something is likely to fail, you’ll generate a lot of information if it doesn’t actually fail. But in the majority of instances it will indeed fail, and as such this experiment yields little information.</p>
+<p>So, the optimal experiment for generating new information has a 50% failure rate. Programmers might recognize this principle from the binary search algorithm.</p>
+<p>This principle underlies a lot of what we should be doing when de-risking startups. Binary questions such as “should we do this or not?” or “will that work?” are constantly arising as we generate new ideas.</p>
+<p>Applying this principle, we should try to devise experiments that are much more likely to fail (50%) than we might intuitively think, if we want them to generate as much new information as possible.</p>]]></summary>
+</entry>
+
+</feed>
