@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - Posts tagged programming</title>
-    <link href="http://gphil.net/tags/programming.xml" rel="self" />
+    <title>gphil's blog - Posts tagged metrics</title>
+    <link href="http://gphil.net/tags/metrics.xml" rel="self" />
     <link href="http://gphil.net" />
-    <id>http://gphil.net/tags/programming.xml</id>
+    <id>http://gphil.net/tags/metrics.xml</id>
     <author>
         <name>Greg Phillips</name>
         <email>gap023@gmail.com</email>
@@ -38,16 +38,6 @@
 <p>Ruby definitely still has a major adoption and mind-share advantage over Clojure, but Clojure fared better than I thought it would on StackOverflow, and especially on GitHub.</p>
 <p>It’s also interesting to note the wide range across the comparisons (400x down to 1.5x), which probably says as much about the communities they came from (as well as the inaccuracy of this methodology) as it does for Clojure versus Ruby adoption in the real world.</p>
 <p>I look forward to following these numbers in order to see if Clojure makes inroads against Ruby and lowers these ratios over time.</p>]]></summary>
-</entry>
-<entry>
-    <title>Thoughts on Clojure vs. Ruby for Startups</title>
-    <link href="http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html" />
-    <id>http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html</id>
-    <published>2013-06-07T00:00:00Z</published>
-    <updated>2013-06-07T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>At <a href="https://kwelia.com">Kwelia</a> we’re building our platform using both Ruby and Clojure. As of today, our web application is a Rails app but we do a lot of backend data processing in Clojure. I personally prefer programming in Clojure to programming in Ruby, and some days I wish we had more Clojure than Ruby in our codebase. I don’t think we’ll be switching from Rails any time soon, but we may try to encapsulate more business logic behind Clojure web services in the future.</p>
-<p>When we started building our product (and I still think this is true today–although it’s less true now) it was faster and easier to get a production-ready web application up using Ruby on Rails. One of the best features of Rails in my opinion is that it makes a lot of design decisions for you and that it has pretty sane defaults for the most part. This ends up saving a lot of time up front, which is critical for a start up that wants to quickly validate an idea. There is also a lot of open source code available via RubyGems that replaces or expedites a lot of common web application development tasks. This is a one-two punch that’s pretty hard to beat in a start up context.</p>
-<p>However, as the Clojure ecosystem matures it’s starting to chip away at the advantages that the Rails ecosystem offers. More and more quality libraries are being shipped to <a href="https://clojars.org">Clojars</a>, and informal conventions are starting to emerge regarding how to structure a web application in Clojure. I think the growth of both of these are critical for newcomers who want to get started on a Clojure webapp quickly. I’m optimistic that these trends will continue and Clojure will continue to become a better and better choice for new projects.</p>]]></summary>
 </entry>
 
 </feed>
