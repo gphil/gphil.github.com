@@ -8,14 +8,14 @@
         <name>Greg Phillips</name>
         <email>gap023@gmail.com</email>
     </author>
-    <updated>2013-06-10T00:00:00Z</updated>
+    <updated>2013-07-11T00:00:00Z</updated>
     <entry>
     <title>Leiningen Download Stats</title>
-    <link href="http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html" />
-    <id>http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html</id>
-    <published>2013-06-10T00:00:00Z</published>
-    <updated>2013-06-10T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>A while back I wrote a post <a href="2013-06-10-tracking-clojure-versus-ruby-adoption.markdown">comparing Ruby and Clojure adoption</a> based on package respository download stats and some other metrics.</p>
+    <link href="http://gphil.net/posts/2013-07-11-2013-leiningen-download-stats.html" />
+    <id>http://gphil.net/posts/2013-07-11-2013-leiningen-download-stats.html</id>
+    <published>2013-07-11T00:00:00Z</published>
+    <updated>2013-07-11T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>About a month ago, I wrote a post <a href="2013-06-10-tracking-clojure-versus-ruby-adoption.markdown">comparing Ruby and Clojure adoption</a> based on package respository download stats and some other metrics.</p>
 <p>At the time, statistics on the number of downloads for <a href="http://http://leiningen.org/">Leiningen</a> were not available. However, after the blog post was published, <a href="http://technomancy.us/">Phil Hagelberg</a> (the creator of Leiningen) reached out to me letting me know that the stats could be made available if someone were to write some log parsing code to extract them.</p>
 <p>So, I recently wrote a little <a href="https://github.com/technomancy/leiningen/pull/1252">log parsing code</a>. Here are the results as of today:</p>
 <table class="leiningen-downloads">
@@ -65,6 +65,37 @@ Unique IP Addresses (S3 Downloads Only)
 <p>The discrepancy between the unique downloads and total seems to be due to the fact that certain versions of leiningen have been downloaded much more than average. It seems as if a bot or deployment script gone wild has downloaded the same version over and over.</p>
 <p>In fact, versions 2.0.0-preview10 and and 2.1.2 account for over a million of the downloads! For comparison, the next most popular version (1.7.1) has only been downloaded 82,444 times. So there’s a little bit of a mystery there.</p>
 <p>Let me know if you have any theories!</p>]]></summary>
+</entry>
+<entry>
+    <title>Tracking Clojure vs. Ruby Adoption</title>
+    <link href="http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html" />
+    <id>http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html</id>
+    <published>2013-06-10T00:00:00Z</published>
+    <updated>2013-06-10T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>If you read my <a href="2013-06-06-thoughts-on-clojure-versus-ruby-for-startups.html">previous post</a>, then you know that I’m rooting for greater adoption of Clojure.</p>
+<p>In this post I want to take a more quantitative look at the adoption of Clojure, and benchmark that against Ruby. I picked Ruby because it’s another dynamic language that I use frequently, and because I feel that it has quite a bit of traction.</p>
+<p>What follows below is an un-scientific comparison of Clojure and Ruby based on usage statistics culled from their respective package repositories, StackOverflow and GitHub.</p>
+<h2 id="package-repositories">Package Repositories</h2>
+<p>The package repository for Clojure is <a href="https://clojars.org">Clojars</a>. Since its inception, it’s had 4,215,857 total packages downloaded.</p>
+<p>(Edit: <a href="https://twitter.com/xeqixeqi">@xeqixeqi</a> pointed out that Clojars started keeping track of downloads in Oct./Nov. 2012, so these numbers don’t actually go back that far. That may explain why they are lagging Ruby by the most. RubyGems has been keeping track since July 2009.)</p>
+<p>The corresponding package repository for Ruby is <a href="https://rubygems.org">RubyGems</a>. RubyGems has 1,677,981,312 total downloads. This is ~398x more than Clojars.</p>
+<p>The top package on Clojars is <a href="https://github.com/ring-clojure/ring">Ring</a>, which has been downloaded 131,383 times.</p>
+<p>The top package on RubyGems is <a href="https://github.com/wycats/thor">Thor</a> and it has been downloaded 30,235,277 times, which is ~230x more than Ring.</p>
+<p>Thor is a tool for making command line utilities and is often also used as a build tool, while Ring is a web application library. The de facto build tool for Clojure is <a href="https://github.com/technomancy/leiningen">Leiningen</a>, which might compare more favorably to Thor. However, it is generally downloaded directly and then used to fetch dependencies from Clojars. So far as I know, no statistics are available on the number of Leiningen downloads.</p>
+<p>A more apples-to-apples comparison might be to compare Ring to <a href="https://github.com/rack/rack">Rack</a>, its Ruby analogue:</p>
+<p>Rack has 27,119,992 downloads which is ~206x the number of Ring downloads.</p>
+<h2 id="stackoverflow">StackOverflow</h2>
+<p>I used <a href="http://data.stackexchange.com/stackoverflow/query/90306/compare-size-and-growth-trends-for-stackoverflow-tags">this StackExchange Data Explorer query</a> to compare the number of questions tagged as “clojure” or “ruby” on StackOverflow.</p>
+<p>The tag “clojure” has been used 1,919 times in the last 6 months, whereas the tag “ruby” has been used 23,495 times in the last 6 months.</p>
+<p>This is a much more favorable comparision for Clojure, as Ruby “only” has a ~12x advantage here.</p>
+<h2 id="github">GitHub</h2>
+<p>Ring has 1,321 stars, and 166 forks and Rack has 1,973 stars and 596 forks for ratios of ~3.5x and ~1.5x respectively.</p>
+<p>Looking at <a href="https://github.com/ring-clojure/ring">Ring</a> and <a href="https://github.com/rack/rack">Rack</a> projects on GitHub, the numbers bode even better for Clojure.</p>
+<p>Interestingly, it looks like Ring and Rack both started out on personal accounts and subsequently moved to their own organizations. The number of stars are summations using both accounts, but the number of forks reported was the same on both accounts because both organizations have forked from the original personal projects.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Ruby definitely still has a major adoption and mind-share advantage over Clojure, but Clojure fared better than I thought it would on StackOverflow, and especially on GitHub.</p>
+<p>It’s also interesting to note the wide range across the comparisons (400x down to 1.5x), which probably says as much about the communities they came from (as well as the inaccuracy of this methodology) as it does for Clojure versus Ruby adoption in the real world.</p>
+<p>I look forward to following these numbers in order to see if Clojure makes inroads against Ruby and lowers these ratios over time.</p>]]></summary>
 </entry>
 
 </feed>
