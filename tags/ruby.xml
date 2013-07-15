@@ -15,7 +15,7 @@
     <id>http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html</id>
     <published>2013-06-10T00:00:00Z</published>
     <updated>2013-06-10T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>If you read my <a href="2013-06-06-thoughts-on-clojure-versus-ruby-for-startups.html">previous post</a>, then you know that I’m rooting for greater adoption of Clojure.</p>
+    <summary type="html"><![CDATA[<p>If you read my <a href="2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html">previous post</a>, then you know that I’m rooting for greater adoption of Clojure.</p>
 <p>In this post I want to take a more quantitative look at the adoption of Clojure, and benchmark that against Ruby. I picked Ruby because it’s another dynamic language that I use frequently, and because I feel that it has quite a bit of traction.</p>
 <p>What follows below is an un-scientific comparison of Clojure and Ruby based on usage statistics culled from their respective package repositories, StackOverflow and GitHub.</p>
 <h2 id="package-repositories">Package Repositories</h2>
