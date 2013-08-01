@@ -8,8 +8,20 @@
         <name>Greg Phillips</name>
         <email>gap023@gmail.com</email>
     </author>
-    <updated>2013-06-07T00:00:00Z</updated>
+    <updated>2013-08-01T00:00:00Z</updated>
     <entry>
+    <title>Don't Get Lost in Big Data</title>
+    <link href="http://gphil.net/posts/2013-08-01-dont-get-lost-in-big-data.html" />
+    <id>http://gphil.net/posts/2013-08-01-dont-get-lost-in-big-data.html</id>
+    <published>2013-08-01T00:00:00Z</published>
+    <updated>2013-08-01T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>The value of data comes only when one can derive actionable insights from it. Accordingly, the primary aim of a big data project should be to convert big data into useful data.</p>
+<p>However, it seems like a lot of big data projects lose sight of the this goal. I think the reason for this is that these projects quickly run into engineering challenges.</p>
+<p>It’s easy to lose the forest for the trees when the focus shifts from the end goal (delivering value to stakeholders) to acheiving difficult intermediate goals (how are we going to efficiently process this data?)</p>
+<p>I had this realization after I recently re-read <a href="http://www.crunchbase.com/person/dj-patil">DJ Patil’s</a> essay <a href="http://oreilly.com/data/radarreports/data-jujitsu.csp">Data Jujitsu</a>. The essay is so-named because it talks about how to work around the big engineering challenges that tend to crop up when working with large datasets, without meeting them head-on. I found that it really resonated with some of the findings I’ve had while working on <a href="https://kwelia.com">Kwelia</a>.</p>
+<p>These types of “Data Jujitsu” strategies are critical for getting a big data project off the ground–not only because they help you avoid doing extra work, but also because they make it easier to stay focused on the real goal of delivering as much value as possible to the stakeholders of the project.</p>]]></summary>
+</entry>
+<entry>
     <title>Thoughts on Clojure vs. Ruby for Startups</title>
     <link href="http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html" />
     <id>http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html</id>
