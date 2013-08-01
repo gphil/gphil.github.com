@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>gphil's blog - Is It Possible to Securely Meter a Client-Facing API?</title>
+    <title>Is It Possible to Securely Meter a Client-Facing API?</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" />
     <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet" type="text/css" />
@@ -23,19 +24,18 @@
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </p>
       <p>
-        Greg Phillips is a Philosophy major turned software developer and tech entrepreneur, and a co-founder of <a href="http://kwelia.com">Kwelia.</a>
+        Greg Phillips is a Philosophy major turned software developer and tech entrepreneur.
       </p>
-      <br />
-      <br />
-      <p><a href="mailto:gphil@gphil.net">Contact me</a></p>
+      <p>Co-founder of <a href="http://kwelia.com">Kwelia</a>.</p>
+      <p><a href="mailto:gphil@gphil.net">Contact</a></p>
+      <p><a href="https://github.com/gphil">GitHub</a></p>
+      <p><a href="https://www.linkedin.com/pub/gregory-phillips/3a/b42/a6a/">LinkedIn</a></p>
       <p><a href="../posts.html">Read more posts…</a></p>
     </div>
     <div class="main">
       <h3>Is It Possible to Securely Meter a Client-Facing API?</h3>
 
-<p>by <em>gphil</em> on <strong>May 12, 2013</strong></p>
-
-<p>Tagged as: <a href="../tags/security.html">security</a>, <a href="../tags/apis.html">apis</a>.</p>
+<p><strong>May 12, 2013</strong></p>
 
 <p>Imagine that your business provides a paid API (or since you’re reading this blog, there’s a good chance it actually does), and you want to meter the number of calls to it so that you can bill the API consumers based on their usage.</p>
 <p>The best way to do this is to provide a unique secret token to each consumer of the API. Then, you require that the consumer includes the secret token with each API call in order to authenticate that they are allowed to access the API. You can also measure the usage associated with each token. So long as these authentication tokens stay secret, so good.</p>
@@ -44,6 +44,8 @@
 <p>You could go a step further and look at the actual usage patterns of the API and decide which are legitimate and which are not based on the legitimate client’s historical usage of the API. But this would be a lot of effort, and would likely be prone to false positives.</p>
 <p>I’m not a security expert (just a developer who strives to make secure software) so I don’t know if there are more or better techniques, but it seems like any API accessible from an environment that can be accessed by malicious third parties is susceptible.</p>
 <p>It would be interesting to study how the aforementioned Google Maps API is enforcing its metering. Perhaps Google is just willing to accept some amount of unauthorized access? I would love to hear how existing APIs in this category cope with this problem.</p>
+
+<p><em>Tagged as:</em> <a href="../tags/security.html">security</a>, <a href="../tags/apis.html">apis</a>.</p>
 
 <p>
   <a href="https://twitter.com/share" class="twitter-share-button" data-via="gphil" data-size="large">Tweet</a>
@@ -65,10 +67,6 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
-      <br />
-      <br />
-      <br />
-      <br />
       <div class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />This text on this blog is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
     </div>
     <script type="text/javascript">
