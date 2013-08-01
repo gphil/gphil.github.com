@@ -41,7 +41,11 @@
 <p>I googled around and found a few projects on GitHub that were built for the purpose of loading this data into PostgreSQL. I settled on <a href="https://github.com/leehach/census-postgres">this one</a>, which did most of what I needed.</p>
 <p>However, I had to make a few changes because I only wanted to load the data for the census tract level and ignore the other geographies because we can aggregate everything up from the census tract level in our app. You can check out what I ended up with in <a href="https://github.com/gphil/census-postgres">my version</a>.</p>
 <p>It took me a little while to figure this out on my own, so hopefuly this is helpful for other people trying to use this data. Even after loading the data it’s still fairly difficult to figure out what’s where, but at least it’s now in a format that’s easier to manipulate and query.</p>
-<br />
+
+<p>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="gphil" data-size="large">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

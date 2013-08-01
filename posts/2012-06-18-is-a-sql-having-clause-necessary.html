@@ -50,7 +50,11 @@
 <p>Another potential benefit of the “HAVING” clause is that depending on your database, there may be significant performance differences between these two approaches, although I haven’t really looked into this at all yet other than to check that these queries generate significantly different explain plans in PostgreSQL.</p>
 <p>Finally, I’m not 100% sure if all possible use cases of a “HAVING” clause can be rewritten using this method (or similar), but I haven’t been able to come up with any counter-examples.</p>
 <p>Does anyone know of any counter-examples that I’m missing, or have a more conclusive proof that all “HAVING” clauses can be re-written like this?</p>
-<br />
+
+<p>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="gphil" data-size="large">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
