@@ -8,8 +8,20 @@
         <name>Greg Phillips</name>
         <email>gap023@gmail.com</email>
     </author>
-    <updated>2013-08-01T00:00:00Z</updated>
+    <updated>2013-08-31T00:00:00Z</updated>
     <entry>
+    <title>My Quantified Self Setup</title>
+    <link href="http://gphil.net/posts/2013-08-31-my-quantified-self-setup.html" />
+    <id>http://gphil.net/posts/2013-08-31-my-quantified-self-setup.html</id>
+    <published>2013-08-31T00:00:00Z</published>
+    <updated>2013-08-31T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>A few years ago, I didn’t keep track of any personal metrics, nor did I feel there was any need to. This has changed drastically since then: I now keep track of metrics pertaining to my work habits, career, exercise, diet and sleep. As others have observed before, I found that merely keeping track of these metrics has positively affected my focus, behavior and overall health. However, it didn’t happen overnight–it took a progression of deliberate incremental steps over time.</p>
+<p>I started with <a href="https://www.rescuetime.com/">RescueTime</a> shortly after co-founding my startup, <a href="https://www.kwelia.com/">Kwelia</a>. Kwelia is my first venture, and I left a more structured software engineering job at an established company to start it. My initial motivation was that I didn’t want my work ethic to slip when my job became more self-directed. This didn’t happen for a number of reasons, but I think RescueTime’s tracking of all of my behavior on my computer certainly helped me stay focused. (I could really use RescueTime or a RescueTime-like for my iPhone as well–it seems like that’s where I waste the most time now, but I digress.)</p>
+<p>After the initial success with RescueTime, I was thinking about how I could measure progress on more of a career and company development level. I came across this <a href="http://calnewport.com/blog/2013/04/08/deliberately-experimenting-with-deliberate-practice-looking-for-subjects-to-test-my-advice/">blog post</a> by <a href="http://calnewport.com">Cal Newport</a> announcing a class that would explore the notion of <a href="https://en.wikipedia.org/wiki/Practice_learning_method#Deliberate_practice">deliberate practice</a> in a career-development context, and my interest was piqued. I ended up taking the class, and the biggest take-away for me was the isolation of some key career metrics that I wanted to track. I won’t go into too much detail, but they all boiled to down to gaining more traction for <a href="https://kwelia.com/">Kwelia</a>, as well as for my personal brand via writing and tweeting more. I now periodically track these metrics manually in a small Emacs <a href="https://org-mode.org">org-mode</a> document. Just keeping track of a few rough measures of “traction” has inspired me to work harder to promote myself and my company.</p>
+<p>The final piece of my current Quantified Self puzzle fell into place when my <a href="https://twitter.com/jessdabel">lovely, fitness-obsessed girlfriend</a> bought me a <a href="http://www.fitbit.com/">FitBit</a>. Initially, I thought I would just wear it and track my steps as a rough gauge of how much physical activity I was getting. However, I ended up going whole-hog and tracking my sleep, calories consumed and other fitness activity using their software as well. I’ve been doing this for almost a month now, and I’ve been losing weight and finding it easier to make healthier choices when it comes to my diet and exercise just by keeping track.</p>
+<p>If there’s one lesson I’ve learned from all of this, it’s that you can initiate a tremendous amount of personal change just by starting to keep track of metrics in areas where you wish to improve. If you dutifully keep track of your past activity, you will naturally be more mindful of your goals when making decisions in the future. I underestimated the power of this phenomenon going into it, but now I’m slowly but surely becoming a quantified-self addict.</p>]]></summary>
+</entry>
+<entry>
     <title>Don't Get Lost in Big Data</title>
     <link href="http://gphil.net/posts/2013-08-01-dont-get-lost-in-big-data.html" />
     <id>http://gphil.net/posts/2013-08-01-dont-get-lost-in-big-data.html</id>
@@ -207,31 +219,6 @@ Unique IP Addresses (S3 Downloads Only)
 <p>Another potential benefit of the “HAVING” clause is that depending on your database, there may be significant performance differences between these two approaches, although I haven’t really looked into this at all yet other than to check that these queries generate significantly different explain plans in PostgreSQL.</p>
 <p>Finally, I’m not 100% sure if all possible use cases of a “HAVING” clause can be rewritten using this method (or similar), but I haven’t been able to come up with any counter-examples.</p>
 <p>Does anyone know of any counter-examples that I’m missing, or have a more conclusive proof that all “HAVING” clauses can be re-written like this?</p>]]></summary>
-</entry>
-<entry>
-    <title>Setting up a blog using Hakyll and GitHub</title>
-    <link href="http://gphil.net/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html" />
-    <id>http://gphil.net/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html</id>
-    <published>2011-10-26T00:00:00Z</published>
-    <updated>2011-10-26T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>I first discovered Haskell in 2008, and I remember even then being quite impressed by the quality of the <a href="http://haskell.org/haskellwiki/Haskell">community</a>, which has since grown substantially. There was enough buzz around it that I decided to jump in and try to <a href="http://haskell.org/haskellwiki/Tutorials">learn some Haskell</a>.</p>
-<p>My first foray into Haskell (and functional programming in general) was hacking up some solutions to <a href="http://projecteuler.net/">Project Euler</a> problems in Haskell, and after solving just a few of them I noticed that the core Haskell paradigms (laziness, purity) really shifted my thinking about the practice of programming in general.</p>
-<p>Since that initial discovery phase, I haven’t actually used Haskell much. I’ve learned quite a bit more about functional programming since then, but largely this has been through more thorough experimentation with Clojure over the last year or two.</p>
-<p>I was recently reading a blog post by <a href="http://chrisdone.com/">Chris Done</a> that made the front page of Hacker News and caught my eye. The post discussed “value polymorphism” which reminded me how little that I actually know about Haskell, having just scratched the surface in my earlier exploration.</p>
-<p>I also noticed that he was using <a href="http://jaspervdj.be/hakyll/index.html">Hakyll</a> as his blogging engine, and I figured that since I was planning to start this blog, and I was feeling like I wanted to get back into some Haskell coding, that I could kill two birds with one stone.</p>
-<p>Here’s how I did it:</p>
-<p>First, I downloaded and installed the <a href="http://hackage.haskell.org/platform/">Haskell Platform</a> for Mac OS X. I remember when trying to get Haskell set up in the past I always had a little bit of a hard time figuring it all out, but the Haskell Platform package has really improved that experience.</p>
-<p>Next, I just ran:</p>
-<pre><code> cabal install hakyll</code></pre>
-<p>I was hoping this would just work out of the box but unfortunately, this failed with a compiler error when it tried to build the library regex-pcre-0.94.2:</p>
-<pre><code> Wrap.hsc:143:18: error: pcre.h: No such file or directory</code></pre>
-<p>I figured that I must be missing some regex library that didn’t come with the Haskell package, so after a little research I tried installing the “pcre” Homebrew package:</p>
-<pre><code> brew install pcre</code></pre>
-<p>Sure enough, that did the trick and a second crack at: “cabal install hakyll” finished without any further issues. I later found that this issue is covered in the Hakyll FAQ <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#problem-with-regex-pcre-dependency-on-mac-os">here</a>.</p>
-<p>The next step was to work through the tutorial on the hakyll site in order to understand some of the general concepts. I ran into another obstacle during this step, trying to compile of some of the example code. Fortunately, this was <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#file-name-does-not-match-module-name-on-mac-os">also documented in the Hakyll FAQ</a> so I was able to quickly resolve it.</p>
-<p>Once I had the lay of the land, I copied the tagblog/ folder out of the hakyll-examples project and into my own git project. From there, I edited the files in the css/ and templates/ directory to my liking. For the duration of this step, I kept the sample blog posts around so I could see how they looked as I changed the templates and styles.</p>
-<p>As soon as the site was looking good, I removed the extraneous files from the Hakyll sample blog and build the site using the Hakyll compiler. Since everything is statically compiled into the _site/ directory, you can just turn this into it’s own git repo (you’ll have to add “/<em>site&quot; to your .gitignore if you want to put the rest of the project into git as well since that will be it’s own repo) and push it to a repository named &quot;your</em>github_acct.github.com” and <a href="http://pages.github.com/">github pages</a> will do the rest!</p>
-<p>You can check out <a href="https://github.com/gphil">my github page</a> for the source.</p>]]></summary>
 </entry>
 
 </feed>
