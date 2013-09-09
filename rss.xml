@@ -8,8 +8,27 @@
         <name>Greg Phillips</name>
         <email>gap023@gmail.com</email>
     </author>
-    <updated>2013-08-31T00:00:00Z</updated>
+    <updated>2013-09-08T00:00:00Z</updated>
     <entry>
+    <title>Yahoo's New Direction</title>
+    <link href="http://gphil.net/posts/2013-09-08-yahoos-new-direction.html" />
+    <id>http://gphil.net/posts/2013-09-08-yahoos-new-direction.html</id>
+    <published>2013-09-08T00:00:00Z</published>
+    <updated>2013-09-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>Along with a good portion of the rest of the internet, I read <a href="http://marissamayr.tumblr.com/post/60336044815/geeking-out-on-the-logo">Marissa Mayer’s post about the new Yahoo logo</a>. There’s been a lot of talk about the logo since then, and for what it’s worth: I like the new logo more than the old one, and I think that it is notable that they decided to buck the “flat” design trend by giving it some depth.</p>
+<p>However, what Mayer’s post really got me thinking about was: how has Yahoo changed since she took over?</p>
+<p>Obviously, in addition to the new logo, they’re getting a lot more attention from the tech media, and they’ve made a <a href="http://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Yahoo!#Acquisitions">bunch of acquistions</a>.</p>
+<p>But how has all this actually affected their web presence? I decided to take a look at the Yahoo homepage this evening, and compare it to the Yahoo homepage on the eve of the day Mayer was named CEO. Take a look:</p>
+<p>Yahoo Homepage as of July 15th 2012:</p>
+<p><a href="/img/yahoo-homepage-2012-07-15.png" data-lightbox="image-1" title="Yahoo Homepage 2012-07-15"><img src="/img/yahoo-homepage-2012-07-15.png" alt="Yahoo Homepage 2012-07-15" width="500"></a></p>
+<p>Yahoo Homepage as of September 8th 2013:</p>
+<p><a href="/img/yahoo-homepage-2013-09-08.png" data-lightbox="image-2" title="Yahoo Homepage 2013-09-08"><img src="/img/yahoo-homepage-2013-09-08.png" alt="Yahoo Homepage 2013-09-08" data-lightbox="image-2" title="Yahoo Homepage 2013-09-08" width="500"></a></p>
+<p>Although the pages have very different visual feels, there has been little substantive change: the layout and content are nearly identical.</p>
+<p>The biggest difference is the introduction of the navigation bar similar to Google’s at the top of today’s page. This seems to represent a shift in focus from being a content provider to more of an application provider like Google is.</p>
+<p>In the last year or so, Yahoo has redesigned Flickr and Mail and acquired a bunch of other “apps” (the most prominent of which being Tumblr.) However, none of the acquisitions seem to have made a dent in the homepage yet.</p>
+<p>So, even though Yahoo has a new logo to go with its new look and feel, it still seems to be more or less the same site–even after all the acquisitions. This might change, but for now it seems that the changes at Yahoo are mostly skin-deep.</p>]]></summary>
+</entry>
+<entry>
     <title>My Quantified Self Setup</title>
     <link href="http://gphil.net/posts/2013-08-31-my-quantified-self-setup.html" />
     <id>http://gphil.net/posts/2013-08-31-my-quantified-self-setup.html</id>
@@ -199,26 +218,6 @@ Unique IP Addresses (S3 Downloads Only)
 
 <p>After adding these dependencies and the log4j.properties configuration file, I was successfully able to use clojure.tools.logging to log to log4j via SLF4J.</p>
 <p>Hopefully this is helpful to somebody else who’s trying to figure this out. I’m no expert in this domain, so if you think I did something wrong please let me know in the comments.</p>]]></summary>
-</entry>
-<entry>
-    <title>Is the SQL "HAVING" Clause Strictly Necessary?</title>
-    <link href="http://gphil.net/posts/2012-06-18-is-a-sql-having-clause-necessary.html" />
-    <id>http://gphil.net/posts/2012-06-18-is-a-sql-having-clause-necessary.html</id>
-    <published>2012-06-18T00:00:00Z</published>
-    <updated>2012-06-18T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>The other day I was refactoring a SQL query containing a “HAVING” clause, and while I was thinking about that refactor, I realized that “HAVING” clauses can always in principle be reimplemented using a self-join to a subquery and a “WHERE” clause.</p>
-<p>My “proof” of this is that you can always write a subquery using the grouping and aggregate that you wish to filter on, then join the outer query to it using the columns in the grouping, and then filter the outer query using based on the result of the joined-in aggregate from the subquery.</p>
-<p>Consider the following example, which selects all the ice cream parlors in cities that have over 5 ice cream parlors:</p>
-<script src="https://gist.github.com/3625695.js"> </script>
-
-<p>This can be re-written as:</p>
-<script src="https://gist.github.com/3625707.js"> </script>
-
-<p>It seems that all “HAVING” queries could in principle be re-written this way, undermining an explicit need for the “HAVING” clause. However, I think there are some benefits to using the “HAVING” clause, even if you don’t necessarily need it to express your query.</p>
-<p>The first and most obvious benefit of the “HAVING” clause is that the first query is shorter and easier to understand than the second query.</p>
-<p>Another potential benefit of the “HAVING” clause is that depending on your database, there may be significant performance differences between these two approaches, although I haven’t really looked into this at all yet other than to check that these queries generate significantly different explain plans in PostgreSQL.</p>
-<p>Finally, I’m not 100% sure if all possible use cases of a “HAVING” clause can be rewritten using this method (or similar), but I haven’t been able to come up with any counter-examples.</p>
-<p>Does anyone know of any counter-examples that I’m missing, or have a more conclusive proof that all “HAVING” clauses can be re-written like this?</p>]]></summary>
 </entry>
 
 </feed>
