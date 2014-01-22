@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>gphil's blog - Posts tagged management</title>
+    <link href="http://gphil.net/tags/management.xml" rel="self" />
+    <link href="http://gphil.net" />
+    <id>http://gphil.net/tags/management.xml</id>
+    <author>
+        <name>Greg Phillips</name>
+        <email>gap023@gmail.com</email>
+    </author>
+    <updated>2014-01-21T00:00:00Z</updated>
+    <entry>
+    <title>A Really Simple Product Development Workflow</title>
+    <link href="http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html" />
+    <id>http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html</id>
+    <published>2014-01-21T00:00:00Z</published>
+    <updated>2014-01-21T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>As we’re looking bring on some more development talent at <a href="https://kwelia.com">Kwelia</a>, I’ve been reflecting a lot on what processes have worked for us as a founding team so far in terms of product development. I wanted to start with something really simple. In my experience, having too much process can feel overly restrictive and often gets circumvented. Having too little process results in a lack of direction (which can be fatal for a startup.)</p>
+<p>So, I came up with the following (click to enlarge):</p>
+<p><a href="/img/pf.png" data-lightbox="A Really Simple Product Development Workflow" title="Yahoo Homepage 2012-07-15"><img src="/img/pf.png" alt="A Really Simple Product Development Workflow" width="500"></a></p>
+<p>It’s obviously oversimplified, but I think it codifies fairly well what’s worked for us in terms of product development. And, upon reflection, most of the effort that’s fallen outside of this framework hasn’t been very fruitful. I’m going to try cylcing through this workflow for a while and see if I’m missing anything important.</p>]]></summary>
+</entry>
+
+</feed>
