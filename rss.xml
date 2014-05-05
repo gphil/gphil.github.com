@@ -8,8 +8,27 @@
         <name>Greg Phillips</name>
         <email>gap023@gmail.com</email>
     </author>
-    <updated>2014-01-21T00:00:00Z</updated>
+    <updated>2014-05-05T00:00:00Z</updated>
     <entry>
+    <title>Fire and Forget Background Jobs Using Clojure Futures</title>
+    <link href="http://gphil.net/posts/2014-05-05-fire-and-forget-background-jobs-using-clojure-futures.html" />
+    <id>http://gphil.net/posts/2014-05-05-fire-and-forget-background-jobs-using-clojure-futures.html</id>
+    <published>2014-05-05T00:00:00Z</published>
+    <updated>2014-05-05T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>One of the killer features of Clojure is its built-in (and <a href="https://github.com/clojure/core.async">library-supported</a>) ability to manage concurrent threads of execution. However, in the name of <a href="http://www.infoq.com/presentations/Simple-Made-Easy">simplicity</a>, I generally try to eschew concurrency in my own code until I really need it.</p>
+<p>At <a href="https://kwelia.com">Kwelia</a>, we do a lot of data processing in background jobs. Our recurring background jobs either run on a schedule, or by popping tasks off of a job queue. These jobs run concurrently, but there’s no concurrency written into the application logic.</p>
+<p>In addition to recurring background jobs, we also end up with lots of one-off types of background jobs that largely involve fetching, cleaning, manipulating, and persisting data. In the fetching and persisting steps of these jobs, we’re often waiting on network and database calls for the majority of the job.</p>
+<p>So, in order to speed up these jobs, we can sprinkle in some concurrency (carefully and without accidentally overloading our database or our partners’ APIs.)</p>
+<p>Since these are one-off jobs where we usually want results back ASAP, it doesn’t really make sense to schedule or queue them. Instead, we construct sub-jobs (some subset of the data processing) such that it doesn’t matter what order they run in and kick those off simultaneously in the job itself.</p>
+<p>Since we don’t particularly care about what happens after they finish, we can just “fire and forget” all of the sub-jobs without keeping track of them. If something goes wrong, we’ll just get an exception or log message letting us know, and we can deal with it appropriately at that point.</p>
+<p>“Fire and forget” can be accomplished incredibly simply using Clojure’s futures:</p>
+<script src="https://gist.github.com/gphil/26794cf1be3c6317594a.js"></script>
+
+<p>Calling run-job will kick off all the sub-jobs, and since they are wrapped with “future” none will block the next from kicking off. Furthermore, if the above is run with “lein run” (or in some other execution context) the program will not terminate until all the sub-jobs are done executing. To track the progress of the job, we can just wait until the program finishes executing.</p>
+<p>If we wanted, we could hold on to a reference to a future and track that sub-job’s completion within our job. However, in our current use cases we have no reason to do this. If we do run into this, it will probably be worth moving to <a href="https://github.com/clojure/core.async">core.async</a> to manage it. But that could be a blog post for another day!</p>
+<p>On certain jobs (those with lots of network and database round trips) we get a huge performance improvement with this approach. And there is very little added complexity, thanks to Clojure’s well thought-out concurrency support.</p>]]></summary>
+</entry>
+<entry>
     <title>A Really Simple Product Development Workflow</title>
     <link href="http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html" />
     <id>http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html</id>
@@ -189,17 +208,6 @@ Unique IP Addresses (S3 Downloads Only)
 <p>So, the optimal experiment for generating new information has a 50% failure rate. Programmers might recognize this principle from the binary search algorithm.</p>
 <p>This principle underlies a lot of what we should be doing when de-risking startups. Binary questions such as “should we do this or not?” or “will that work?” are constantly arising as we generate new ideas.</p>
 <p>Applying this principle, we should try to devise experiments that are much more likely to fail (50%) than we might intuitively think, if we want them to generate as much new information as possible.</p>]]></summary>
-</entry>
-<entry>
-    <title>Loading US Census ACS Data into PostgreSQL</title>
-    <link href="http://gphil.net/posts/2013-03-05-loading-us-census-acs-data-into-postgresql.html" />
-    <id>http://gphil.net/posts/2013-03-05-loading-us-census-acs-data-into-postgresql.html</id>
-    <published>2013-03-05T00:00:00Z</published>
-    <updated>2013-03-05T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Today I was looking into displaying data from the <a href="https://www.census.gov/acs/www/">US Census ACS</a> (the most recent being the 2011 5-year estimates) alongside our analytics at <a href="http://kwelia.com">Kwelia</a>. Unfortunately, this data is only available in a pretty strange format (spread across thousands of text files) that is not easily queried. So, I decided that the first order of business was to get the data loaded into a PostgreSQL database and work from there.</p>
-<p>I googled around and found a few projects on GitHub that were built for the purpose of loading this data into PostgreSQL. I settled on <a href="https://github.com/leehach/census-postgres">this one</a>, which did most of what I needed.</p>
-<p>However, I had to make a few changes because I only wanted to load the data for the census tract level and ignore the other geographies because we can aggregate everything up from the census tract level in our app. You can check out what I ended up with in <a href="https://github.com/gphil/census-postgres">my version</a>.</p>
-<p>It took me a little while to figure this out on my own, so hopefuly this is helpful for other people trying to use this data. Even after loading the data it’s still fairly difficult to figure out what’s where, but at least it’s now in a format that’s easier to manipulate and query.</p>]]></summary>
 </entry>
 
 </feed>

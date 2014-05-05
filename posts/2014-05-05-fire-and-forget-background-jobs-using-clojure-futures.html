@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Don't Get Lost in Big Data</title>
+    <title>Fire and Forget Background Jobs Using Clojure Futures</title>
     <link rel="shortcut icon" href="../img/favicon.ico" />
     <link href="http://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
@@ -42,17 +42,24 @@
       <p class="emphasis"><a href="../posts.html">Read more posts…</a></p>
     </div>
     <div class="main">
-      <h3>Don't Get Lost in Big Data</h3>
+      <h3>Fire and Forget Background Jobs Using Clojure Futures</h3>
 
-<p class="date">August  1, 2013</p>
+<p class="date">May  5, 2014</p>
 
-<p>The value of data comes only when one can derive actionable insights from it. Accordingly, the primary aim of a big data project should be to convert big data into useful data.</p>
-<p>However, it seems like a lot of big data projects lose sight of the this goal. I think the reason for this is that these projects quickly run into engineering challenges.</p>
-<p>It’s easy to lose the forest for the trees when the focus shifts from the end goal (delivering value to stakeholders) to acheiving difficult intermediate goals (how are we going to efficiently process this data?)</p>
-<p>I had this realization after I recently re-read <a href="http://www.crunchbase.com/person/dj-patil">DJ Patil’s</a> essay <a href="http://oreilly.com/data/radarreports/data-jujitsu.csp">Data Jujitsu</a>. The essay is so-named because it talks about how to work around the big engineering challenges that tend to crop up when working with large datasets, without meeting them head-on. I found that it really resonated with some of the findings I’ve had while working on <a href="https://kwelia.com">Kwelia</a>.</p>
-<p>These types of “Data Jujitsu” strategies are critical for getting a big data project off the ground–not only because they help you avoid doing extra work, but also because they make it easier to stay focused on the real goal of delivering as much value as possible to the stakeholders of the project.</p>
+<p>One of the killer features of Clojure is its built-in (and <a href="https://github.com/clojure/core.async">library-supported</a>) ability to manage concurrent threads of execution. However, in the name of <a href="http://www.infoq.com/presentations/Simple-Made-Easy">simplicity</a>, I generally try to eschew concurrency in my own code until I really need it.</p>
+<p>At <a href="https://kwelia.com">Kwelia</a>, we do a lot of data processing in background jobs. Our recurring background jobs either run on a schedule, or by popping tasks off of a job queue. These jobs run concurrently, but there’s no concurrency written into the application logic.</p>
+<p>In addition to recurring background jobs, we also end up with lots of one-off types of background jobs that largely involve fetching, cleaning, manipulating, and persisting data. In the fetching and persisting steps of these jobs, we’re often waiting on network and database calls for the majority of the job.</p>
+<p>So, in order to speed up these jobs, we can sprinkle in some concurrency (carefully and without accidentally overloading our database or our partners’ APIs.)</p>
+<p>Since these are one-off jobs where we usually want results back ASAP, it doesn’t really make sense to schedule or queue them. Instead, we construct sub-jobs (some subset of the data processing) such that it doesn’t matter what order they run in and kick those off simultaneously in the job itself.</p>
+<p>Since we don’t particularly care about what happens after they finish, we can just “fire and forget” all of the sub-jobs without keeping track of them. If something goes wrong, we’ll just get an exception or log message letting us know, and we can deal with it appropriately at that point.</p>
+<p>“Fire and forget” can be accomplished incredibly simply using Clojure’s futures:</p>
+<script src="https://gist.github.com/gphil/26794cf1be3c6317594a.js"></script>
 
-<p><em>Tagged as:</em> <a href="../tags/big data.html">big data</a>, <a href="../tags/data.html">data</a>, <a href="../tags/startups.html">startups</a>.</p>
+<p>Calling run-job will kick off all the sub-jobs, and since they are wrapped with “future” none will block the next from kicking off. Furthermore, if the above is run with “lein run” (or in some other execution context) the program will not terminate until all the sub-jobs are done executing. To track the progress of the job, we can just wait until the program finishes executing.</p>
+<p>If we wanted, we could hold on to a reference to a future and track that sub-job’s completion within our job. However, in our current use cases we have no reason to do this. If we do run into this, it will probably be worth moving to <a href="https://github.com/clojure/core.async">core.async</a> to manage it. But that could be a blog post for another day!</p>
+<p>On certain jobs (those with lots of network and database round trips) we get a huge performance improvement with this approach. And there is very little added complexity, thanks to Clojure’s well thought-out concurrency support.</p>
+
+<p><em>Tagged as:</em> <a href="../tags/programming.html">programming</a>, <a href="../tags/clojure.html">clojure</a>, <a href="../tags/concurrency.html">concurrency</a>.</p>
 
 <p>
   <a href="https://twitter.com/share" class="twitter-share-button" data-via="gphil" data-size="large">Tweet</a>
