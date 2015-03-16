@@ -8,8 +8,20 @@
         <name>Greg Phillips</name>
         <email>gap023@gmail.com</email>
     </author>
-    <updated>2014-05-05T00:00:00Z</updated>
+    <updated>2015-03-16T00:00:00Z</updated>
     <entry>
+    <title>this.sucks</title>
+    <link href="http://gphil.net/posts/2015-03-16-this-sucks.html" />
+    <id>http://gphil.net/posts/2015-03-16-this-sucks.html</id>
+    <published>2015-03-16T00:00:00Z</published>
+    <updated>2015-03-16T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>The .sucks TLD <a href="http://arstechnica.com/information-technology/2015/03/sucks-tld-to-accept-sunrise-registrations-soon-but-theyll-be-pricey/">is a protection racket</a>:</p>
+<blockquote>
+<p>The <a href="http://www.nic.sucks/products">pricing situation</a> around .sucks domain names is complicated. Companies with registered trademarks will have to pay an astounding $2,499 to register their trademarked names in .sucks. Registration of non-trademarked names during the “sunrise” period (March 30 until June 1) before .sucks goes live will cost at least $199 per name, while the standard registration fee after June 1 rises to $249 per name.</p>
+</blockquote>
+<p>I’m surprised they’re getting away with this.</p>]]></summary>
+</entry>
+<entry>
     <title>Fire and Forget Background Jobs Using Clojure Futures</title>
     <link href="http://gphil.net/posts/2014-05-05-fire-and-forget-background-jobs-using-clojure-futures.html" />
     <id>http://gphil.net/posts/2014-05-05-fire-and-forget-background-jobs-using-clojure-futures.html</id>
@@ -193,21 +205,6 @@ Unique IP Addresses (S3 Downloads Only)
 <p>You could go a step further and look at the actual usage patterns of the API and decide which are legitimate and which are not based on the legitimate client’s historical usage of the API. But this would be a lot of effort, and would likely be prone to false positives.</p>
 <p>I’m not a security expert (just a developer who strives to make secure software) so I don’t know if there are more or better techniques, but it seems like any API accessible from an environment that can be accessed by malicious third parties is susceptible.</p>
 <p>It would be interesting to study how the aforementioned Google Maps API is enforcing its metering. Perhaps Google is just willing to accept some amount of unauthorized access? I would love to hear how existing APIs in this category cope with this problem.</p>]]></summary>
-</entry>
-<entry>
-    <title>50 Percent Failure Rate</title>
-    <link href="http://gphil.net/posts/2013-04-27-50-percent-failure-rate.html" />
-    <id>http://gphil.net/posts/2013-04-27-50-percent-failure-rate.html</id>
-    <published>2013-04-27T00:00:00Z</published>
-    <updated>2013-04-27T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Lately I’ve been reading <a href="http://www.amazon.com/gp/product/1935401009/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1935401009&amp;linkCode=as2&amp;tag=gphilsblog-20">The Principles of Product Development Flow</a> by Don Reinertsen. It describes a set of principles for conducting product development in an economically optimal fashion.</p>
-<p>The principles in the book are aimed at product development “in the large.” The goal of the book is to empower product developers to make better decisions by quantifying the expected economic value of each decision faced when developing a product.</p>
-<p>In my case, I’m developing a software product in a startup context (at <a href="https://kwelia.com">Kwelia</a>) and I’ve found that many of principles described in the book have been helpful in guiding our product development.</p>
-<p>One of the principles stood out to me as particularly enlightening for a startup: when running an experiment with two outcomes, a 50% failure rate is optimal for generating information.</p>
-<p>That’s because if something is certain to succeed or fail, there’s no reason to test it because you already know. If something is likely to fail, you’ll generate a lot of information if it doesn’t actually fail. But in the majority of instances it will indeed fail, and as such this experiment yields little information.</p>
-<p>So, the optimal experiment for generating new information has a 50% failure rate. Programmers might recognize this principle from the binary search algorithm.</p>
-<p>This principle underlies a lot of what we should be doing when de-risking startups. Binary questions such as “should we do this or not?” or “will that work?” are constantly arising as we generate new ideas.</p>
-<p>Applying this principle, we should try to devise experiments that are much more likely to fail (50%) than we might intuitively think, if we want them to generate as much new information as possible.</p>]]></summary>
 </entry>
 
 </feed>
