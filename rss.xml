@@ -8,8 +8,26 @@
         <name>Greg Phillips</name>
         <email>gap023@gmail.com</email>
     </author>
-    <updated>2015-03-16T00:00:00Z</updated>
+    <updated>2015-03-17T00:00:00Z</updated>
     <entry>
+    <title>This is very Jobsian</title>
+    <link href="http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html" />
+    <id>http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html</id>
+    <published>2015-03-17T00:00:00Z</published>
+    <updated>2015-03-17T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>WIRED on the <a href="http://www.thelifeclockapp.com/">Life Clock</a> app for the Apple Watch:</p>
+<blockquote>
+<p>Here’s one way the Apple Watch could help you live a fuller life: by counting down the seconds until you croak.</p>
+</blockquote>
+<p>Steve Jobs:</p>
+<blockquote>
+<p>Remembering that I’ll be dead soon is the most important tool I’ve ever encountered to help me make the big choices in life.</p>
+</blockquote>
+<blockquote>
+<p>Almost everything–all external expectations, all pride, all fear of embarrassment or failure–these things just fall away in the face of death, leaving only what is truly important.</p>
+</blockquote>]]></summary>
+</entry>
+<entry>
     <title>this.sucks</title>
     <link href="http://gphil.net/posts/2015-03-16-this-sucks.html" />
     <id>http://gphil.net/posts/2015-03-16-this-sucks.html</id>
@@ -191,20 +209,6 @@ Unique IP Addresses (S3 Downloads Only)
     <summary type="html"><![CDATA[<p>At <a href="https://kwelia.com">Kwelia</a> we’re building our platform using both Ruby and Clojure. As of today, our web application is a Rails app but we do a lot of backend data processing in Clojure. I personally prefer programming in Clojure to programming in Ruby, and some days I wish we had more Clojure than Ruby in our codebase. I don’t think we’ll be switching from Rails any time soon, but we may try to encapsulate more business logic behind Clojure web services in the future.</p>
 <p>When we started building our product (and I still think this is true today–although it’s less true now) it was faster and easier to get a production-ready web application up using Ruby on Rails. One of the best features of Rails in my opinion is that it makes a lot of design decisions for you and that it has pretty sane defaults for the most part. This ends up saving a lot of time up front, which is critical for a start up that wants to quickly validate an idea. There is also a lot of open source code available via RubyGems that replaces or expedites a lot of common web application development tasks. This is a one-two punch that’s pretty hard to beat in a start up context.</p>
 <p>However, as the Clojure ecosystem matures it’s starting to chip away at the advantages that the Rails ecosystem offers. More and more quality libraries are being shipped to <a href="https://clojars.org">Clojars</a>, and informal conventions are starting to emerge regarding how to structure a web application in Clojure. I think the growth of both of these are critical for newcomers who want to get started on a Clojure webapp quickly. I’m optimistic that these trends will continue and Clojure will continue to become a better and better choice for new projects.</p>]]></summary>
-</entry>
-<entry>
-    <title>Is It Possible to Securely Meter a Client-Facing API?</title>
-    <link href="http://gphil.net/posts/2013-05-12-is-it-possible-to-securely-meter-a-javascript-api.html" />
-    <id>http://gphil.net/posts/2013-05-12-is-it-possible-to-securely-meter-a-javascript-api.html</id>
-    <published>2013-05-12T00:00:00Z</published>
-    <updated>2013-05-12T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Imagine that your business provides a paid API (or since you’re reading this blog, there’s a good chance it actually does), and you want to meter the number of calls to it so that you can bill the API consumers based on their usage.</p>
-<p>The best way to do this is to provide a unique secret token to each consumer of the API. Then, you require that the consumer includes the secret token with each API call in order to authenticate that they are allowed to access the API. You can also measure the usage associated with each token. So long as these authentication tokens stay secret, so good.</p>
-<p>But what about environments where the API consumer can’t keep their token secret? For example, consider a client-side JavaScript app or a native mobile app where the binary is provided to an untrusted tablet or phone. In both of these cases it is possible for a malicious third party to discover the secret token and authenticate to the API on the legitimate consumer’s behalf (by posing as the consumer using their token.) This is a pretty big issue. There’s basically no way around this if they API needs to be called from an untrusted source. (For more information on this, see <a href="http://www.schneier.com/essay-063.html">this essay</a>.)</p>
-<p>It seems to me that the best you can do is to also log the IP address and the top-level domain that the request is originating from (if it’s available.) I think this must be what the <a href="https://developers.google.com/maps/documentation/javascript/reference">Google Maps JavaScript API</a> is doing, as they provide a metered service to client-side JavaScript apps without requiring a secret token. However, these identifiers can also be easily forged or changed by malicious consumers when limits are reached.</p>
-<p>You could go a step further and look at the actual usage patterns of the API and decide which are legitimate and which are not based on the legitimate client’s historical usage of the API. But this would be a lot of effort, and would likely be prone to false positives.</p>
-<p>I’m not a security expert (just a developer who strives to make secure software) so I don’t know if there are more or better techniques, but it seems like any API accessible from an environment that can be accessed by malicious third parties is susceptible.</p>
-<p>It would be interesting to study how the aforementioned Google Maps API is enforcing its metering. Perhaps Google is just willing to accept some amount of unauthorized access? I would love to hear how existing APIs in this category cope with this problem.</p>]]></summary>
 </entry>
 
 </feed>
