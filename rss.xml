@@ -8,8 +8,107 @@
         <name>Greg Phillips</name>
         <email>gap023@gmail.com</email>
     </author>
-    <updated>2015-03-17T00:00:00Z</updated>
+    <updated>2016-05-26T00:00:00Z</updated>
     <entry>
+    <title>Explaining the 2017 Philadelphia Property Tax Assessment Changes</title>
+    <link href="http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html" />
+    <id>http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html</id>
+    <published>2016-05-26T00:00:00Z</published>
+    <updated>2016-05-26T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>The Philadelphia Office of Property Assessment (OPA) recently released their property tax assessments for the 2017 tax year. It’s been widely reported that these assessments <a href="http://planphilly.com/articles/2016/04/20/2017-property-tax-assessments-shift-more-value-to-land">shifted a substantial amount of value from building values to land values</a>, perhaps accurately reflecting <a href="http://planphilly.com/articles/2016/03/04/what-s-driving-philly-s-rising-land-values">growing land values</a> in the city.</p>
+<p>More recently, the methodology behind this move has resulted in <a href="http://www.newsworks.org/index.php/essay-works/item/93495">some controversy</a> with the general consensus being that the new 2017 land values seem to be derived from previous building values rather than the from the fundamental underlying value of the land.</p>
+<p>This is a problem for a number of reasons. For one, it is an inaccurate approach because the value of what is currently built (or not) on the land has nothing to do with the underlying land value. If you are going to value the land based on the building, you might as well just only value the building.</p>
+<p>Worse, this approach unfairly targets owners of properties with buildings having 10-year tax abatements, as that exemption pertains only to the building value and not to the land value of the property. Furthermore, these properties by have higher building values by definition (the amount of the abatement is proportional to the increased building assessment.) In effect, the city is reneging on tax abatements in this scenario.</p>
+<p>Because I build real estate analytics products professionally, and because I own tax-abated property in the city of Philadelphia, I couldn’t help myself from doing a deeper dive into the data to see what actually transpired. It might take a little bit of patience to get through the full analysis that follows, but the short version is that the data in fact shows that, for a subset of properties, the new 2017 land values appear to in fact be derived mainly from 2016 building values. (By the way, I love digging into and discussing this kind of thing so I’m happy to answer any questions, offer advice, or just talk shop so please <script type="text/javascript">
+<!--
+h='&#x67;&#112;&#104;&#x69;&#108;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x67;&#112;&#104;&#x69;&#108;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'get in touch!'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x67;&#x65;&#116;&#32;&#x69;&#110;&#32;&#116;&#x6f;&#x75;&#x63;&#104;&#x21;&#32;&#40;&#x67;&#112;&#104;&#x69;&#108;&#32;&#x61;&#116;&#32;&#x67;&#112;&#104;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#110;&#x65;&#116;&#x29;</noscript>)</p>
+<p>OK, here we go with the data stuff:</p>
+<p>The <a href="https://www.opendataphilly.org/dataset/opa-property-assessments">2017 Philadelphia Property Tax Assessment</a> dataset contains comprehensive descriptive ownership and market value information for the 579,912 properties in the city of Philadelphia. All 578,276 properties from that dataset having tax assessments in both 2016 and 2017 are considered in this analysis. Of interest in this analysis are the following tax assessments:</p>
+<table class="property-tax-definitions">
+  <tr>
+     <td class="emphasis">
+Taxable Building
+</td>
+     <td>
+Taxable value of the improvement
+</td>
+  </tr>
+  <tr>
+     <td class="emphasis">
+Exempt Building
+</td>
+     <td>
+Tax exemptions on the improvement
+</td>
+  </tr>
+  <tr>
+     <td class="emphasis">
+Total Building
+</td>
+     <td>
+Taxable Building + Exempt Building
+</td>
+  </tr>
+  <tr>
+     <td class="emphasis">
+Taxable Land
+</td>
+     <td>
+Taxable value of the land
+</td>
+  </tr>
+  <tr>
+     <td class="emphasis">
+Exempt Land
+</td>
+     <td>
+Tax exemptions on the land
+</td>
+  </tr>
+  <tr>
+     <td class="emphasis">
+Total Land
+</td>
+     <td>
+Taxable Land + Exempt Land
+</td>
+  </tr>
+  <tr>
+     <td class="emphasis">
+Market Value
+</td>
+     <td>
+Total Land + Total Building
+</td>
+  </tr>
+</table>
+
+<p>In 2017, the OPA adjusted the market value for only 4.5% of properties in this so there was not a major change in the total valuation of most properties (the proportion was a bit higher when you just look at residential properties but I wanted to look at the dataset as a whole.)</p>
+<p>However, for vast majority of properties (79% of all properties) the market value was held constant and some amount was simply “shifted” between the component land and building values. For 54% of all properties, some amount was shifted from the land value to the building value and for 25% of all properties, some amount was shifted from the building value to the land value.</p>
+<p>Based on this evidence, it appears the city’s goal was to rebalance the land and building components of the assessment without changing the assessment of the total market value. There was an overall focus on shifting more value to the land portion of the assessment, but there was movement in both directions.</p>
+<p>On the surface, this seems like a pretty measured and reasonable approach: don’t worry too much about the total market values and try to get to a more accurate underlying the land/building split while shifting value to the land portion of the assessment which many observers have been calling out as undervalued for years.</p>
+<p>However, when you dig deeper into the data this approach resulted in some peculiarities suggesting that what transpired was not just an objective re-evaluation of land values based on the fundamental value of the land, but rather a transfer of building value to land value based on the building value.</p>
+<p>Looking at the dataset as a whole, building and land value do not appear to be correlated. (r<sup>2</sup> = ~.13 for both the 2016 and 2017 assessments.) This what one would expect, as the value of the underlying land intuitively should not necessarily be correlated with the value of what happens to be currently built on it. In practice, land value comes down to location and parcel size. However, despite the low overall correlation there actually is still a visible pattern (always check the scatter plot):</p>
+<p><img src="/img/building_to_land_value_total_scatter.png" /></p>
+<p>The above chart demonstrates that there actually is a relationship between building value and land value. The lack of observations upper-left quadrant of the cluster suggest that there are essentially no high land value, low building value assessments–at least not to the same extent that there are high building value, low land value assessments.</p>
+<p>Because the OPA held the market value constant for the vast majority of properties, there was not much of an opportunity to change land values for properties with lower building values (e.g. there was not a lot of building value to shift for low-value buildings.) Given this observation, let’s look at the effect for just the properties that underwent a building-to-land value shift:</p>
+<p><img src="/img/building_to_land_value_shifted_scatter.png" /></p>
+<p>In this portion of the data, the correlation between 2016 building value to 2017 land value is immediately obvious (r<sup>2</sup>=.93) with a very strong linear relationship. This is a direct consequence of the 2017 assessment changes–In 2016, the building to land value correlation was r<sup>2</sup>=.74, and in 2017 it jumped up to r<sup>2</sup>=.90. In fact, the 2017 land assessments in this cohort can actually be better explained in terms of their previous building value than their previous land value (r<sup>2</sup>=.88) or the size of the parcel (r<sup>2</sup>=.11)!</p>
+<p>Intentional or not, these assessments can be interpreted as unfairly targeting taxpayers owning properties having higher building values (e.g. those with tax abatements) rather than independent assessments of the underlying land.</p>
+<p>This doesn’t matter too much in the context of properties without tax exemptions on the building, but owners of higher building value tax-abated properties in this set of properties will now have disproportionately higher tax bills, as part of their abatement was quite literally taken away when some of their building value was transferred to land value. In my opinion the effect of future tax abatements may be less pronounced if buyers become concerned that building value could again be shifted to land value in the same fashion.</p>
+<p>In my opinion the most concerning aspect of this approach (where building value is used a proxy for land value) is that it is divorced from the actual, real-world drivers of land value (location and size.) This is worrisome because if the assessment methodology used by the OPA is not predictable, it could be de-stabilizing and serve as a disincentive for investment in Philadelphia real estate by adding an unnecessary “future uncertain tax reassessment” risk.</p>
+<p>At the end of the day, I’m actually a proponent of shifting more assessed value to land for a number of reasons, but I think the OPA did not take the right approach in these assessments. I would have not touched any of the building values (and hence tax abatements), then conducted an independent re-evaluation of the fundamental land values. This approach is more difficult, and would affect a wider range of taxpayers than just 12,000 owners of tax abatement properties, but it is the right way to go about fixing the problem of under-assessed land. Instead, by partially unraveling existing tax abatements to in order to move more value to land, the City may have cost itself some future development.</p>
+<p>The obvious remaining open question is, how were the 54% of “land-shifted” properties selected? The city has stated that <a href="http://www.philadelphiacontroller.org/media/press-releases/property-reassessments-could-add-30-million-in-new-revenues">12,000 of 15,000 tax-abated properties are in fact affected</a> so that’s a start. I might dive into this topic next if there is interest, but I’ve exhausted my side-project time budget on this for now. I love diving into this kind of stuff, so if you’re interested in more analysis, have feedback, questions about a particular property or area please <script type="text/javascript">
+<!--
+h='&#x67;&#112;&#104;&#x69;&#108;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x67;&#112;&#104;&#x69;&#108;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'drop me a line!'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#100;&#114;&#x6f;&#112;&#32;&#x6d;&#x65;&#32;&#x61;&#32;&#108;&#x69;&#110;&#x65;&#x21;&#32;&#40;&#x67;&#112;&#104;&#x69;&#108;&#32;&#x61;&#116;&#32;&#x67;&#112;&#104;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#110;&#x65;&#116;&#x29;</noscript></p>]]></summary>
+</entry>
+<entry>
     <title>This is very Jobsian</title>
     <link href="http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html" />
     <id>http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html</id>
@@ -199,16 +298,6 @@ Unique IP Addresses (S3 Downloads Only)
 <p>Ruby definitely still has a major adoption and mind-share advantage over Clojure, but Clojure fared better than I thought it would on StackOverflow, and especially on GitHub.</p>
 <p>It’s also interesting to note the wide range across the comparisons (400x down to 1.5x), which probably says as much about the communities they came from (as well as the inaccuracy of this methodology) as it does for Clojure versus Ruby adoption in the real world.</p>
 <p>I look forward to following these numbers in order to see if Clojure makes inroads against Ruby and lowers these ratios over time.</p>]]></summary>
-</entry>
-<entry>
-    <title>Thoughts on Clojure vs. Ruby for Startups</title>
-    <link href="http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html" />
-    <id>http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html</id>
-    <published>2013-06-07T00:00:00Z</published>
-    <updated>2013-06-07T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>At <a href="https://kwelia.com">Kwelia</a> we’re building our platform using both Ruby and Clojure. As of today, our web application is a Rails app but we do a lot of backend data processing in Clojure. I personally prefer programming in Clojure to programming in Ruby, and some days I wish we had more Clojure than Ruby in our codebase. I don’t think we’ll be switching from Rails any time soon, but we may try to encapsulate more business logic behind Clojure web services in the future.</p>
-<p>When we started building our product (and I still think this is true today–although it’s less true now) it was faster and easier to get a production-ready web application up using Ruby on Rails. One of the best features of Rails in my opinion is that it makes a lot of design decisions for you and that it has pretty sane defaults for the most part. This ends up saving a lot of time up front, which is critical for a start up that wants to quickly validate an idea. There is also a lot of open source code available via RubyGems that replaces or expedites a lot of common web application development tasks. This is a one-two punch that’s pretty hard to beat in a start up context.</p>
-<p>However, as the Clojure ecosystem matures it’s starting to chip away at the advantages that the Rails ecosystem offers. More and more quality libraries are being shipped to <a href="https://clojars.org">Clojars</a>, and informal conventions are starting to emerge regarding how to structure a web application in Clojure. I think the growth of both of these are critical for newcomers who want to get started on a Clojure webapp quickly. I’m optimistic that these trends will continue and Clojure will continue to become a better and better choice for new projects.</p>]]></summary>
 </entry>
 
 </feed>
