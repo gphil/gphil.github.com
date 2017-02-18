@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - Posts tagged haskell</title>
-    <link href="http://gphil.net/tags/haskell.xml" rel="self" />
-    <link href="http://gphil.net" />
-    <id>http://gphil.net/tags/haskell.xml</id>
-    <author>
-        <name>Greg Phillips</name>
-        <email>gap023@gmail.com</email>
-    </author>
-    <updated>2011-10-26T00:00:00Z</updated>
-    <entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - Posts tagged haskell</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/tags/haskell.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Wed, 26 Oct 2011 00:00:00 UT</lastBuildDate>
+        <item>
     <title>Setting up a blog using Hakyll and GitHub</title>
-    <link href="http://gphil.net/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html" />
-    <id>http://gphil.net/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html</id>
-    <published>2011-10-26T00:00:00Z</published>
-    <updated>2011-10-26T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>I first discovered Haskell in 2008, and I remember even then being quite impressed by the quality of the <a href="http://haskell.org/haskellwiki/Haskell">community</a>, which has since grown substantially. There was enough buzz around it that I decided to jump in and try to <a href="http://haskell.org/haskellwiki/Tutorials">learn some Haskell</a>.</p>
+    <link>http://gphil.net/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html</link>
+    <description><![CDATA[<p>I first discovered Haskell in 2008, and I remember even then being quite impressed by the quality of the <a href="http://haskell.org/haskellwiki/Haskell">community</a>, which has since grown substantially. There was enough buzz around it that I decided to jump in and try to <a href="http://haskell.org/haskellwiki/Tutorials">learn some Haskell</a>.</p>
 <p>My first foray into Haskell (and functional programming in general) was hacking up some solutions to <a href="http://projecteuler.net/">Project Euler</a> problems in Haskell, and after solving just a few of them I noticed that the core Haskell paradigms (laziness, purity) really shifted my thinking about the practice of programming in general.</p>
 <p>Since that initial discovery phase, I haven’t actually used Haskell much. I’ve learned quite a bit more about functional programming since then, but largely this has been through more thorough experimentation with Clojure over the last year or two.</p>
 <p>I was recently reading a blog post by <a href="http://chrisdone.com/">Chris Done</a> that made the front page of Hacker News and caught my eye. The post discussed “value polymorphism” which reminded me how little that I actually know about Haskell, having just scratched the surface in my earlier exploration.</p>
@@ -31,8 +27,12 @@
 <p>Sure enough, that did the trick and a second crack at: “cabal install hakyll” finished without any further issues. I later found that this issue is covered in the Hakyll FAQ <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#problem-with-regex-pcre-dependency-on-mac-os">here</a>.</p>
 <p>The next step was to work through the tutorial on the hakyll site in order to understand some of the general concepts. I ran into another obstacle during this step, trying to compile of some of the example code. Fortunately, this was <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#file-name-does-not-match-module-name-on-mac-os">also documented in the Hakyll FAQ</a> so I was able to quickly resolve it.</p>
 <p>Once I had the lay of the land, I copied the tagblog/ folder out of the hakyll-examples project and into my own git project. From there, I edited the files in the css/ and templates/ directory to my liking. For the duration of this step, I kept the sample blog posts around so I could see how they looked as I changed the templates and styles.</p>
-<p>As soon as the site was looking good, I removed the extraneous files from the Hakyll sample blog and build the site using the Hakyll compiler. Since everything is statically compiled into the _site/ directory, you can just turn this into it’s own git repo (you’ll have to add “/<em>site&quot; to your .gitignore if you want to put the rest of the project into git as well since that will be it’s own repo) and push it to a repository named &quot;your</em>github_acct.github.com” and <a href="http://pages.github.com/">github pages</a> will do the rest!</p>
-<p>You can check out <a href="https://github.com/gphil">my github page</a> for the source.</p>]]></summary>
-</entry>
+<p>As soon as the site was looking good, I removed the extraneous files from the Hakyll sample blog and build the site using the Hakyll compiler. Since everything is statically compiled into the _site/ directory, you can just turn this into it’s own git repo (you’ll have to add “/_site&quot; to your .gitignore if you want to put the rest of the project into git as well since that will be it’s own repo) and push it to a repository named “your_github_acct.github.com” and <a href="http://pages.github.com/">github pages</a> will do the rest!</p>
+<p>You can check out <a href="https://github.com/gphil">my github page</a> for the source.</p>]]></description>
+    <pubDate>Wed, 26 Oct 2011 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2011-10-26-setting-up-a-blog-with-hakyll-and-github.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
 
-</feed>
+    </channel>
+</rss>

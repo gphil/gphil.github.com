@@ -27,15 +27,14 @@
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </p>
       <p>
-        Greg Phillips is a Philosophy major turned full-stack software developer and tech entrepreneur turning data problems into business insights.
+        Greg Phillips is the CTO of <a href="http://houwzer.com">Houwzer</a> where he's reimagining and reinventing real estate brokerage using a data and technology-driven approach.
       </p>
-      <p class="emphasis">Co-founder of <a href="http://renthub.com">RentHub</a></p>
       <ul class="emphasis">
-        <li><a href="https://github.com/gphil">GitHub</a></li>
         <li><a href="https://www.linkedin.com/pub/gregory-phillips/3a/b42/a6a/">LinkedIn</a></li>
         <li><a href="mailto:gphil@gphil.net">Contact</a></li>
+        <li><a href="https://github.com/gphil">GitHub</a></li>
       </ul>
-      <p class="emphasis"><a href="../posts.html">Read more posts…</a></p>
+      <p class="emphasis"><a href="../posts.html">Read more posts&hellip;</a></p>
     </div>
     <div class="main">
       <h3>Setting up a blog using Hakyll and GitHub</h3>
@@ -58,7 +57,7 @@
 <p>Sure enough, that did the trick and a second crack at: “cabal install hakyll” finished without any further issues. I later found that this issue is covered in the Hakyll FAQ <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#problem-with-regex-pcre-dependency-on-mac-os">here</a>.</p>
 <p>The next step was to work through the tutorial on the hakyll site in order to understand some of the general concepts. I ran into another obstacle during this step, trying to compile of some of the example code. Fortunately, this was <a href="http://jaspervdj.be/hakyll/tutorials/faq.html#file-name-does-not-match-module-name-on-mac-os">also documented in the Hakyll FAQ</a> so I was able to quickly resolve it.</p>
 <p>Once I had the lay of the land, I copied the tagblog/ folder out of the hakyll-examples project and into my own git project. From there, I edited the files in the css/ and templates/ directory to my liking. For the duration of this step, I kept the sample blog posts around so I could see how they looked as I changed the templates and styles.</p>
-<p>As soon as the site was looking good, I removed the extraneous files from the Hakyll sample blog and build the site using the Hakyll compiler. Since everything is statically compiled into the _site/ directory, you can just turn this into it’s own git repo (you’ll have to add “/<em>site&quot; to your .gitignore if you want to put the rest of the project into git as well since that will be it’s own repo) and push it to a repository named &quot;your</em>github_acct.github.com” and <a href="http://pages.github.com/">github pages</a> will do the rest!</p>
+<p>As soon as the site was looking good, I removed the extraneous files from the Hakyll sample blog and build the site using the Hakyll compiler. Since everything is statically compiled into the _site/ directory, you can just turn this into it’s own git repo (you’ll have to add “/_site&quot; to your .gitignore if you want to put the rest of the project into git as well since that will be it’s own repo) and push it to a repository named “your_github_acct.github.com” and <a href="http://pages.github.com/">github pages</a> will do the rest!</p>
 <p>You can check out <a href="https://github.com/gphil">my github page</a> for the source.</p>
 
 <p><em>Tagged as:</em> <a href="../tags/haskell.html">haskell</a>, <a href="../tags/hakyll.html">hakyll</a>, <a href="../tags/github.html">github</a>.</p>

@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - Posts tagged quotes</title>
-    <link href="http://gphil.net/tags/quotes.xml" rel="self" />
-    <link href="http://gphil.net" />
-    <id>http://gphil.net/tags/quotes.xml</id>
-    <author>
-        <name>Greg Phillips</name>
-        <email>gap023@gmail.com</email>
-    </author>
-    <updated>2015-03-17T00:00:00Z</updated>
-    <entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - Posts tagged quotes</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/tags/quotes.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Tue, 17 Mar 2015 00:00:00 UT</lastBuildDate>
+        <item>
     <title>This is very Jobsian</title>
-    <link href="http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html" />
-    <id>http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html</id>
-    <published>2015-03-17T00:00:00Z</published>
-    <updated>2015-03-17T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>WIRED on the <a href="http://www.thelifeclockapp.com/">Life Clock</a> app for the Apple Watch:</p>
+    <link>http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html</link>
+    <description><![CDATA[<p>WIRED on the <a href="http://www.thelifeclockapp.com/">Life Clock</a> app for the Apple Watch:</p>
 <blockquote>
 <p>Here’s one way the Apple Watch could help you live a fuller life: by counting down the seconds until you croak.</p>
 </blockquote>
@@ -25,7 +21,11 @@
 </blockquote>
 <blockquote>
 <p>Almost everything–all external expectations, all pride, all fear of embarrassment or failure–these things just fall away in the face of death, leaving only what is truly important.</p>
-</blockquote>]]></summary>
-</entry>
+</blockquote>]]></description>
+    <pubDate>Tue, 17 Mar 2015 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
 
-</feed>
+    </channel>
+</rss>

@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - Posts tagged product development</title>
-    <link href="http://gphil.net/tags/product development.xml" rel="self" />
-    <link href="http://gphil.net" />
-    <id>http://gphil.net/tags/product development.xml</id>
-    <author>
-        <name>Greg Phillips</name>
-        <email>gap023@gmail.com</email>
-    </author>
-    <updated>2014-01-21T00:00:00Z</updated>
-    <entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - Posts tagged product development</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/tags/product%20development.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Tue, 21 Jan 2014 00:00:00 UT</lastBuildDate>
+        <item>
     <title>A Really Simple Product Development Workflow</title>
-    <link href="http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html" />
-    <id>http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html</id>
-    <published>2014-01-21T00:00:00Z</published>
-    <updated>2014-01-21T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>As we’re looking bring on some more development talent at <a href="https://kwelia.com">Kwelia</a>, I’ve been reflecting a lot on what processes have worked for us as a founding team so far in terms of product development. I wanted to start with something really simple. In my experience, having too much process can feel overly restrictive and often gets circumvented. Having too little process results in a lack of direction (which can be fatal for a startup.)</p>
+    <link>http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html</link>
+    <description><![CDATA[<p>As we’re looking bring on some more development talent at <a href="https://kwelia.com">Kwelia</a>, I’ve been reflecting a lot on what processes have worked for us as a founding team so far in terms of product development. I wanted to start with something really simple. In my experience, having too much process can feel overly restrictive and often gets circumvented. Having too little process results in a lack of direction (which can be fatal for a startup.)</p>
 <p>So, I came up with the following (click to enlarge):</p>
 <p><a href="/img/pf.png" data-lightbox="A Really Simple Product Development Workflow" title="Yahoo Homepage 2012-07-15"><img src="/img/pf.png" alt="A Really Simple Product Development Workflow" width="500"></a></p>
-<p>It’s obviously oversimplified, but I think it codifies fairly well what’s worked for us in terms of product development. And, upon reflection, most of the effort that’s fallen outside of this framework hasn’t been very fruitful. I’m going to try cylcing through this workflow for a while and see if I’m missing anything important.</p>]]></summary>
-</entry>
-<entry>
+<p>It’s obviously oversimplified, but I think it codifies fairly well what’s worked for us in terms of product development. And, upon reflection, most of the effort that’s fallen outside of this framework hasn’t been very fruitful. I’m going to try cylcing through this workflow for a while and see if I’m missing anything important.</p>]]></description>
+    <pubDate>Tue, 21 Jan 2014 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>50 Percent Failure Rate</title>
-    <link href="http://gphil.net/posts/2013-04-27-50-percent-failure-rate.html" />
-    <id>http://gphil.net/posts/2013-04-27-50-percent-failure-rate.html</id>
-    <published>2013-04-27T00:00:00Z</published>
-    <updated>2013-04-27T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Lately I’ve been reading <a href="http://www.amazon.com/gp/product/1935401009/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1935401009&amp;linkCode=as2&amp;tag=gphilsblog-20">The Principles of Product Development Flow</a> by Don Reinertsen. It describes a set of principles for conducting product development in an economically optimal fashion.</p>
+    <link>http://gphil.net/posts/2013-04-27-50-percent-failure-rate.html</link>
+    <description><![CDATA[<p>Lately I’ve been reading <a href="http://www.amazon.com/gp/product/1935401009/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1935401009&amp;linkCode=as2&amp;tag=gphilsblog-20">The Principles of Product Development Flow</a> by Don Reinertsen. It describes a set of principles for conducting product development in an economically optimal fashion.</p>
 <p>The principles in the book are aimed at product development “in the large.” The goal of the book is to empower product developers to make better decisions by quantifying the expected economic value of each decision faced when developing a product.</p>
 <p>In my case, I’m developing a software product in a startup context (at <a href="https://kwelia.com">Kwelia</a>) and I’ve found that many of principles described in the book have been helpful in guiding our product development.</p>
 <p>One of the principles stood out to me as particularly enlightening for a startup: when running an experiment with two outcomes, a 50% failure rate is optimal for generating information.</p>
 <p>That’s because if something is certain to succeed or fail, there’s no reason to test it because you already know. If something is likely to fail, you’ll generate a lot of information if it doesn’t actually fail. But in the majority of instances it will indeed fail, and as such this experiment yields little information.</p>
 <p>So, the optimal experiment for generating new information has a 50% failure rate. Programmers might recognize this principle from the binary search algorithm.</p>
 <p>This principle underlies a lot of what we should be doing when de-risking startups. Binary questions such as “should we do this or not?” or “will that work?” are constantly arising as we generate new ideas.</p>
-<p>Applying this principle, we should try to devise experiments that are much more likely to fail (50%) than we might intuitively think, if we want them to generate as much new information as possible.</p>]]></summary>
-</entry>
+<p>Applying this principle, we should try to devise experiments that are much more likely to fail (50%) than we might intuitively think, if we want them to generate as much new information as possible.</p>]]></description>
+    <pubDate>Sat, 27 Apr 2013 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2013-04-27-50-percent-failure-rate.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
 
-</feed>
+    </channel>
+</rss>

@@ -27,15 +27,14 @@
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </p>
       <p>
-        Greg Phillips is a Philosophy major turned full-stack software developer and tech entrepreneur turning data problems into business insights.
+        Greg Phillips is the CTO of <a href="http://houwzer.com">Houwzer</a> where he's reimagining and reinventing real estate brokerage using a data and technology-driven approach.
       </p>
-      <p class="emphasis">Co-founder of <a href="http://renthub.com">RentHub</a></p>
       <ul class="emphasis">
-        <li><a href="https://github.com/gphil">GitHub</a></li>
         <li><a href="https://www.linkedin.com/pub/gregory-phillips/3a/b42/a6a/">LinkedIn</a></li>
         <li><a href="mailto:gphil@gphil.net">Contact</a></li>
+        <li><a href="https://github.com/gphil">GitHub</a></li>
       </ul>
-      <p class="emphasis"><a href="../posts.html">Read more posts…</a></p>
+      <p class="emphasis"><a href="../posts.html">Read more posts&hellip;</a></p>
     </div>
     <div class="main">
       <h3>Explaining the 2017 Philadelphia Property Tax Assessment Changes</h3>
@@ -47,73 +46,39 @@
 <p>This is a problem for a number of reasons. For one, it is an inaccurate approach because the value of what is currently built (or not) on the land has nothing to do with the underlying land value. <b class="emphasis">If you are going to value the land based on the building, you might as well just only value the building.</b></p>
 <p>Worse, this approach unfairly targets owners of properties with buildings having 10-year tax abatements, as that exemption pertains only to the building value and not to the land value of the property. Furthermore, these properties by have higher building values by definition (the amount of the abatement is proportional to the increased building assessment.) <b class="emphasis">In effect, the city is partially reneging on tax abatements.</b></p>
 <p>Because I build real estate analytics products professionally, and because I own tax-abated property in the city of Philadelphia, I couldn’t help myself from doing a deeper dive into the data to see what actually transpired. It might take a little bit of patience to get through the full analysis that follows, but the short version is that the data shows that, for a subset of properties, the new 2017 land values appear to in fact be derived mainly from 2016 building values.</p>
-<p>(By the way, I love digging into and discussing this kind of thing so I’m happy to answer any questions, offer advice, or just talk shop so please <script type="text/javascript">
-<!--
-h='&#x67;&#112;&#104;&#x69;&#108;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x67;&#112;&#104;&#x69;&#108;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'get in touch!'+'<\/'+'a'+'>');
-// -->
-</script><noscript>get in touch! (gphil at gphil dot net)</noscript>)</p>
+<p>(By the way, I love digging into and discussing this kind of thing so I’m happy to answer any questions, offer advice, or just talk shop so please <a href="mailto:gphil@gphil.net">get in touch!</a>)</p>
 <p>OK, here we go with the data stuff:</p>
 <p>The <a href="https://www.opendataphilly.org/dataset/opa-property-assessments">2017 Philadelphia Property Tax Assessment</a> dataset contains comprehensive descriptive ownership and market value information for the 579,912 properties in the city of Philadelphia. All 578,276 properties from that dataset having tax assessments in both 2016 and 2017 are considered in this analysis. Of interest in this analysis are the following tax assessments:</p>
 <table class="property-tax-definitions">
-  <tr>
-     <td class="emphasis">
-Taxable Building
-</td>
-     <td>
-Taxable value of the improvement
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Exempt Building
-</td>
-     <td>
-Tax exemptions on the improvement
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Total Building
-</td>
-     <td>
-Taxable Building + Exempt Building
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Taxable Land
-</td>
-     <td>
-Taxable value of the land
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Exempt Land
-</td>
-     <td>
-Tax exemptions on the land
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Total Land
-</td>
-     <td>
-Taxable Land + Exempt Land
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Market Value
-</td>
-     <td>
-Total Land + Total Building
-</td>
-  </tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Taxable Building&lt;/td&gt;
+ &lt;td&gt;Taxable value of the improvement&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Exempt Building&lt;/td&gt;
+ &lt;td&gt;Tax exemptions on the improvement&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Total Building&lt;/td&gt;
+ &lt;td&gt;Taxable Building + Exempt Building&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Taxable Land&lt;/td&gt;
+ &lt;td&gt;Taxable value of the land&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Exempt Land&lt;/td&gt;
+ &lt;td&gt;Tax exemptions on the land&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Total Land&lt;/td&gt;
+ &lt;td&gt;Taxable Land + Exempt Land&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Market Value&lt;/td&gt;
+ &lt;td&gt;Total Land + Total Building&lt;/td&gt;</code></pre>
+</tr>
 </table>
-
 <p>In 2017, the OPA adjusted the market value for only 4.5% of properties in this so there was not a major change in the total valuation of most properties (the proportion was a bit higher when you just look at residential properties but I wanted to look at the dataset as a whole.)</p>
 <p>However, for vast majority of properties (79% of all properties) the market value was held constant and some amount was simply “shifted” between the component land and building values. For 54% of all properties, some amount was shifted from the land value to the building value and for 25% of all properties, some amount was shifted from the building value to the land value.</p>
 <p>Based on this evidence, it appears the city’s goal was to rebalance the land and building components of the assessment without changing the assessment of the total market value. There was an overall focus on shifting more value to the land portion of the assessment, but there was movement in both directions.</p>
@@ -130,14 +95,9 @@ Total Land + Total Building
 <p>I think the most concerning aspect of this approach (where building value is used a proxy for land value) is that it is divorced from the actual, real-world drivers of land value (location and size.) This is worrisome because if the assessment methodology used by the OPA is not predictable, it could be de-stabilizing and serve as a disincentive for investment in Philadelphia real estate by adding an unnecessary “future uncertain tax reassessment” risk.</p>
 <p>At the end of the day, I’m actually a proponent of shifting more assessed value to land for a number of reasons, but I think the OPA did not take the right approach in these assessments. I would have not touched any of the building values (and hence tax abatements), then conducted an independent re-evaluation of the fundamental land values.</p>
 <p>This approach is more difficult, and would affect a wider range of taxpayers than just 12,000 owners of tax abated properties, but it is the right way to go about fixing the problem of under-assessed land. Instead, by partially unraveling existing tax abatements to move more value to land, the City may have cost itself some future development.</p>
-<p>The obvious remaining open question is, how were the 54% of “land-shifted” properties selected? The city has stated that <a href="http://www.philadelphiacontroller.org/media/press-releases/property-reassessments-could-add-30-million-in-new-revenues">12,000 of 15,000 tax-abated properties are in fact affected</a> so that’s a start. I might dive into this topic next if there is interest, but I’ve exhausted my side-project time budget on this for now. I love diving into this kind of stuff, so if you’re interested in more analysis, have feedback, questions about a particular property or area please <script type="text/javascript">
-<!--
-h='&#x67;&#112;&#104;&#x69;&#108;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x67;&#112;&#104;&#x69;&#108;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'drop me a line!'+'<\/'+'a'+'>');
-// -->
-</script><noscript>drop me a line! (gphil at gphil dot net)</noscript></p>
+<p>The obvious remaining open question is, how were the 54% of “land-shifted” properties selected? The city has stated that <a href="http://www.philadelphiacontroller.org/media/press-releases/property-reassessments-could-add-30-million-in-new-revenues">12,000 of 15,000 tax-abated properties are in fact affected</a> so that’s a start. I might dive into this topic next if there is interest, but I’ve exhausted my side-project time budget on this for now. I love diving into this kind of stuff, so if you’re interested in more analysis, have feedback, questions about a particular property or area please <a href="mailto:gphil@gphil.net">drop me a line!</a></p>
 
-<p><em>Tagged as:</em> <a href="../tags/data.html">data</a>, <a href="../tags/statistics.html">statistics</a>, <a href="../tags/real estate.html">real estate</a>, <a href="../tags/philadelphia.html">philadelphia</a>, <a href="../tags/tax.html">tax</a>.</p>
+<p><em>Tagged as:</em> <a href="../tags/data.html">data</a>, <a href="../tags/statistics.html">statistics</a>, <a href="../tags/real%20estate.html">real estate</a>, <a href="../tags/philadelphia.html">philadelphia</a>, <a href="../tags/tax.html">tax</a>.</p>
 
 <p>
   <a href="https://twitter.com/share" class="twitter-share-button" data-via="gphil" data-size="large">Tweet</a>

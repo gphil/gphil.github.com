@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - Posts tagged logging</title>
-    <link href="http://gphil.net/tags/logging.xml" rel="self" />
-    <link href="http://gphil.net" />
-    <id>http://gphil.net/tags/logging.xml</id>
-    <author>
-        <name>Greg Phillips</name>
-        <email>gap023@gmail.com</email>
-    </author>
-    <updated>2012-09-04T00:00:00Z</updated>
-    <entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - Posts tagged logging</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/tags/logging.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Tue, 04 Sep 2012 00:00:00 UT</lastBuildDate>
+        <item>
     <title>Logging in Clojure</title>
-    <link href="http://gphil.net/posts/2012-09-04-logging-in-clojure.html" />
-    <id>http://gphil.net/posts/2012-09-04-logging-in-clojure.html</id>
-    <published>2012-09-04T00:00:00Z</published>
-    <updated>2012-09-04T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>At <a href="http://kwelia.com">Kwelia</a> we are using Clojure for some data integration and transformation tasks. As these tasks started to get more complex, what initially started as some short and somewhat disorganized scripts has now evolved into a larger project which organizes these tasks.</p>
+    <link>http://gphil.net/posts/2012-09-04-logging-in-clojure.html</link>
+    <description><![CDATA[<p>At <a href="http://kwelia.com">Kwelia</a> we are using Clojure for some data integration and transformation tasks. As these tasks started to get more complex, what initially started as some short and somewhat disorganized scripts has now evolved into a larger project which organizes these tasks.</p>
 <p>Recently, I wanted to configure a logging service for this project and I found that the process for doing so was not well documented, and I hit a few speedbumps along the way. So, I’ve decided to share what I found here.</p>
 <p>After a little bit of research, I discovered <a href="https://github.com/clojure/tools.logging">clojure.tools.logging</a> which is a set of logging macros which delegate to one of many interchangeable logging frameworks. (From the README: “At runtime a specific implementation is selected from, in order, slf4j, Apache commons-logging, log4j, and finally java.util.logging.”)</p>
 <p>So, my first stab at it was to just add clojure.tools.logging to my leiningen project and test it out as demonstrated in the README.</p>
 <script src="https://gist.github.com/3625496.js"> </script>
-
 <p>I intentionally didn’t try to add any logging backends yet, just to see what happened out of the box. When I tried logging something I got the following messages:</p>
 <script src="https://gist.github.com/3625006.js?file=gistfile1.txt"></script>
-
 <p>I figured that this meant that clojure.tools.logging was trying to use SLF4J as the above line quoted from the README suggested it would, but I hadn’t ever explicitly installed SLF4J so I decided to dig into that. Using “lein deps :tree” I found out that <a href="https://github.com/neotyk/http.async.client">http.async.client</a> (which we were already using in this project to integrate with some webservices) depended on it.</p>
 <p>Since SLF4J appears itself to be a wrapper for multiple logging backends, and since I’ve used log4j in the past, I decided that I would point SLF4J to use log4j. (I also considered trying to use log4j directly, but I was dissuaded from doing so based on <a href="https://groups.google.com/d/msg/clojure-dev/H0scci72QQ0/ynVUsipwbkMJ">this conversation.</a>)</p>
 <p>So I added log4j to my project.clj (the exclusions are optional dependencies not available in Clojars or Maven Central and I did not want to deal with obtaining them from other sources):</p>
 <script src="https://gist.github.com/3625485.js"> </script>
-
 <p>And put the following basic log4j configuration in my src/ directory (it can go anywhere on the CLASSPATH):</p>
 <script src="https://gist.github.com/3624967.js"></script>
-
 <p>Finally, I had to explicitly add the log4j adapter for SLF4J in order to get everything to link up.</p>
 <script src="https://gist.github.com/3625561.js"> </script>
-
 <p>After adding these dependencies and the log4j.properties configuration file, I was successfully able to use clojure.tools.logging to log to log4j via SLF4J.</p>
-<p>Hopefully this is helpful to somebody else who’s trying to figure this out. I’m no expert in this domain, so if you think I did something wrong please let me know in the comments.</p>]]></summary>
-</entry>
+<p>Hopefully this is helpful to somebody else who’s trying to figure this out. I’m no expert in this domain, so if you think I did something wrong please let me know in the comments.</p>]]></description>
+    <pubDate>Tue, 04 Sep 2012 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2012-09-04-logging-in-clojure.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
 
-</feed>
+    </channel>
+</rss>

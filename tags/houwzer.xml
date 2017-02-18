@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - Posts tagged houwzer</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/tags/houwzer.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Sat, 18 Feb 2017 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>Why I'm Joining Houwzer</title>
+    <link>http://gphil.net/posts/2017-02-18-why-im-joining-houwzer.html</link>
+    <description><![CDATA[<p>I’m excited to announce that I have recently accepted the CTO position at <a href="http://houwzer.com">Houwzer</a>. I recently <a href="http://houwzer.com/welcome-greg-phillips/">wrote a post for the Houwzer blog</a> about why I’m excited for this new opportunity, so I’m sharing it here as well:</p>
+<p>Over the course of my career as a software engineer and technical startup founder, I’ve managed to develop a laundry list of full-stack software engineering and entrepreneurial skills: software engineering, data analytics, cloud software deployment, distributed systems, growth hacking, fundraising, business strategy, etc. The more unusual part of my story is that I developed these skills while developing technology for the real estate industry. However, I don’t expect this path to be an unusual one for much longer.</p>
+<p>Although the real estate industry has stubbornly resisted the technology-driven reinvention that has tilted the balance of power toward consumers in so many other industries, I strongly believe that we are on the precipice of a sea change across the entire industry and particularly in the way residential real estate is bought and sold.</p>
+<p>Over 90% of buyers used the internet in some way in their home search process, yet the process is quickly diverted into a disorganized, chaotic process conducted over a haphazard assortment of in-person meetings, home showings, phone calls, paper documents, PDFs, text messages, faxes (yes, faxes) and emails.</p>
+<p>Consequently, I am excited to announce the next step in my journey to push the real estate industry forward using technology. I’m proud to be serving as the CTO of Houwzer, and we’re already hard at work on the software platform that is going to reinvent the way home buyers and sellers transact their homes.</p>
+<p>Houwzer is the perfect place to design, implement and scale this platform. We’re already a rapidly growing, data-driven real estate brokerage with a healthy transaction volume, an incredible team, and a streamlined transaction management process. We’re already listing homes for no listing commission. (Yes, you really can get full service when selling your home without paying us any commission. <a href="http://houwzer.com/contact/">Contact us</a> if you don’t believe us, and we’ll prove it to you.) And soon, we’ll be tipping the scales toward the consumer even further with our technology platform. Stay tuned!</p>]]></description>
+    <pubDate>Sat, 18 Feb 2017 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2017-02-18-why-im-joining-houwzer.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+
+    </channel>
+</rss>

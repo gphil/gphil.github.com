@@ -27,15 +27,14 @@
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </p>
       <p>
-        Greg Phillips is a Philosophy major turned full-stack software developer and tech entrepreneur turning data problems into business insights.
+        Greg Phillips is the CTO of <a href="http://houwzer.com">Houwzer</a> where he's reimagining and reinventing real estate brokerage using a data and technology-driven approach.
       </p>
-      <p class="emphasis">Co-founder of <a href="http://renthub.com">RentHub</a></p>
       <ul class="emphasis">
-        <li><a href="https://github.com/gphil">GitHub</a></li>
         <li><a href="https://www.linkedin.com/pub/gregory-phillips/3a/b42/a6a/">LinkedIn</a></li>
         <li><a href="mailto:gphil@gphil.net">Contact</a></li>
+        <li><a href="https://github.com/gphil">GitHub</a></li>
       </ul>
-      <p class="emphasis"><a href="../posts.html">Read more posts…</a></p>
+      <p class="emphasis"><a href="../posts.html">Read more posts&hellip;</a></p>
     </div>
     <div class="main">
       <h3>Leiningen Download Stats</h3>
@@ -46,49 +45,27 @@
 <p>At the time, statistics on the number of downloads for <a href="http://http://leiningen.org/">Leiningen</a> were not available. However, after the blog post was published, <a href="http://technomancy.us/">Phil Hagelberg</a> (the creator of Leiningen) reached out to me letting me know that the stats could be made available if someone were to write some log parsing code to extract them.</p>
 <p>So, I recently wrote a little <a href="https://github.com/technomancy/leiningen/pull/1252">log parsing code</a>. Here are the results as of today:</p>
 <table class="leiningen-downloads">
-        <tr>
-               <td>
-Downloads from GitHub (through 1/21/2013)
-</td>
-               <td>
-958,033
-</td>
-        </tr>
-        <tr>
-               <td>
-Downloads from S3 (1/21/2013 until today)
-</td>
-               <td>
-467,730
-</td>
-        </tr>
-        <tr>
-               <td>
-Total
-</td>
-               <td>
-1,425,763
-</td>
-        </tr>
-        <tr>
-                <td>
-<br />
-</td>
-                <td>
-<br />
-</td>
-        </tr>
-        <tr>
-                <td>
-Unique IP Addresses (S3 Downloads Only)
-</td>
-                <td>
-35,888
-</td>
-        </tr>
-
+<pre><code>    &lt;tr&gt;
+           &lt;td&gt;Downloads from GitHub (through 1/21/2013)&lt;/td&gt;
+           &lt;td&gt;958,033&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+           &lt;td&gt;Downloads from S3 (1/21/2013 until today)&lt;/td&gt;
+           &lt;td&gt;467,730&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+           &lt;td&gt;Total&lt;/td&gt;
+           &lt;td&gt;1,425,763&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+            &lt;td&gt;&lt;br /&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;br /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+            &lt;td&gt;Unique IP Addresses (S3 Downloads Only)&lt;/td&gt;
+            &lt;td&gt;35,888&lt;/td&gt;
+    &lt;/tr&gt;</code></pre>
 </table>
-
 <p>The discrepancy between the unique downloads and total seems to be due to the fact that certain versions of leiningen have been downloaded much more than average. It seems as if a bot or deployment script gone wild has downloaded the same version over and over.</p>
 <p>In fact, versions 2.0.0-preview10 and and 2.1.2 account for over a million of the downloads! For comparison, the next most popular version (1.7.1) has only been downloaded 82,444 times. So there’s a little bit of a mystery there.</p>
 <p>Let me know if you have any theories!</p>

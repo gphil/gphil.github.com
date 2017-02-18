@@ -27,15 +27,14 @@
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </p>
       <p>
-        Greg Phillips is a Philosophy major turned full-stack software developer and tech entrepreneur turning data problems into business insights.
+        Greg Phillips is the CTO of <a href="http://houwzer.com">Houwzer</a> where he's reimagining and reinventing real estate brokerage using a data and technology-driven approach.
       </p>
-      <p class="emphasis">Co-founder of <a href="http://renthub.com">RentHub</a></p>
       <ul class="emphasis">
-        <li><a href="https://github.com/gphil">GitHub</a></li>
         <li><a href="https://www.linkedin.com/pub/gregory-phillips/3a/b42/a6a/">LinkedIn</a></li>
         <li><a href="mailto:gphil@gphil.net">Contact</a></li>
+        <li><a href="https://github.com/gphil">GitHub</a></li>
       </ul>
-      <p class="emphasis"><a href="../posts.html">Read more posts…</a></p>
+      <p class="emphasis"><a href="../posts.html">Read more posts&hellip;</a></p>
     </div>
     <div class="main">
       <h3>Fire and Forget Background Jobs Using Clojure Futures</h3>
@@ -50,7 +49,6 @@
 <p>Since we don’t particularly care about what happens after they finish, we can just “fire and forget” all of the sub-jobs without keeping track of them. If something goes wrong, we’ll just get an exception or log message letting us know, and we can deal with it appropriately at that point.</p>
 <p>“Fire and forget” can be accomplished incredibly simply using Clojure’s futures:</p>
 <script src="https://gist.github.com/gphil/26794cf1be3c6317594a.js"></script>
-
 <p>Calling run-job will kick off all the sub-jobs, and since they are wrapped with “future” none will block the next from kicking off. Furthermore, if the above is run with “lein run” (or in some other execution context) the program will not terminate until all the sub-jobs are done executing. To track the progress of the job, we can just wait until the program finishes executing.</p>
 <p>If we wanted, we could hold on to a reference to a future and track that sub-job’s completion within our job. However, in our current use cases we have no reason to do this. If we do run into this, it will probably be worth moving to <a href="https://github.com/clojure/core.async">core.async</a> to manage it. But that could be a blog post for another day!</p>
 <p>On certain jobs (those with lots of network and database round trips) we get a huge performance improvement with this approach. And there is very little added complexity, thanks to Clojure’s well thought-out concurrency support.</p>

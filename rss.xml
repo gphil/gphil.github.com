@@ -1,92 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - All posts</title>
-    <link href="http://gphil.net/rss.xml" rel="self" />
-    <link href="http://gphil.net" />
-    <id>http://gphil.net/rss.xml</id>
-    <author>
-        <name>Greg Phillips</name>
-        <email>gap023@gmail.com</email>
-    </author>
-    <updated>2016-05-26T00:00:00Z</updated>
-    <entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - All Posts</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/rss.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Sat, 18 Feb 2017 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>Why I'm Joining Houwzer</title>
+    <link>http://gphil.net/posts/2017-02-18-why-im-joining-houwzer.html</link>
+    <description><![CDATA[<p>I’m excited to announce that I have recently accepted the CTO position at <a href="http://houwzer.com">Houwzer</a>. I recently <a href="http://houwzer.com/welcome-greg-phillips/">wrote a post for the Houwzer blog</a> about why I’m excited for this new opportunity, so I’m sharing it here as well:</p>
+<p>Over the course of my career as a software engineer and technical startup founder, I’ve managed to develop a laundry list of full-stack software engineering and entrepreneurial skills: software engineering, data analytics, cloud software deployment, distributed systems, growth hacking, fundraising, business strategy, etc. The more unusual part of my story is that I developed these skills while developing technology for the real estate industry. However, I don’t expect this path to be an unusual one for much longer.</p>
+<p>Although the real estate industry has stubbornly resisted the technology-driven reinvention that has tilted the balance of power toward consumers in so many other industries, I strongly believe that we are on the precipice of a sea change across the entire industry and particularly in the way residential real estate is bought and sold.</p>
+<p>Over 90% of buyers used the internet in some way in their home search process, yet the process is quickly diverted into a disorganized, chaotic process conducted over a haphazard assortment of in-person meetings, home showings, phone calls, paper documents, PDFs, text messages, faxes (yes, faxes) and emails.</p>
+<p>Consequently, I am excited to announce the next step in my journey to push the real estate industry forward using technology. I’m proud to be serving as the CTO of Houwzer, and we’re already hard at work on the software platform that is going to reinvent the way home buyers and sellers transact their homes.</p>
+<p>Houwzer is the perfect place to design, implement and scale this platform. We’re already a rapidly growing, data-driven real estate brokerage with a healthy transaction volume, an incredible team, and a streamlined transaction management process. We’re already listing homes for no listing commission. (Yes, you really can get full service when selling your home without paying us any commission. <a href="http://houwzer.com/contact/">Contact us</a> if you don’t believe us, and we’ll prove it to you.) And soon, we’ll be tipping the scales toward the consumer even further with our technology platform. Stay tuned!</p>]]></description>
+    <pubDate>Sat, 18 Feb 2017 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2017-02-18-why-im-joining-houwzer.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>Explaining the 2017 Philadelphia Property Tax Assessment Changes</title>
-    <link href="http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html" />
-    <id>http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html</id>
-    <published>2016-05-26T00:00:00Z</published>
-    <updated>2016-05-26T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>The Philadelphia Office of Property Assessment (OPA) recently released their property tax assessments for the 2017 tax year. It’s been widely reported that these assessments <a href="http://planphilly.com/articles/2016/04/20/2017-property-tax-assessments-shift-more-value-to-land">shifted a substantial amount of value from building values to land values</a>, perhaps accurately reflecting <a href="http://planphilly.com/articles/2016/03/04/what-s-driving-philly-s-rising-land-values">growing land values</a> in the city.</p>
+    <link>http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html</link>
+    <description><![CDATA[<p>The Philadelphia Office of Property Assessment (OPA) recently released their property tax assessments for the 2017 tax year. It’s been widely reported that these assessments <a href="http://planphilly.com/articles/2016/04/20/2017-property-tax-assessments-shift-more-value-to-land">shifted a substantial amount of value from building values to land values</a>, perhaps accurately reflecting <a href="http://planphilly.com/articles/2016/03/04/what-s-driving-philly-s-rising-land-values">growing land values</a> in the city.</p>
 <p>More recently, the methodology behind this move has resulted in <a href="http://www.newsworks.org/index.php/essay-works/item/93495">some controversy</a> with the general consensus being that the new <b class="emphasis">2017 land values seem to be derived from previous building values rather than the from the fundamental underlying value of the land.</b></p>
 <p>This is a problem for a number of reasons. For one, it is an inaccurate approach because the value of what is currently built (or not) on the land has nothing to do with the underlying land value. <b class="emphasis">If you are going to value the land based on the building, you might as well just only value the building.</b></p>
 <p>Worse, this approach unfairly targets owners of properties with buildings having 10-year tax abatements, as that exemption pertains only to the building value and not to the land value of the property. Furthermore, these properties by have higher building values by definition (the amount of the abatement is proportional to the increased building assessment.) <b class="emphasis">In effect, the city is partially reneging on tax abatements.</b></p>
 <p>Because I build real estate analytics products professionally, and because I own tax-abated property in the city of Philadelphia, I couldn’t help myself from doing a deeper dive into the data to see what actually transpired. It might take a little bit of patience to get through the full analysis that follows, but the short version is that the data shows that, for a subset of properties, the new 2017 land values appear to in fact be derived mainly from 2016 building values.</p>
-<p>(By the way, I love digging into and discussing this kind of thing so I’m happy to answer any questions, offer advice, or just talk shop so please <script type="text/javascript">
-<!--
-h='&#x67;&#112;&#104;&#x69;&#108;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x67;&#112;&#104;&#x69;&#108;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'get in touch!'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#x67;&#x65;&#116;&#32;&#x69;&#110;&#32;&#116;&#x6f;&#x75;&#x63;&#104;&#x21;&#32;&#40;&#x67;&#112;&#104;&#x69;&#108;&#32;&#x61;&#116;&#32;&#x67;&#112;&#104;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#110;&#x65;&#116;&#x29;</noscript>)</p>
+<p>(By the way, I love digging into and discussing this kind of thing so I’m happy to answer any questions, offer advice, or just talk shop so please <a href="mailto:gphil@gphil.net">get in touch!</a>)</p>
 <p>OK, here we go with the data stuff:</p>
 <p>The <a href="https://www.opendataphilly.org/dataset/opa-property-assessments">2017 Philadelphia Property Tax Assessment</a> dataset contains comprehensive descriptive ownership and market value information for the 579,912 properties in the city of Philadelphia. All 578,276 properties from that dataset having tax assessments in both 2016 and 2017 are considered in this analysis. Of interest in this analysis are the following tax assessments:</p>
 <table class="property-tax-definitions">
-  <tr>
-     <td class="emphasis">
-Taxable Building
-</td>
-     <td>
-Taxable value of the improvement
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Exempt Building
-</td>
-     <td>
-Tax exemptions on the improvement
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Total Building
-</td>
-     <td>
-Taxable Building + Exempt Building
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Taxable Land
-</td>
-     <td>
-Taxable value of the land
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Exempt Land
-</td>
-     <td>
-Tax exemptions on the land
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Total Land
-</td>
-     <td>
-Taxable Land + Exempt Land
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Market Value
-</td>
-     <td>
-Total Land + Total Building
-</td>
-  </tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Taxable Building&lt;/td&gt;
+ &lt;td&gt;Taxable value of the improvement&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Exempt Building&lt;/td&gt;
+ &lt;td&gt;Tax exemptions on the improvement&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Total Building&lt;/td&gt;
+ &lt;td&gt;Taxable Building + Exempt Building&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Taxable Land&lt;/td&gt;
+ &lt;td&gt;Taxable value of the land&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Exempt Land&lt;/td&gt;
+ &lt;td&gt;Tax exemptions on the land&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Total Land&lt;/td&gt;
+ &lt;td&gt;Taxable Land + Exempt Land&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Market Value&lt;/td&gt;
+ &lt;td&gt;Total Land + Total Building&lt;/td&gt;</code></pre>
+</tr>
 </table>
-
 <p>In 2017, the OPA adjusted the market value for only 4.5% of properties in this so there was not a major change in the total valuation of most properties (the proportion was a bit higher when you just look at residential properties but I wanted to look at the dataset as a whole.)</p>
 <p>However, for vast majority of properties (79% of all properties) the market value was held constant and some amount was simply “shifted” between the component land and building values. For 54% of all properties, some amount was shifted from the land value to the building value and for 25% of all properties, some amount was shifted from the building value to the land value.</p>
 <p>Based on this evidence, it appears the city’s goal was to rebalance the land and building components of the assessment without changing the assessment of the total market value. There was an overall focus on shifting more value to the land portion of the assessment, but there was movement in both directions.</p>
@@ -103,20 +78,15 @@ Total Land + Total Building
 <p>I think the most concerning aspect of this approach (where building value is used a proxy for land value) is that it is divorced from the actual, real-world drivers of land value (location and size.) This is worrisome because if the assessment methodology used by the OPA is not predictable, it could be de-stabilizing and serve as a disincentive for investment in Philadelphia real estate by adding an unnecessary “future uncertain tax reassessment” risk.</p>
 <p>At the end of the day, I’m actually a proponent of shifting more assessed value to land for a number of reasons, but I think the OPA did not take the right approach in these assessments. I would have not touched any of the building values (and hence tax abatements), then conducted an independent re-evaluation of the fundamental land values.</p>
 <p>This approach is more difficult, and would affect a wider range of taxpayers than just 12,000 owners of tax abated properties, but it is the right way to go about fixing the problem of under-assessed land. Instead, by partially unraveling existing tax abatements to move more value to land, the City may have cost itself some future development.</p>
-<p>The obvious remaining open question is, how were the 54% of “land-shifted” properties selected? The city has stated that <a href="http://www.philadelphiacontroller.org/media/press-releases/property-reassessments-could-add-30-million-in-new-revenues">12,000 of 15,000 tax-abated properties are in fact affected</a> so that’s a start. I might dive into this topic next if there is interest, but I’ve exhausted my side-project time budget on this for now. I love diving into this kind of stuff, so if you’re interested in more analysis, have feedback, questions about a particular property or area please <script type="text/javascript">
-<!--
-h='&#x67;&#112;&#104;&#x69;&#108;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x67;&#112;&#104;&#x69;&#108;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'drop me a line!'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#100;&#114;&#x6f;&#112;&#32;&#x6d;&#x65;&#32;&#x61;&#32;&#108;&#x69;&#110;&#x65;&#x21;&#32;&#40;&#x67;&#112;&#104;&#x69;&#108;&#32;&#x61;&#116;&#32;&#x67;&#112;&#104;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#110;&#x65;&#116;&#x29;</noscript></p>]]></summary>
-</entry>
-<entry>
+<p>The obvious remaining open question is, how were the 54% of “land-shifted” properties selected? The city has stated that <a href="http://www.philadelphiacontroller.org/media/press-releases/property-reassessments-could-add-30-million-in-new-revenues">12,000 of 15,000 tax-abated properties are in fact affected</a> so that’s a start. I might dive into this topic next if there is interest, but I’ve exhausted my side-project time budget on this for now. I love diving into this kind of stuff, so if you’re interested in more analysis, have feedback, questions about a particular property or area please <a href="mailto:gphil@gphil.net">drop me a line!</a></p>]]></description>
+    <pubDate>Thu, 26 May 2016 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>This is very Jobsian</title>
-    <link href="http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html" />
-    <id>http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html</id>
-    <published>2015-03-17T00:00:00Z</published>
-    <updated>2015-03-17T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>WIRED on the <a href="http://www.thelifeclockapp.com/">Life Clock</a> app for the Apple Watch:</p>
+    <link>http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html</link>
+    <description><![CDATA[<p>WIRED on the <a href="http://www.thelifeclockapp.com/">Life Clock</a> app for the Apple Watch:</p>
 <blockquote>
 <p>Here’s one way the Apple Watch could help you live a fuller life: by counting down the seconds until you croak.</p>
 </blockquote>
@@ -126,27 +96,27 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'drop me a line!'+'<\/'+'a'
 </blockquote>
 <blockquote>
 <p>Almost everything–all external expectations, all pride, all fear of embarrassment or failure–these things just fall away in the face of death, leaving only what is truly important.</p>
-</blockquote>]]></summary>
-</entry>
-<entry>
+</blockquote>]]></description>
+    <pubDate>Tue, 17 Mar 2015 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2015-03-17-this-is-very-jobsian.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>this.sucks</title>
-    <link href="http://gphil.net/posts/2015-03-16-this-sucks.html" />
-    <id>http://gphil.net/posts/2015-03-16-this-sucks.html</id>
-    <published>2015-03-16T00:00:00Z</published>
-    <updated>2015-03-16T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>The .sucks TLD <a href="http://arstechnica.com/information-technology/2015/03/sucks-tld-to-accept-sunrise-registrations-soon-but-theyll-be-pricey/">is a protection racket</a>:</p>
+    <link>http://gphil.net/posts/2015-03-16-this-sucks.html</link>
+    <description><![CDATA[<p>The .sucks TLD <a href="http://arstechnica.com/information-technology/2015/03/sucks-tld-to-accept-sunrise-registrations-soon-but-theyll-be-pricey/">is a protection racket</a>:</p>
 <blockquote>
 <p>The <a href="http://www.nic.sucks/products">pricing situation</a> around .sucks domain names is complicated. Companies with registered trademarks will have to pay an astounding $2,499 to register their trademarked names in .sucks. Registration of non-trademarked names during the “sunrise” period (March 30 until June 1) before .sucks goes live will cost at least $199 per name, while the standard registration fee after June 1 rises to $249 per name.</p>
 </blockquote>
-<p>I’m surprised they’re getting away with this.</p>]]></summary>
-</entry>
-<entry>
+<p>I’m surprised they’re getting away with this.</p>]]></description>
+    <pubDate>Mon, 16 Mar 2015 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2015-03-16-this-sucks.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>Fire and Forget Background Jobs Using Clojure Futures</title>
-    <link href="http://gphil.net/posts/2014-05-05-fire-and-forget-background-jobs-using-clojure-futures.html" />
-    <id>http://gphil.net/posts/2014-05-05-fire-and-forget-background-jobs-using-clojure-futures.html</id>
-    <published>2014-05-05T00:00:00Z</published>
-    <updated>2014-05-05T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>One of the killer features of Clojure is its built-in (and <a href="https://github.com/clojure/core.async">library-supported</a>) ability to manage concurrent threads of execution. However, in the name of <a href="http://www.infoq.com/presentations/Simple-Made-Easy">simplicity</a>, I generally try to eschew concurrency in my own code until I really need it.</p>
+    <link>http://gphil.net/posts/2014-05-05-fire-and-forget-background-jobs-using-clojure-futures.html</link>
+    <description><![CDATA[<p>One of the killer features of Clojure is its built-in (and <a href="https://github.com/clojure/core.async">library-supported</a>) ability to manage concurrent threads of execution. However, in the name of <a href="http://www.infoq.com/presentations/Simple-Made-Easy">simplicity</a>, I generally try to eschew concurrency in my own code until I really need it.</p>
 <p>At <a href="https://kwelia.com">Kwelia</a>, we do a lot of data processing in background jobs. Our recurring background jobs either run on a schedule, or by popping tasks off of a job queue. These jobs run concurrently, but there’s no concurrency written into the application logic.</p>
 <p>In addition to recurring background jobs, we also end up with lots of one-off types of background jobs that largely involve fetching, cleaning, manipulating, and persisting data. In the fetching and persisting steps of these jobs, we’re often waiting on network and database calls for the majority of the job.</p>
 <p>So, in order to speed up these jobs, we can sprinkle in some concurrency (carefully and without accidentally overloading our database or our partners’ APIs.)</p>
@@ -154,29 +124,28 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'drop me a line!'+'<\/'+'a'
 <p>Since we don’t particularly care about what happens after they finish, we can just “fire and forget” all of the sub-jobs without keeping track of them. If something goes wrong, we’ll just get an exception or log message letting us know, and we can deal with it appropriately at that point.</p>
 <p>“Fire and forget” can be accomplished incredibly simply using Clojure’s futures:</p>
 <script src="https://gist.github.com/gphil/26794cf1be3c6317594a.js"></script>
-
 <p>Calling run-job will kick off all the sub-jobs, and since they are wrapped with “future” none will block the next from kicking off. Furthermore, if the above is run with “lein run” (or in some other execution context) the program will not terminate until all the sub-jobs are done executing. To track the progress of the job, we can just wait until the program finishes executing.</p>
 <p>If we wanted, we could hold on to a reference to a future and track that sub-job’s completion within our job. However, in our current use cases we have no reason to do this. If we do run into this, it will probably be worth moving to <a href="https://github.com/clojure/core.async">core.async</a> to manage it. But that could be a blog post for another day!</p>
-<p>On certain jobs (those with lots of network and database round trips) we get a huge performance improvement with this approach. And there is very little added complexity, thanks to Clojure’s well thought-out concurrency support.</p>]]></summary>
-</entry>
-<entry>
+<p>On certain jobs (those with lots of network and database round trips) we get a huge performance improvement with this approach. And there is very little added complexity, thanks to Clojure’s well thought-out concurrency support.</p>]]></description>
+    <pubDate>Mon, 05 May 2014 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2014-05-05-fire-and-forget-background-jobs-using-clojure-futures.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>A Really Simple Product Development Workflow</title>
-    <link href="http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html" />
-    <id>http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html</id>
-    <published>2014-01-21T00:00:00Z</published>
-    <updated>2014-01-21T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>As we’re looking bring on some more development talent at <a href="https://kwelia.com">Kwelia</a>, I’ve been reflecting a lot on what processes have worked for us as a founding team so far in terms of product development. I wanted to start with something really simple. In my experience, having too much process can feel overly restrictive and often gets circumvented. Having too little process results in a lack of direction (which can be fatal for a startup.)</p>
+    <link>http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html</link>
+    <description><![CDATA[<p>As we’re looking bring on some more development talent at <a href="https://kwelia.com">Kwelia</a>, I’ve been reflecting a lot on what processes have worked for us as a founding team so far in terms of product development. I wanted to start with something really simple. In my experience, having too much process can feel overly restrictive and often gets circumvented. Having too little process results in a lack of direction (which can be fatal for a startup.)</p>
 <p>So, I came up with the following (click to enlarge):</p>
 <p><a href="/img/pf.png" data-lightbox="A Really Simple Product Development Workflow" title="Yahoo Homepage 2012-07-15"><img src="/img/pf.png" alt="A Really Simple Product Development Workflow" width="500"></a></p>
-<p>It’s obviously oversimplified, but I think it codifies fairly well what’s worked for us in terms of product development. And, upon reflection, most of the effort that’s fallen outside of this framework hasn’t been very fruitful. I’m going to try cylcing through this workflow for a while and see if I’m missing anything important.</p>]]></summary>
-</entry>
-<entry>
+<p>It’s obviously oversimplified, but I think it codifies fairly well what’s worked for us in terms of product development. And, upon reflection, most of the effort that’s fallen outside of this framework hasn’t been very fruitful. I’m going to try cylcing through this workflow for a while and see if I’m missing anything important.</p>]]></description>
+    <pubDate>Tue, 21 Jan 2014 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2014-01-21-a-really-simple-product-development-workflow.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>Yahoo's New Direction</title>
-    <link href="http://gphil.net/posts/2013-09-08-yahoos-new-direction.html" />
-    <id>http://gphil.net/posts/2013-09-08-yahoos-new-direction.html</id>
-    <published>2013-09-08T00:00:00Z</published>
-    <updated>2013-09-08T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Along with a good portion of the rest of the internet, I read <a href="http://marissamayr.tumblr.com/post/60336044815/geeking-out-on-the-logo">Marissa Mayer’s post about the new Yahoo logo</a>. There’s been a lot of talk about the logo since then, and for what it’s worth: I like the new logo more than the old one, and I think that it is notable that they decided to buck the “flat” design trend by giving it some depth.</p>
+    <link>http://gphil.net/posts/2013-09-08-yahoos-new-direction.html</link>
+    <description><![CDATA[<p>Along with a good portion of the rest of the internet, I read <a href="http://marissamayr.tumblr.com/post/60336044815/geeking-out-on-the-logo">Marissa Mayer’s post about the new Yahoo logo</a>. There’s been a lot of talk about the logo since then, and for what it’s worth: I like the new logo more than the old one, and I think that it is notable that they decided to buck the “flat” design trend by giving it some depth.</p>
 <p>However, what Mayer’s post really got me thinking about was: how has Yahoo changed since she took over?</p>
 <p>Obviously, in addition to the new logo, they’re getting a lot more attention from the tech media, and they’ve made a <a href="http://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Yahoo!#Acquisitions">bunch of acquistions</a>.</p>
 <p>But how has all this actually affected their web presence? I decided to take a look at the Yahoo homepage this evening, and compare it to the Yahoo homepage on the eve of the day Mayer was named CEO. Take a look:</p>
@@ -187,119 +156,70 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'drop me a line!'+'<\/'+'a'
 <p>Although the pages have very different visual feels, there has been little substantive change: the layout and content are nearly identical.</p>
 <p>The biggest difference is the introduction of the navigation bar similar to Google’s at the top of today’s page. This seems to represent a shift in focus from being a content provider to more of an application provider like Google is.</p>
 <p>In the last year or so, Yahoo has redesigned Flickr and Mail and acquired a bunch of other “apps” (the most prominent of which being Tumblr.) However, none of the acquisitions seem to have made a dent in the homepage yet.</p>
-<p>So, even though Yahoo has a new logo to go with its new look and feel, it still seems to be more or less the same site–even after all the acquisitions. This might change, but for now it seems that the changes at Yahoo are mostly skin-deep.</p>]]></summary>
-</entry>
-<entry>
+<p>So, even though Yahoo has a new logo to go with its new look and feel, it still seems to be more or less the same site–even after all the acquisitions. This might change, but for now it seems that the changes at Yahoo are mostly skin-deep.</p>]]></description>
+    <pubDate>Sun, 08 Sep 2013 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2013-09-08-yahoos-new-direction.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>My Quantified Self Setup</title>
-    <link href="http://gphil.net/posts/2013-08-31-my-quantified-self-setup.html" />
-    <id>http://gphil.net/posts/2013-08-31-my-quantified-self-setup.html</id>
-    <published>2013-08-31T00:00:00Z</published>
-    <updated>2013-08-31T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>A few years ago, I didn’t keep track of any personal metrics, nor did I feel there was any need to. This has changed drastically since then: I now keep track of metrics pertaining to my work habits, career, exercise, diet and sleep. As others have observed before, I found that merely keeping track of these metrics has positively affected my focus, behavior and overall health. However, it didn’t happen overnight–it took a progression of deliberate incremental steps over time.</p>
+    <link>http://gphil.net/posts/2013-08-31-my-quantified-self-setup.html</link>
+    <description><![CDATA[<p>A few years ago, I didn’t keep track of any personal metrics, nor did I feel there was any need to. This has changed drastically since then: I now keep track of metrics pertaining to my work habits, career, exercise, diet and sleep. As others have observed before, I found that merely keeping track of these metrics has positively affected my focus, behavior and overall health. However, it didn’t happen overnight–it took a progression of deliberate incremental steps over time.</p>
 <p>I started with <a href="https://www.rescuetime.com/">RescueTime</a> shortly after co-founding my startup, <a href="https://www.kwelia.com/">Kwelia</a>. Kwelia is my first venture, and I left a more structured software engineering job at an established company to start it. My initial motivation was that I didn’t want my work ethic to slip when my job became more self-directed. This didn’t happen for a number of reasons, but I think RescueTime’s tracking of all of my behavior on my computer certainly helped me stay focused. (I could really use RescueTime or a RescueTime-like for my iPhone as well–it seems like that’s where I waste the most time now, but I digress.)</p>
-<p>After the initial success with RescueTime, I was thinking about how I could measure progress on more of a career and company development level. I came across this <a href="http://calnewport.com/blog/2013/04/08/deliberately-experimenting-with-deliberate-practice-looking-for-subjects-to-test-my-advice/">blog post</a> by <a href="http://calnewport.com">Cal Newport</a> announcing a class that would explore the notion of <a href="https://en.wikipedia.org/wiki/Practice_learning_method#Deliberate_practice">deliberate practice</a> in a career-development context, and my interest was piqued. I ended up taking the class, and the biggest take-away for me was the isolation of some key career metrics that I wanted to track. I won’t go into too much detail, but they all boiled to down to gaining more traction for <a href="https://kwelia.com/">Kwelia</a>, as well as for my personal brand via writing and tweeting more. I now periodically track these metrics manually in a small Emacs <a href="https://org-mode.org">org-mode</a> document. Just keeping track of a few rough measures of “traction” has inspired me to work harder to promote myself and my company.</p>
+<p>After the initial success with RescueTime, I was thinking about how I could measure progress on more of a career and company development level. I came across this <a href="http://calnewport.com/blog/2013/04/08/deliberately-experimenting-with-deliberate-practice-looking-for-subjects-to-test-my-advice/">blog post</a> by <a href="http://calnewport.com">Cal Newport</a> announcing a class that would explore the notion of <a href="https://en.wikipedia.org/wiki/Practice_(learning_method)#Deliberate_practice">deliberate practice</a> in a career-development context, and my interest was piqued. I ended up taking the class, and the biggest take-away for me was the isolation of some key career metrics that I wanted to track. I won’t go into too much detail, but they all boiled to down to gaining more traction for <a href="https://kwelia.com/">Kwelia</a>, as well as for my personal brand via writing and tweeting more. I now periodically track these metrics manually in a small Emacs <a href="https://org-mode.org">org-mode</a> document. Just keeping track of a few rough measures of “traction” has inspired me to work harder to promote myself and my company.</p>
 <p>The final piece of my current Quantified Self puzzle fell into place when my <a href="https://twitter.com/jessdabel">lovely, fitness-obsessed girlfriend</a> bought me a <a href="http://www.fitbit.com/">FitBit</a>. Initially, I thought I would just wear it and track my steps as a rough gauge of how much physical activity I was getting. However, I ended up going whole-hog and tracking my sleep, calories consumed and other fitness activity using their software as well. I’ve been doing this for almost a month now, and I’ve been losing weight and finding it easier to make healthier choices when it comes to my diet and exercise just by keeping track.</p>
-<p>If there’s one lesson I’ve learned from all of this, it’s that you can initiate a tremendous amount of personal change just by starting to keep track of metrics in areas where you wish to improve. If you dutifully keep track of your past activity, you will naturally be more mindful of your goals when making decisions in the future. I underestimated the power of this phenomenon going into it, but now I’m slowly but surely becoming a quantified-self addict.</p>]]></summary>
-</entry>
-<entry>
+<p>If there’s one lesson I’ve learned from all of this, it’s that you can initiate a tremendous amount of personal change just by starting to keep track of metrics in areas where you wish to improve. If you dutifully keep track of your past activity, you will naturally be more mindful of your goals when making decisions in the future. I underestimated the power of this phenomenon going into it, but now I’m slowly but surely becoming a quantified-self addict.</p>]]></description>
+    <pubDate>Sat, 31 Aug 2013 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2013-08-31-my-quantified-self-setup.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>Don't Get Lost in Big Data</title>
-    <link href="http://gphil.net/posts/2013-08-01-dont-get-lost-in-big-data.html" />
-    <id>http://gphil.net/posts/2013-08-01-dont-get-lost-in-big-data.html</id>
-    <published>2013-08-01T00:00:00Z</published>
-    <updated>2013-08-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>The value of data comes only when one can derive actionable insights from it. Accordingly, the primary aim of a big data project should be to convert big data into useful data.</p>
+    <link>http://gphil.net/posts/2013-08-01-dont-get-lost-in-big-data.html</link>
+    <description><![CDATA[<p>The value of data comes only when one can derive actionable insights from it. Accordingly, the primary aim of a big data project should be to convert big data into useful data.</p>
 <p>However, it seems like a lot of big data projects lose sight of the this goal. I think the reason for this is that these projects quickly run into engineering challenges.</p>
 <p>It’s easy to lose the forest for the trees when the focus shifts from the end goal (delivering value to stakeholders) to acheiving difficult intermediate goals (how are we going to efficiently process this data?)</p>
 <p>I had this realization after I recently re-read <a href="http://www.crunchbase.com/person/dj-patil">DJ Patil’s</a> essay <a href="http://oreilly.com/data/radarreports/data-jujitsu.csp">Data Jujitsu</a>. The essay is so-named because it talks about how to work around the big engineering challenges that tend to crop up when working with large datasets, without meeting them head-on. I found that it really resonated with some of the findings I’ve had while working on <a href="https://kwelia.com">Kwelia</a>.</p>
-<p>These types of “Data Jujitsu” strategies are critical for getting a big data project off the ground–not only because they help you avoid doing extra work, but also because they make it easier to stay focused on the real goal of delivering as much value as possible to the stakeholders of the project.</p>]]></summary>
-</entry>
-<entry>
+<p>These types of “Data Jujitsu” strategies are critical for getting a big data project off the ground–not only because they help you avoid doing extra work, but also because they make it easier to stay focused on the real goal of delivering as much value as possible to the stakeholders of the project.</p>]]></description>
+    <pubDate>Thu, 01 Aug 2013 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2013-08-01-dont-get-lost-in-big-data.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>Leiningen Download Stats</title>
-    <link href="http://gphil.net/posts/2013-07-11-2013-leiningen-download-stats.html" />
-    <id>http://gphil.net/posts/2013-07-11-2013-leiningen-download-stats.html</id>
-    <published>2013-07-11T00:00:00Z</published>
-    <updated>2013-07-11T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>About a month ago, I wrote a post <a href="2013-06-10-tracking-clojure-versus-ruby-adoption.html">comparing Ruby and Clojure adoption</a> based on package respository download stats and some other metrics.</p>
+    <link>http://gphil.net/posts/2013-07-11-2013-leiningen-download-stats.html</link>
+    <description><![CDATA[<p>About a month ago, I wrote a post <a href="2013-06-10-tracking-clojure-versus-ruby-adoption.html">comparing Ruby and Clojure adoption</a> based on package respository download stats and some other metrics.</p>
 <p>At the time, statistics on the number of downloads for <a href="http://http://leiningen.org/">Leiningen</a> were not available. However, after the blog post was published, <a href="http://technomancy.us/">Phil Hagelberg</a> (the creator of Leiningen) reached out to me letting me know that the stats could be made available if someone were to write some log parsing code to extract them.</p>
 <p>So, I recently wrote a little <a href="https://github.com/technomancy/leiningen/pull/1252">log parsing code</a>. Here are the results as of today:</p>
 <table class="leiningen-downloads">
-        <tr>
-               <td>
-Downloads from GitHub (through 1/21/2013)
-</td>
-               <td>
-958,033
-</td>
-        </tr>
-        <tr>
-               <td>
-Downloads from S3 (1/21/2013 until today)
-</td>
-               <td>
-467,730
-</td>
-        </tr>
-        <tr>
-               <td>
-Total
-</td>
-               <td>
-1,425,763
-</td>
-        </tr>
-        <tr>
-                <td>
-<br />
-</td>
-                <td>
-<br />
-</td>
-        </tr>
-        <tr>
-                <td>
-Unique IP Addresses (S3 Downloads Only)
-</td>
-                <td>
-35,888
-</td>
-        </tr>
-
+<pre><code>    &lt;tr&gt;
+           &lt;td&gt;Downloads from GitHub (through 1/21/2013)&lt;/td&gt;
+           &lt;td&gt;958,033&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+           &lt;td&gt;Downloads from S3 (1/21/2013 until today)&lt;/td&gt;
+           &lt;td&gt;467,730&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+           &lt;td&gt;Total&lt;/td&gt;
+           &lt;td&gt;1,425,763&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+            &lt;td&gt;&lt;br /&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;br /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+            &lt;td&gt;Unique IP Addresses (S3 Downloads Only)&lt;/td&gt;
+            &lt;td&gt;35,888&lt;/td&gt;
+    &lt;/tr&gt;</code></pre>
 </table>
-
 <p>The discrepancy between the unique downloads and total seems to be due to the fact that certain versions of leiningen have been downloaded much more than average. It seems as if a bot or deployment script gone wild has downloaded the same version over and over.</p>
 <p>In fact, versions 2.0.0-preview10 and and 2.1.2 account for over a million of the downloads! For comparison, the next most popular version (1.7.1) has only been downloaded 82,444 times. So there’s a little bit of a mystery there.</p>
-<p>Let me know if you have any theories!</p>]]></summary>
-</entry>
-<entry>
-    <title>Tracking Clojure vs. Ruby Adoption</title>
-    <link href="http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html" />
-    <id>http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html</id>
-    <published>2013-06-10T00:00:00Z</published>
-    <updated>2013-06-10T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>If you read my <a href="2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html">previous post</a>, then you know that I’m rooting for greater adoption of Clojure.</p>
-<p>In this post I want to take a more quantitative look at the adoption of Clojure, and benchmark that against Ruby. I picked Ruby because it’s another dynamic language that I use frequently, and because I feel that it has quite a bit of traction.</p>
-<p>What follows below is an un-scientific comparison of Clojure and Ruby based on usage statistics culled from their respective package repositories, StackOverflow and GitHub.</p>
-<h2 id="package-repositories">Package Repositories</h2>
-<p>The package repository for Clojure is <a href="https://clojars.org">Clojars</a>. Since its inception, it’s had 4,215,857 total packages downloaded.</p>
-<p>(Edit: <a href="https://twitter.com/xeqixeqi">@xeqixeqi</a> pointed out that Clojars started keeping track of downloads in Oct./Nov. 2012, so these numbers don’t actually go back that far. That may explain why they are lagging Ruby by the most. RubyGems has been keeping track since July 2009.)</p>
-<p>The corresponding package repository for Ruby is <a href="https://rubygems.org">RubyGems</a>. RubyGems has 1,677,981,312 total downloads. This is ~398x more than Clojars.</p>
-<p>The top package on Clojars is <a href="https://github.com/ring-clojure/ring">Ring</a>, which has been downloaded 131,383 times.</p>
-<p>The top package on RubyGems is <a href="https://github.com/wycats/thor">Thor</a> and it has been downloaded 30,235,277 times, which is ~230x more than Ring.</p>
-<p>Thor is a tool for making command line utilities and is often also used as a build tool, while Ring is a web application library. The de facto build tool for Clojure is <a href="https://github.com/technomancy/leiningen">Leiningen</a>, which might compare more favorably to Thor. However, it is generally downloaded directly and then used to fetch dependencies from Clojars. So far as I know, no statistics are available on the number of Leiningen downloads.</p>
-<p>A more apples-to-apples comparison might be to compare Ring to <a href="https://github.com/rack/rack">Rack</a>, its Ruby analogue:</p>
-<p>Rack has 27,119,992 downloads which is ~206x the number of Ring downloads.</p>
-<h2 id="stackoverflow">StackOverflow</h2>
-<p>I used <a href="http://data.stackexchange.com/stackoverflow/query/90306/compare-size-and-growth-trends-for-stackoverflow-tags">this StackExchange Data Explorer query</a> to compare the number of questions tagged as “clojure” or “ruby” on StackOverflow.</p>
-<p>The tag “clojure” has been used 1,919 times in the last 6 months, whereas the tag “ruby” has been used 23,495 times in the last 6 months.</p>
-<p>This is a much more favorable comparision for Clojure, as Ruby “only” has a ~12x advantage here.</p>
-<h2 id="github">GitHub</h2>
-<p>Ring has 1,321 stars, and 166 forks and Rack has 1,973 stars and 596 forks for ratios of ~3.5x and ~1.5x respectively.</p>
-<p>Looking at <a href="https://github.com/ring-clojure/ring">Ring</a> and <a href="https://github.com/rack/rack">Rack</a> projects on GitHub, the numbers bode even better for Clojure.</p>
-<p>Interestingly, it looks like Ring and Rack both started out on personal accounts and subsequently moved to their own organizations. The number of stars are summations using both accounts, but the number of forks reported was the same on both accounts because both organizations have forked from the original personal projects.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Ruby definitely still has a major adoption and mind-share advantage over Clojure, but Clojure fared better than I thought it would on StackOverflow, and especially on GitHub.</p>
-<p>It’s also interesting to note the wide range across the comparisons (400x down to 1.5x), which probably says as much about the communities they came from (as well as the inaccuracy of this methodology) as it does for Clojure versus Ruby adoption in the real world.</p>
-<p>I look forward to following these numbers in order to see if Clojure makes inroads against Ruby and lowers these ratios over time.</p>]]></summary>
-</entry>
+<p>Let me know if you have any theories!</p>]]></description>
+    <pubDate>Thu, 11 Jul 2013 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2013-07-11-2013-leiningen-download-stats.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
 
-</feed>
+    </channel>
+</rss>

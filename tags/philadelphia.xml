@@ -1,92 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - Posts tagged philadelphia</title>
-    <link href="http://gphil.net/tags/philadelphia.xml" rel="self" />
-    <link href="http://gphil.net" />
-    <id>http://gphil.net/tags/philadelphia.xml</id>
-    <author>
-        <name>Greg Phillips</name>
-        <email>gap023@gmail.com</email>
-    </author>
-    <updated>2016-05-26T00:00:00Z</updated>
-    <entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - Posts tagged philadelphia</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/tags/philadelphia.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Sat, 18 Feb 2017 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>Why I'm Joining Houwzer</title>
+    <link>http://gphil.net/posts/2017-02-18-why-im-joining-houwzer.html</link>
+    <description><![CDATA[<p>I’m excited to announce that I have recently accepted the CTO position at <a href="http://houwzer.com">Houwzer</a>. I recently <a href="http://houwzer.com/welcome-greg-phillips/">wrote a post for the Houwzer blog</a> about why I’m excited for this new opportunity, so I’m sharing it here as well:</p>
+<p>Over the course of my career as a software engineer and technical startup founder, I’ve managed to develop a laundry list of full-stack software engineering and entrepreneurial skills: software engineering, data analytics, cloud software deployment, distributed systems, growth hacking, fundraising, business strategy, etc. The more unusual part of my story is that I developed these skills while developing technology for the real estate industry. However, I don’t expect this path to be an unusual one for much longer.</p>
+<p>Although the real estate industry has stubbornly resisted the technology-driven reinvention that has tilted the balance of power toward consumers in so many other industries, I strongly believe that we are on the precipice of a sea change across the entire industry and particularly in the way residential real estate is bought and sold.</p>
+<p>Over 90% of buyers used the internet in some way in their home search process, yet the process is quickly diverted into a disorganized, chaotic process conducted over a haphazard assortment of in-person meetings, home showings, phone calls, paper documents, PDFs, text messages, faxes (yes, faxes) and emails.</p>
+<p>Consequently, I am excited to announce the next step in my journey to push the real estate industry forward using technology. I’m proud to be serving as the CTO of Houwzer, and we’re already hard at work on the software platform that is going to reinvent the way home buyers and sellers transact their homes.</p>
+<p>Houwzer is the perfect place to design, implement and scale this platform. We’re already a rapidly growing, data-driven real estate brokerage with a healthy transaction volume, an incredible team, and a streamlined transaction management process. We’re already listing homes for no listing commission. (Yes, you really can get full service when selling your home without paying us any commission. <a href="http://houwzer.com/contact/">Contact us</a> if you don’t believe us, and we’ll prove it to you.) And soon, we’ll be tipping the scales toward the consumer even further with our technology platform. Stay tuned!</p>]]></description>
+    <pubDate>Sat, 18 Feb 2017 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2017-02-18-why-im-joining-houwzer.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>Explaining the 2017 Philadelphia Property Tax Assessment Changes</title>
-    <link href="http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html" />
-    <id>http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html</id>
-    <published>2016-05-26T00:00:00Z</published>
-    <updated>2016-05-26T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>The Philadelphia Office of Property Assessment (OPA) recently released their property tax assessments for the 2017 tax year. It’s been widely reported that these assessments <a href="http://planphilly.com/articles/2016/04/20/2017-property-tax-assessments-shift-more-value-to-land">shifted a substantial amount of value from building values to land values</a>, perhaps accurately reflecting <a href="http://planphilly.com/articles/2016/03/04/what-s-driving-philly-s-rising-land-values">growing land values</a> in the city.</p>
+    <link>http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html</link>
+    <description><![CDATA[<p>The Philadelphia Office of Property Assessment (OPA) recently released their property tax assessments for the 2017 tax year. It’s been widely reported that these assessments <a href="http://planphilly.com/articles/2016/04/20/2017-property-tax-assessments-shift-more-value-to-land">shifted a substantial amount of value from building values to land values</a>, perhaps accurately reflecting <a href="http://planphilly.com/articles/2016/03/04/what-s-driving-philly-s-rising-land-values">growing land values</a> in the city.</p>
 <p>More recently, the methodology behind this move has resulted in <a href="http://www.newsworks.org/index.php/essay-works/item/93495">some controversy</a> with the general consensus being that the new <b class="emphasis">2017 land values seem to be derived from previous building values rather than the from the fundamental underlying value of the land.</b></p>
 <p>This is a problem for a number of reasons. For one, it is an inaccurate approach because the value of what is currently built (or not) on the land has nothing to do with the underlying land value. <b class="emphasis">If you are going to value the land based on the building, you might as well just only value the building.</b></p>
 <p>Worse, this approach unfairly targets owners of properties with buildings having 10-year tax abatements, as that exemption pertains only to the building value and not to the land value of the property. Furthermore, these properties by have higher building values by definition (the amount of the abatement is proportional to the increased building assessment.) <b class="emphasis">In effect, the city is partially reneging on tax abatements.</b></p>
 <p>Because I build real estate analytics products professionally, and because I own tax-abated property in the city of Philadelphia, I couldn’t help myself from doing a deeper dive into the data to see what actually transpired. It might take a little bit of patience to get through the full analysis that follows, but the short version is that the data shows that, for a subset of properties, the new 2017 land values appear to in fact be derived mainly from 2016 building values.</p>
-<p>(By the way, I love digging into and discussing this kind of thing so I’m happy to answer any questions, offer advice, or just talk shop so please <script type="text/javascript">
-<!--
-h='&#x67;&#112;&#104;&#x69;&#108;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x67;&#112;&#104;&#x69;&#108;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'get in touch!'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#x67;&#x65;&#116;&#32;&#x69;&#110;&#32;&#116;&#x6f;&#x75;&#x63;&#104;&#x21;&#32;&#40;&#x67;&#112;&#104;&#x69;&#108;&#32;&#x61;&#116;&#32;&#x67;&#112;&#104;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#110;&#x65;&#116;&#x29;</noscript>)</p>
+<p>(By the way, I love digging into and discussing this kind of thing so I’m happy to answer any questions, offer advice, or just talk shop so please <a href="mailto:gphil@gphil.net">get in touch!</a>)</p>
 <p>OK, here we go with the data stuff:</p>
 <p>The <a href="https://www.opendataphilly.org/dataset/opa-property-assessments">2017 Philadelphia Property Tax Assessment</a> dataset contains comprehensive descriptive ownership and market value information for the 579,912 properties in the city of Philadelphia. All 578,276 properties from that dataset having tax assessments in both 2016 and 2017 are considered in this analysis. Of interest in this analysis are the following tax assessments:</p>
 <table class="property-tax-definitions">
-  <tr>
-     <td class="emphasis">
-Taxable Building
-</td>
-     <td>
-Taxable value of the improvement
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Exempt Building
-</td>
-     <td>
-Tax exemptions on the improvement
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Total Building
-</td>
-     <td>
-Taxable Building + Exempt Building
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Taxable Land
-</td>
-     <td>
-Taxable value of the land
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Exempt Land
-</td>
-     <td>
-Tax exemptions on the land
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Total Land
-</td>
-     <td>
-Taxable Land + Exempt Land
-</td>
-  </tr>
-  <tr>
-     <td class="emphasis">
-Market Value
-</td>
-     <td>
-Total Land + Total Building
-</td>
-  </tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Taxable Building&lt;/td&gt;
+ &lt;td&gt;Taxable value of the improvement&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Exempt Building&lt;/td&gt;
+ &lt;td&gt;Tax exemptions on the improvement&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Total Building&lt;/td&gt;
+ &lt;td&gt;Taxable Building + Exempt Building&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Taxable Land&lt;/td&gt;
+ &lt;td&gt;Taxable value of the land&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Exempt Land&lt;/td&gt;
+ &lt;td&gt;Tax exemptions on the land&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Total Land&lt;/td&gt;
+ &lt;td&gt;Taxable Land + Exempt Land&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<pre><code> &lt;td class=&quot;emphasis&quot;&gt;Market Value&lt;/td&gt;
+ &lt;td&gt;Total Land + Total Building&lt;/td&gt;</code></pre>
+</tr>
 </table>
-
 <p>In 2017, the OPA adjusted the market value for only 4.5% of properties in this so there was not a major change in the total valuation of most properties (the proportion was a bit higher when you just look at residential properties but I wanted to look at the dataset as a whole.)</p>
 <p>However, for vast majority of properties (79% of all properties) the market value was held constant and some amount was simply “shifted” between the component land and building values. For 54% of all properties, some amount was shifted from the land value to the building value and for 25% of all properties, some amount was shifted from the building value to the land value.</p>
 <p>Based on this evidence, it appears the city’s goal was to rebalance the land and building components of the assessment without changing the assessment of the total market value. There was an overall focus on shifting more value to the land portion of the assessment, but there was movement in both directions.</p>
@@ -103,12 +78,11 @@ Total Land + Total Building
 <p>I think the most concerning aspect of this approach (where building value is used a proxy for land value) is that it is divorced from the actual, real-world drivers of land value (location and size.) This is worrisome because if the assessment methodology used by the OPA is not predictable, it could be de-stabilizing and serve as a disincentive for investment in Philadelphia real estate by adding an unnecessary “future uncertain tax reassessment” risk.</p>
 <p>At the end of the day, I’m actually a proponent of shifting more assessed value to land for a number of reasons, but I think the OPA did not take the right approach in these assessments. I would have not touched any of the building values (and hence tax abatements), then conducted an independent re-evaluation of the fundamental land values.</p>
 <p>This approach is more difficult, and would affect a wider range of taxpayers than just 12,000 owners of tax abated properties, but it is the right way to go about fixing the problem of under-assessed land. Instead, by partially unraveling existing tax abatements to move more value to land, the City may have cost itself some future development.</p>
-<p>The obvious remaining open question is, how were the 54% of “land-shifted” properties selected? The city has stated that <a href="http://www.philadelphiacontroller.org/media/press-releases/property-reassessments-could-add-30-million-in-new-revenues">12,000 of 15,000 tax-abated properties are in fact affected</a> so that’s a start. I might dive into this topic next if there is interest, but I’ve exhausted my side-project time budget on this for now. I love diving into this kind of stuff, so if you’re interested in more analysis, have feedback, questions about a particular property or area please <script type="text/javascript">
-<!--
-h='&#x67;&#112;&#104;&#x69;&#108;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x67;&#112;&#104;&#x69;&#108;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'drop me a line!'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#100;&#114;&#x6f;&#112;&#32;&#x6d;&#x65;&#32;&#x61;&#32;&#108;&#x69;&#110;&#x65;&#x21;&#32;&#40;&#x67;&#112;&#104;&#x69;&#108;&#32;&#x61;&#116;&#32;&#x67;&#112;&#104;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#110;&#x65;&#116;&#x29;</noscript></p>]]></summary>
-</entry>
+<p>The obvious remaining open question is, how were the 54% of “land-shifted” properties selected? The city has stated that <a href="http://www.philadelphiacontroller.org/media/press-releases/property-reassessments-could-add-30-million-in-new-revenues">12,000 of 15,000 tax-abated properties are in fact affected</a> so that’s a start. I might dive into this topic next if there is interest, but I’ve exhausted my side-project time budget on this for now. I love diving into this kind of stuff, so if you’re interested in more analysis, have feedback, questions about a particular property or area please <a href="mailto:gphil@gphil.net">drop me a line!</a></p>]]></description>
+    <pubDate>Thu, 26 May 2016 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2016-05-26-explaining-the-2017-philadelphia-property-tax-assessment-changes.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
 
-</feed>
+    </channel>
+</rss>

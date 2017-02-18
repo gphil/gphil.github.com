@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - Posts tagged yahoo</title>
-    <link href="http://gphil.net/tags/yahoo.xml" rel="self" />
-    <link href="http://gphil.net" />
-    <id>http://gphil.net/tags/yahoo.xml</id>
-    <author>
-        <name>Greg Phillips</name>
-        <email>gap023@gmail.com</email>
-    </author>
-    <updated>2013-09-08T00:00:00Z</updated>
-    <entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - Posts tagged yahoo</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/tags/yahoo.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Sun, 08 Sep 2013 00:00:00 UT</lastBuildDate>
+        <item>
     <title>Yahoo's New Direction</title>
-    <link href="http://gphil.net/posts/2013-09-08-yahoos-new-direction.html" />
-    <id>http://gphil.net/posts/2013-09-08-yahoos-new-direction.html</id>
-    <published>2013-09-08T00:00:00Z</published>
-    <updated>2013-09-08T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Along with a good portion of the rest of the internet, I read <a href="http://marissamayr.tumblr.com/post/60336044815/geeking-out-on-the-logo">Marissa Mayer’s post about the new Yahoo logo</a>. There’s been a lot of talk about the logo since then, and for what it’s worth: I like the new logo more than the old one, and I think that it is notable that they decided to buck the “flat” design trend by giving it some depth.</p>
+    <link>http://gphil.net/posts/2013-09-08-yahoos-new-direction.html</link>
+    <description><![CDATA[<p>Along with a good portion of the rest of the internet, I read <a href="http://marissamayr.tumblr.com/post/60336044815/geeking-out-on-the-logo">Marissa Mayer’s post about the new Yahoo logo</a>. There’s been a lot of talk about the logo since then, and for what it’s worth: I like the new logo more than the old one, and I think that it is notable that they decided to buck the “flat” design trend by giving it some depth.</p>
 <p>However, what Mayer’s post really got me thinking about was: how has Yahoo changed since she took over?</p>
 <p>Obviously, in addition to the new logo, they’re getting a lot more attention from the tech media, and they’ve made a <a href="http://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Yahoo!#Acquisitions">bunch of acquistions</a>.</p>
 <p>But how has all this actually affected their web presence? I decided to take a look at the Yahoo homepage this evening, and compare it to the Yahoo homepage on the eve of the day Mayer was named CEO. Take a look:</p>
@@ -26,7 +22,11 @@
 <p>Although the pages have very different visual feels, there has been little substantive change: the layout and content are nearly identical.</p>
 <p>The biggest difference is the introduction of the navigation bar similar to Google’s at the top of today’s page. This seems to represent a shift in focus from being a content provider to more of an application provider like Google is.</p>
 <p>In the last year or so, Yahoo has redesigned Flickr and Mail and acquired a bunch of other “apps” (the most prominent of which being Tumblr.) However, none of the acquisitions seem to have made a dent in the homepage yet.</p>
-<p>So, even though Yahoo has a new logo to go with its new look and feel, it still seems to be more or less the same site–even after all the acquisitions. This might change, but for now it seems that the changes at Yahoo are mostly skin-deep.</p>]]></summary>
-</entry>
+<p>So, even though Yahoo has a new logo to go with its new look and feel, it still seems to be more or less the same site–even after all the acquisitions. This might change, but for now it seems that the changes at Yahoo are mostly skin-deep.</p>]]></description>
+    <pubDate>Sun, 08 Sep 2013 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2013-09-08-yahoos-new-direction.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
 
-</feed>
+    </channel>
+</rss>

@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - Posts tagged sql</title>
-    <link href="http://gphil.net/tags/sql.xml" rel="self" />
-    <link href="http://gphil.net" />
-    <id>http://gphil.net/tags/sql.xml</id>
-    <author>
-        <name>Greg Phillips</name>
-        <email>gap023@gmail.com</email>
-    </author>
-    <updated>2012-06-18T00:00:00Z</updated>
-    <entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - Posts tagged sql</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/tags/sql.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Mon, 18 Jun 2012 00:00:00 UT</lastBuildDate>
+        <item>
     <title>Is the SQL "HAVING" Clause Strictly Necessary?</title>
-    <link href="http://gphil.net/posts/2012-06-18-is-a-sql-having-clause-necessary.html" />
-    <id>http://gphil.net/posts/2012-06-18-is-a-sql-having-clause-necessary.html</id>
-    <published>2012-06-18T00:00:00Z</published>
-    <updated>2012-06-18T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>The other day I was refactoring a SQL query containing a “HAVING” clause, and while I was thinking about that refactor, I realized that “HAVING” clauses can always in principle be reimplemented using a self-join to a subquery and a “WHERE” clause.</p>
+    <link>http://gphil.net/posts/2012-06-18-is-a-sql-having-clause-necessary.html</link>
+    <description><![CDATA[<p>The other day I was refactoring a SQL query containing a “HAVING” clause, and while I was thinking about that refactor, I realized that “HAVING” clauses can always in principle be reimplemented using a self-join to a subquery and a “WHERE” clause.</p>
 <p>My “proof” of this is that you can always write a subquery using the grouping and aggregate that you wish to filter on, then join the outer query to it using the columns in the grouping, and then filter the outer query using based on the result of the joined-in aggregate from the subquery.</p>
 <p>Consider the following example, which selects all the ice cream parlors in cities that have over 5 ice cream parlors:</p>
 <script src="https://gist.github.com/3625695.js"> </script>
-
 <p>This can be re-written as:</p>
 <script src="https://gist.github.com/3625707.js"> </script>
-
 <p>It seems that all “HAVING” queries could in principle be re-written this way, undermining an explicit need for the “HAVING” clause. However, I think there are some benefits to using the “HAVING” clause, even if you don’t necessarily need it to express your query.</p>
 <p>The first and most obvious benefit of the “HAVING” clause is that the first query is shorter and easier to understand than the second query.</p>
 <p>Another potential benefit of the “HAVING” clause is that depending on your database, there may be significant performance differences between these two approaches, although I haven’t really looked into this at all yet other than to check that these queries generate significantly different explain plans in PostgreSQL.</p>
 <p>Finally, I’m not 100% sure if all possible use cases of a “HAVING” clause can be rewritten using this method (or similar), but I haven’t been able to come up with any counter-examples.</p>
-<p>Does anyone know of any counter-examples that I’m missing, or have a more conclusive proof that all “HAVING” clauses can be re-written like this?</p>]]></summary>
-</entry>
+<p>Does anyone know of any counter-examples that I’m missing, or have a more conclusive proof that all “HAVING” clauses can be re-written like this?</p>]]></description>
+    <pubDate>Mon, 18 Jun 2012 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2012-06-18-is-a-sql-having-clause-necessary.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
 
-</feed>
+    </channel>
+</rss>

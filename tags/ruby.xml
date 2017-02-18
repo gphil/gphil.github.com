@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>gphil's blog - Posts tagged ruby</title>
-    <link href="http://gphil.net/tags/ruby.xml" rel="self" />
-    <link href="http://gphil.net" />
-    <id>http://gphil.net/tags/ruby.xml</id>
-    <author>
-        <name>Greg Phillips</name>
-        <email>gap023@gmail.com</email>
-    </author>
-    <updated>2013-06-10T00:00:00Z</updated>
-    <entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>gphil's blog - Posts tagged ruby</title>
+        <link>http://gphil.net</link>
+        <description><![CDATA[gphil's blog RSS Feed]]></description>
+        <atom:link href="http://gphil.net/tags/ruby.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Mon, 10 Jun 2013 00:00:00 UT</lastBuildDate>
+        <item>
     <title>Tracking Clojure vs. Ruby Adoption</title>
-    <link href="http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html" />
-    <id>http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html</id>
-    <published>2013-06-10T00:00:00Z</published>
-    <updated>2013-06-10T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>If you read my <a href="2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html">previous post</a>, then you know that I’m rooting for greater adoption of Clojure.</p>
+    <link>http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html</link>
+    <description><![CDATA[<p>If you read my <a href="2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html">previous post</a>, then you know that I’m rooting for greater adoption of Clojure.</p>
 <p>In this post I want to take a more quantitative look at the adoption of Clojure, and benchmark that against Ruby. I picked Ruby because it’s another dynamic language that I use frequently, and because I feel that it has quite a bit of traction.</p>
 <p>What follows below is an un-scientific comparison of Clojure and Ruby based on usage statistics culled from their respective package repositories, StackOverflow and GitHub.</p>
 <h2 id="package-repositories">Package Repositories</h2>
 <p>The package repository for Clojure is <a href="https://clojars.org">Clojars</a>. Since its inception, it’s had 4,215,857 total packages downloaded.</p>
-<p>(Edit: <a href="https://twitter.com/xeqixeqi">@xeqixeqi</a> pointed out that Clojars started keeping track of downloads in Oct./Nov. 2012, so these numbers don’t actually go back that far. That may explain why they are lagging Ruby by the most. RubyGems has been keeping track since July 2009.)</p>
+<p>(Edit: <span class="citation">[@xeqixeqi]</span>(https://twitter.com/xeqixeqi) pointed out that Clojars started keeping track of downloads in Oct./Nov. 2012, so these numbers don’t actually go back that far. That may explain why they are lagging Ruby by the most. RubyGems has been keeping track since July 2009.)</p>
 <p>The corresponding package repository for Ruby is <a href="https://rubygems.org">RubyGems</a>. RubyGems has 1,677,981,312 total downloads. This is ~398x more than Clojars.</p>
 <p>The top package on Clojars is <a href="https://github.com/ring-clojure/ring">Ring</a>, which has been downloaded 131,383 times.</p>
 <p>The top package on RubyGems is <a href="https://github.com/wycats/thor">Thor</a> and it has been downloaded 30,235,277 times, which is ~230x more than Ring.</p>
@@ -38,17 +34,21 @@
 <h2 id="conclusion">Conclusion</h2>
 <p>Ruby definitely still has a major adoption and mind-share advantage over Clojure, but Clojure fared better than I thought it would on StackOverflow, and especially on GitHub.</p>
 <p>It’s also interesting to note the wide range across the comparisons (400x down to 1.5x), which probably says as much about the communities they came from (as well as the inaccuracy of this methodology) as it does for Clojure versus Ruby adoption in the real world.</p>
-<p>I look forward to following these numbers in order to see if Clojure makes inroads against Ruby and lowers these ratios over time.</p>]]></summary>
-</entry>
-<entry>
+<p>I look forward to following these numbers in order to see if Clojure makes inroads against Ruby and lowers these ratios over time.</p>]]></description>
+    <pubDate>Mon, 10 Jun 2013 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2013-06-10-tracking-clojure-versus-ruby-adoption.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
+<item>
     <title>Thoughts on Clojure vs. Ruby for Startups</title>
-    <link href="http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html" />
-    <id>http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html</id>
-    <published>2013-06-07T00:00:00Z</published>
-    <updated>2013-06-07T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>At <a href="https://kwelia.com">Kwelia</a> we’re building our platform using both Ruby and Clojure. As of today, our web application is a Rails app but we do a lot of backend data processing in Clojure. I personally prefer programming in Clojure to programming in Ruby, and some days I wish we had more Clojure than Ruby in our codebase. I don’t think we’ll be switching from Rails any time soon, but we may try to encapsulate more business logic behind Clojure web services in the future.</p>
+    <link>http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html</link>
+    <description><![CDATA[<p>At <a href="https://kwelia.com">Kwelia</a> we’re building our platform using both Ruby and Clojure. As of today, our web application is a Rails app but we do a lot of backend data processing in Clojure. I personally prefer programming in Clojure to programming in Ruby, and some days I wish we had more Clojure than Ruby in our codebase. I don’t think we’ll be switching from Rails any time soon, but we may try to encapsulate more business logic behind Clojure web services in the future.</p>
 <p>When we started building our product (and I still think this is true today–although it’s less true now) it was faster and easier to get a production-ready web application up using Ruby on Rails. One of the best features of Rails in my opinion is that it makes a lot of design decisions for you and that it has pretty sane defaults for the most part. This ends up saving a lot of time up front, which is critical for a start up that wants to quickly validate an idea. There is also a lot of open source code available via RubyGems that replaces or expedites a lot of common web application development tasks. This is a one-two punch that’s pretty hard to beat in a start up context.</p>
-<p>However, as the Clojure ecosystem matures it’s starting to chip away at the advantages that the Rails ecosystem offers. More and more quality libraries are being shipped to <a href="https://clojars.org">Clojars</a>, and informal conventions are starting to emerge regarding how to structure a web application in Clojure. I think the growth of both of these are critical for newcomers who want to get started on a Clojure webapp quickly. I’m optimistic that these trends will continue and Clojure will continue to become a better and better choice for new projects.</p>]]></summary>
-</entry>
+<p>However, as the Clojure ecosystem matures it’s starting to chip away at the advantages that the Rails ecosystem offers. More and more quality libraries are being shipped to <a href="https://clojars.org">Clojars</a>, and informal conventions are starting to emerge regarding how to structure a web application in Clojure. I think the growth of both of these are critical for newcomers who want to get started on a Clojure webapp quickly. I’m optimistic that these trends will continue and Clojure will continue to become a better and better choice for new projects.</p>]]></description>
+    <pubDate>Fri, 07 Jun 2013 00:00:00 UT</pubDate>
+    <guid>http://gphil.net/posts/2013-06-07-thoughts-on-clojure-versus-ruby-for-startups.html</guid>
+    <dc:creator>Greg Phillips</dc:creator>
+</item>
 
-</feed>
+    </channel>
+</rss>
